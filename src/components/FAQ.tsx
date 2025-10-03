@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -49,8 +50,36 @@ const FAQ = () => {
     }
   ];
 
+  useEffect(() => {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-structured-data';
+    script.text = JSON.stringify(faqStructuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById('faq-structured-data');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, [faqs]);
+
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-background to-secondary/5">
+    <section id="faq" className="py-20 bg-gradient-to-b from-background to-secondary/5" itemScope itemType="https://schema.org/FAQPage">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -68,12 +97,20 @@ const FAQ = () => {
                 key={index}
                 value={`item-${index}`}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border-none px-6 overflow-hidden"
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
               >
                 <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary hover:no-underline py-6">
-                  {faq.question}
+                  <span itemProp="name">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6 text-base">
-                  {faq.answer}
+                <AccordionContent 
+                  className="text-muted-foreground leading-relaxed pb-6 text-base"
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
+                  <div itemProp="text">{faq.answer}</div>
                 </AccordionContent>
               </AccordionItem>
             ))}
