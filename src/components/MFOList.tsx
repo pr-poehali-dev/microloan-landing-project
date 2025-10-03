@@ -20,7 +20,7 @@ const MFOList = () => {
 
   const mfoList = [
     {
-      name: "Займер",
+      name: "Надо денег",
       logo: "💰",
       rating: 4.9,
       amount: "до 30 000 ₽",
@@ -29,7 +29,7 @@ const MFOList = () => {
       features: ["Первый займ 0%", "Без проверки КИ", "За 5 минут"],
       approved: "98%",
       recommended: true,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/3GyRuqoD?erid=2SDnjdmoM8q&siteId=8015"
     },
     {
       name: "МигКредит",
