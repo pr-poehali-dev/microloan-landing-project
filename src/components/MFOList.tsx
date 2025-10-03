@@ -209,9 +209,16 @@ const MFOList = () => {
                           ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90' 
                           : ''
                       }`}
+                      asChild
                     >
-                      Получить займ
-                      <Icon name="ArrowRight" size={18} className="ml-2" />
+                      <a 
+                        href="https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                      >
+                        Получить займ
+                        <Icon name="ArrowRight" size={18} className="ml-2" />
+                      </a>
                     </Button>
                   </div>
                 </div>
