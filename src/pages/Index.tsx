@@ -8,6 +8,8 @@ import Security from "@/components/Security";
 import Conditions2024 from "@/components/Conditions2024";
 import Comparison from "@/components/Comparison";
 import RefinancingAndTips from "@/components/RefinancingAndTips";
+import Reviews from "@/components/Reviews";
+import FAQ from "@/components/FAQ";
 import Conclusion from "@/components/Conclusion";
 import Footer from "@/components/Footer";
 
@@ -24,6 +26,8 @@ const Index = () => {
       <Conditions2024 />
       <Comparison />
       <RefinancingAndTips />
+      <Reviews />
+      <FAQ />
       <Conclusion />
       <Footer />
     </div>
