@@ -1,0 +1,9 @@
+# Redirect www to non-www
+https://www.mikrofinru.ru/* https://mikrofinru.ru/:splat 301!
+http://www.mikrofinru.ru/* https://mikrofinru.ru/:splat 301!
+
+# Redirect http to https
+http://mikrofinru.ru/* https://mikrofinru.ru/:splat 301!
+
+# SPA fallback
+/*    /index.html   200
