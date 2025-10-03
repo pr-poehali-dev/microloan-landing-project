@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Get all leads with stats",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Get leads with limit",
+      "method": "GET",
+      "path": "/?limit=10&offset=0",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "limit": 10,
+        "offset": 0
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Handle OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
