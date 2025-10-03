@@ -104,7 +104,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-            <p>© 2024 МикроЗайм. Все права защищены.</p>
+            <p>© 2025 МикроФин. Все права защищены.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
               <a href="#" className="hover:text-white transition-colors">Пользовательское соглашение</a>
