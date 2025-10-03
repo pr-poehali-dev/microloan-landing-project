@@ -34,10 +34,10 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <Icon name="Zap" size={24} className="text-white" />
+              <Icon name="Wallet" size={24} className="text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              МикроЗайм
+              МикроФин
             </span>
           </div>
 

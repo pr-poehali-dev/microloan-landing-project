@@ -17,10 +17,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Icon name="Zap" size={24} className="text-white" />
+                <Icon name="Wallet" size={24} className="text-white" />
               </div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                МикроЗайм
+                МикроФин
               </h3>
             </div>
             <p className="text-gray-400 text-sm mb-4">
