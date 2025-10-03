@@ -61,7 +61,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/5 to-background">
+    <section id="reviews" className="py-20 bg-gradient-to-b from-secondary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">

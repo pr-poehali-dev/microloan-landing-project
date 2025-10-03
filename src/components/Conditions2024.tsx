@@ -10,7 +10,7 @@ const Conditions2024 = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+    <section id="conditions" className="py-20 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Выгодные условия микрозаймов в 2025 году</h2>

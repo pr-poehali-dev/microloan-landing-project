@@ -16,7 +16,7 @@ const HowToGetLoan = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/5 to-background">
+    <section id="how-to-get" className="py-20 bg-gradient-to-b from-secondary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">

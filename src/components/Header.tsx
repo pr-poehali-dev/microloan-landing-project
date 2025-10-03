@@ -43,6 +43,20 @@ const Header = () => {
 
           <nav className="hidden md:flex items-center gap-8">
             <button
+              onClick={() => scrollToSection("mfo-list")}
+              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+            >
+              МФО
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection("calculator")}
+              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+            >
+              Калькулятор
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button
               onClick={() => scrollToSection("conditions")}
               className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
             >
@@ -50,17 +64,24 @@ const Header = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
-              onClick={() => scrollToSection("benefits")}
+              onClick={() => scrollToSection("how-to-get")}
               className="text-foreground/80 hover:text-secondary font-medium transition-colors relative group"
             >
-              Преимущества
+              Как получить
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection("reviews")}
+              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+            >
+              Отзывы
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
               onClick={() => scrollToSection("faq")}
               className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
             >
-              Вопросы
+              FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </button>
           </nav>
@@ -73,7 +94,10 @@ const Header = () => {
               <Icon name="Phone" size={18} />
               <span className="font-semibold">8 800 123-45-67</span>
             </a>
-            <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Button 
+              onClick={() => scrollToSection("lead-form")}
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
               Получить займ
               <Icon name="ArrowRight" className="ml-2" size={16} />
             </Button>
@@ -91,22 +115,40 @@ const Header = () => {
           <div className="md:hidden py-6 border-t animate-fade-in">
             <nav className="flex flex-col gap-4">
               <button
+                onClick={() => scrollToSection("mfo-list")}
+                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+              >
+                МФО
+              </button>
+              <button
+                onClick={() => scrollToSection("calculator")}
+                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+              >
+                Калькулятор
+              </button>
+              <button
                 onClick={() => scrollToSection("conditions")}
                 className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
               >
                 Условия
               </button>
               <button
-                onClick={() => scrollToSection("benefits")}
+                onClick={() => scrollToSection("how-to-get")}
                 className="text-left py-2 text-foreground/80 hover:text-secondary font-medium transition-colors"
               >
-                Преимущества
+                Как получить
+              </button>
+              <button
+                onClick={() => scrollToSection("reviews")}
+                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+              >
+                Отзывы
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
                 className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
               >
-                Вопросы
+                FAQ
               </button>
               <a
                 href="tel:88001234567"
@@ -115,7 +157,10 @@ const Header = () => {
                 <Icon name="Phone" size={18} />
                 <span className="font-semibold">8 800 123-45-67</span>
               </a>
-              <Button className="bg-gradient-to-r from-primary to-secondary w-full">
+              <Button 
+                onClick={() => scrollToSection("lead-form")}
+                className="bg-gradient-to-r from-primary to-secondary w-full"
+              >
                 Получить займ
               </Button>
             </nav>
