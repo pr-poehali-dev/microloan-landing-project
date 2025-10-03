@@ -4,6 +4,20 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const MFOList = () => {
+  const trackClick = async (mfoName: string) => {
+    try {
+      await fetch('https://functions.poehali.dev/c591c6e9-075e-48d0-a487-6cfffa0136b7', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mfo_name: mfoName }),
+      });
+    } catch (error) {
+      console.error('Failed to track click:', error);
+    }
+  };
+
   const mfoList = [
     {
       name: "Займер",
@@ -215,6 +229,7 @@ const MFOList = () => {
                         href="https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
                         target="_blank"
                         rel="nofollow noopener noreferrer"
+                        onClick={() => trackClick(mfo.name)}
                       >
                         Получить займ
                         <Icon name="ArrowRight" size={18} className="ml-2" />
