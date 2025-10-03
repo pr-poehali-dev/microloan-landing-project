@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Submit valid lead",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иванов Иван Иванович",
+        "phone": "+7 (999) 123-45-67"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "name": "Reject short name",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Ив",
+        "phone": "+7 (999) 123-45-67"
+      },
+      "expectedStatus": 400
+    },
+    {
+      "name": "Reject invalid phone",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иванов Иван Иванович",
+        "phone": "123"
+      },
+      "expectedStatus": 400
+    },
+    {
+      "name": "Handle OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

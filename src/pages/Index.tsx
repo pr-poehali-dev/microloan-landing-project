@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MFOList from "@/components/MFOList";
 import LoanQuiz from "@/components/LoanQuiz";
+import LeadForm from "@/components/LeadForm";
 import LoanCalculator from "@/components/LoanCalculator";
 import WhatIsMicroloan from "@/components/WhatIsMicroloan";
 import HowToGetLoan from "@/components/HowToGetLoan";
@@ -24,6 +25,7 @@ const Index = () => {
       <Hero />
       <LoanQuiz />
       <MFOList />
+      <LeadForm />
       <LoanCalculator />
       <WhatIsMicroloan />
       <HowToGetLoan />
