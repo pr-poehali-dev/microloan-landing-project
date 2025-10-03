@@ -1,0 +1,170 @@
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Slider } from "@/components/ui/slider";
+import Icon from "@/components/ui/icon";
+
+const LoanCalculator = () => {
+  const [amount, setAmount] = useState(15000);
+  const [days, setDays] = useState(15);
+  const [rate] = useState(0.8);
+
+  const dailyRate = rate / 100;
+  const totalInterest = amount * dailyRate * days;
+  const totalRepayment = amount + totalInterest;
+  const dailyPayment = totalRepayment / days;
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Калькулятор займа
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Рассчитайте сумму, срок и переплату за несколько секунд
+            </p>
+          </div>
+
+          <Card className="p-8 bg-white shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-8">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <label className="text-sm font-semibold text-muted-foreground">
+                      Сумма займа
+                    </label>
+                    <div className="text-2xl font-bold text-primary">
+                      {amount.toLocaleString('ru-RU')} ₽
+                    </div>
+                  </div>
+                  <Slider
+                    value={[amount]}
+                    onValueChange={(value) => setAmount(value[0])}
+                    min={5000}
+                    max={100000}
+                    step={1000}
+                    className="mb-2"
+                  />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>5 000 ₽</span>
+                    <span>100 000 ₽</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <label className="text-sm font-semibold text-muted-foreground">
+                      Срок займа
+                    </label>
+                    <div className="text-2xl font-bold text-primary">
+                      {days} {days === 1 ? 'день' : days < 5 ? 'дня' : 'дней'}
+                    </div>
+                  </div>
+                  <Slider
+                    value={[days]}
+                    onValueChange={(value) => setDays(value[0])}
+                    min={7}
+                    max={180}
+                    step={1}
+                    className="mb-2"
+                  />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>7 дней</span>
+                    <span>180 дней</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Icon name="Percent" size={18} className="text-primary" />
+                    <span className="text-sm font-semibold">Процентная ставка</span>
+                  </div>
+                  <p className="text-2xl font-bold text-primary">{rate}% в день</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Средняя ставка по рынку МФО
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="Calculator" size={20} className="text-green-600" />
+                    <span className="text-sm font-semibold text-green-700">Результат расчета</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Вы получите</p>
+                      <p className="text-3xl font-bold text-green-600">
+                        {amount.toLocaleString('ru-RU')} ₽
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-green-200">
+                      <p className="text-xs text-muted-foreground mb-1">Проценты за {days} {days === 1 ? 'день' : days < 5 ? 'дня' : 'дней'}</p>
+                      <p className="text-2xl font-bold text-orange-600">
+                        +{totalInterest.toLocaleString('ru-RU', { maximumFractionDigits: 0 })} ₽
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-green-200">
+                      <p className="text-xs text-muted-foreground mb-1">К возврату</p>
+                      <p className="text-3xl font-bold text-primary">
+                        {totalRepayment.toLocaleString('ru-RU', { maximumFractionDigits: 0 })} ₽
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-green-200">
+                      <p className="text-xs text-muted-foreground mb-1">Ежедневный платеж</p>
+                      <p className="text-xl font-bold text-gray-700">
+                        {dailyPayment.toLocaleString('ru-RU', { maximumFractionDigits: 0 })} ₽/день
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <Button 
+                  size="lg" 
+                  className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-14"
+                >
+                  Получить займ
+                  <Icon name="ArrowRight" size={20} className="ml-2" />
+                </Button>
+
+                <div className="flex items-center gap-2 text-xs text-muted-foreground justify-center">
+                  <Icon name="Shield" size={14} />
+                  <span>Расчет носит информационный характер</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Icon name="Zap" size={24} className="text-yellow-500" />
+                  <p className="text-sm font-semibold">Мгновенное решение</p>
+                  <p className="text-xs text-muted-foreground">Ответ за 5 минут</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Icon name="CheckCircle2" size={24} className="text-green-500" />
+                  <p className="text-sm font-semibold">Без отказа</p>
+                  <p className="text-xs text-muted-foreground">Одобрение 95%</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Icon name="CreditCard" size={24} className="text-blue-500" />
+                  <p className="text-sm font-semibold">На карту</p>
+                  <p className="text-xs text-muted-foreground">Перевод за минуту</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LoanCalculator;

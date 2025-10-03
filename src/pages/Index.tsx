@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MFOList from "@/components/MFOList";
+import LoanCalculator from "@/components/LoanCalculator";
 import WhatIsMicroloan from "@/components/WhatIsMicroloan";
 import HowToGetLoan from "@/components/HowToGetLoan";
 import OnlineProcess from "@/components/OnlineProcess";
@@ -21,6 +22,7 @@ const Index = () => {
       <Header />
       <Hero />
       <MFOList />
+      <LoanCalculator />
       <WhatIsMicroloan />
       <HowToGetLoan />
       <OnlineProcess />
