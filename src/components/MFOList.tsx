@@ -44,16 +44,16 @@ const MFOList = () => {
       url: "https://trk.ppdu.ru/click/HbPsDylQ?erid=LjN8KKm44&siteId=8015"
     },
     {
-      name: "Lime-Займ",
-      logo: "🍋",
+      name: "Max.Credit",
+      logo: "🎯",
       rating: 4.7,
-      amount: "до 70 000 ₽",
-      term: "до 168 дней",
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
       rate: "0%",
       features: ["С 18 лет", "Мгновенно", "Первый под 0%"],
       approved: "95%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/OMRKMQnH?erid=2SDnjbuHuCz&siteId=8015"
     },
     {
       name: "Веб-Займ",
