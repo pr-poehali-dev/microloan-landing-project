@@ -17,9 +17,11 @@ interface Lead {
   id: number;
   full_name: string;
   phone: string;
+  amount?: number;
+  days?: number;
+  source?: string;
   created_at: string;
   ip_address: string;
-  user_agent: string;
 }
 
 interface Stats {
@@ -99,11 +101,14 @@ const Admin = () => {
   };
 
   const exportToCSV = () => {
-    const headers = ['ID', 'ФИО', 'Телефон', 'Дата', 'IP'];
+    const headers = ['ID', 'ФИО', 'Телефон', 'Сумма', 'Дней', 'Источник', 'Дата', 'IP'];
     const rows = leads.map(lead => [
       lead.id,
       lead.full_name,
       lead.phone,
+      lead.amount || '-',
+      lead.days || '-',
+      lead.source || '-',
       formatDate(lead.created_at),
       lead.ip_address || '-'
     ]);
@@ -224,6 +229,9 @@ const Admin = () => {
                     <TableHead className="font-bold">ID</TableHead>
                     <TableHead className="font-bold">ФИО</TableHead>
                     <TableHead className="font-bold">Телефон</TableHead>
+                    <TableHead className="font-bold">Сумма</TableHead>
+                    <TableHead className="font-bold">Срок</TableHead>
+                    <TableHead className="font-bold">Источник</TableHead>
                     <TableHead className="font-bold">Дата и время</TableHead>
                     <TableHead className="font-bold">IP адрес</TableHead>
                   </TableRow>
@@ -234,6 +242,23 @@ const Admin = () => {
                       <TableCell className="font-medium">{lead.id}</TableCell>
                       <TableCell>{lead.full_name}</TableCell>
                       <TableCell className="font-mono">{lead.phone}</TableCell>
+                      <TableCell className="font-semibold">
+                        {lead.amount ? `${lead.amount.toLocaleString('ru-RU')} ₽` : '-'}
+                      </TableCell>
+                      <TableCell>
+                        {lead.days ? `${lead.days} ${lead.days === 1 ? 'день' : lead.days < 5 ? 'дня' : 'дней'}` : '-'}
+                      </TableCell>
+                      <TableCell>
+                        <span className={`inline-flex px-2 py-1 rounded-full text-xs font-medium ${
+                          lead.source === 'calculator' ? 'bg-blue-100 text-blue-700' :
+                          lead.source === 'leadform' ? 'bg-green-100 text-green-700' :
+                          'bg-gray-100 text-gray-700'
+                        }`}>
+                          {lead.source === 'calculator' ? 'Калькулятор' :
+                           lead.source === 'leadform' ? 'Форма' :
+                           lead.source || '-'}
+                        </span>
+                      </TableCell>
                       <TableCell>{formatDate(lead.created_at)}</TableCell>
                       <TableCell className="text-muted-foreground font-mono text-sm">
                         {lead.ip_address || '-'}

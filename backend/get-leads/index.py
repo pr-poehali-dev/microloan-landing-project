@@ -63,7 +63,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             COUNT(CASE WHEN created_at::date = CURRENT_DATE THEN 1 END) as today,
             COUNT(CASE WHEN created_at >= CURRENT_DATE - INTERVAL '7 days' THEN 1 END) as week,
             COUNT(CASE WHEN created_at >= CURRENT_DATE - INTERVAL '30 days' THEN 1 END) as month
-        FROM leads
+        FROM t_p19837706_microloan_landing_pr.leads
         {where_clause}
     '''
     
@@ -78,8 +78,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     }
     
     leads_query = f'''
-        SELECT id, full_name, phone, created_at, ip_address, user_agent
-        FROM leads
+        SELECT id, first_name, last_name, phone, amount, days, source, created_at, ip_address
+        FROM t_p19837706_microloan_landing_pr.leads
         {where_clause}
         ORDER BY created_at DESC
         LIMIT {limit} OFFSET {offset}
@@ -90,13 +90,16 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     leads: List[Dict[str, Any]] = []
     for row in rows:
+        full_name = f"{row[1]} {row[2]}".strip() if row[1] and row[2] else (row[1] or row[2] or 'Не указано')
         leads.append({
             'id': row[0],
-            'full_name': row[1],
-            'phone': row[2],
-            'created_at': row[3].isoformat() if row[3] else None,
-            'ip_address': row[4],
-            'user_agent': row[5]
+            'full_name': full_name,
+            'phone': row[3],
+            'amount': row[4],
+            'days': row[5],
+            'source': row[6],
+            'created_at': row[7].isoformat() if row[7] else None,
+            'ip_address': row[8]
         })
     
     cursor.close()

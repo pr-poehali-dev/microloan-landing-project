@@ -22,12 +22,38 @@ const LoanCalculator = () => {
   const totalRepayment = amount + totalInterest;
   const dailyPayment = totalRepayment / days;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Заявка отправлена:", { ...formData, amount, days });
-    alert(`Спасибо, ${formData.firstName}! Ваша заявка на ${amount.toLocaleString('ru-RU')} ₽ принята. Мы свяжемся с вами по номеру ${formData.phone}`);
-    setShowForm(false);
-    setFormData({ firstName: "", lastName: "", phone: "" });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/77c76389-0e3c-4aa4-982b-6789a2f9cb26', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          phone: formData.phone,
+          amount: amount,
+          days: days,
+          source: 'calculator'
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        alert(`Спасибо, ${formData.firstName}! Ваша заявка на ${amount.toLocaleString('ru-RU')} ₽ принята. Мы свяжемся с вами по номеру ${formData.phone}`);
+        setShowForm(false);
+        setFormData({ firstName: "", lastName: "", phone: "" });
+      } else {
+        alert(data.error || 'Ошибка при отправке заявки');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Не удалось отправить заявку. Попробуйте позже.');
+    }
   };
 
   return (

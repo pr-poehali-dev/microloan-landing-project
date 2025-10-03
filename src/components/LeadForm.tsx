@@ -51,6 +51,7 @@ const LeadForm = () => {
         body: JSON.stringify({
           full_name: fullName,
           phone: phone,
+          source: 'leadform'
         }),
       });
 
