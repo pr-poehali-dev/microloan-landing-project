@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MFOList from "@/components/MFOList";
@@ -20,27 +21,57 @@ import Footer from "@/components/Footer";
 import ApprovalTicker from "@/components/ApprovalTicker";
 
 const Index = () => {
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Взять микрозайм онлайн на карту без отказа срочно",
+      "description": "Оформите микрозайм онлайн на карту за 5 минут. Без справок и поручителей. Одобрение до 99%.",
+      "url": "https://mikrofinru.ru/",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://mikrofinru.ru/"
+        }]
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
       <ApprovalTicker />
-      <Hero />
-      <LoanQuiz />
-      <MFOList />
-      <LeadForm />
-      <LoanCalculator />
-      <WhatIsMicroloan />
-      <HowToGetLoan />
-      <OnlineProcess />
-      <UrgentLoans />
-      <Security />
-      <Licenses />
-      <Conditions2024 />
-      <Comparison />
-      <RefinancingAndTips />
-      <Reviews />
-      <FAQ />
-      <Conclusion />
+      <main>
+        <Hero />
+        <LoanQuiz />
+        <MFOList />
+        <LeadForm />
+        <LoanCalculator />
+        <WhatIsMicroloan />
+        <HowToGetLoan />
+        <OnlineProcess />
+        <UrgentLoans />
+        <Security />
+        <Licenses />
+        <Conditions2024 />
+        <Comparison />
+        <RefinancingAndTips />
+        <Reviews />
+        <FAQ />
+        <Conclusion />
+      </main>
       <Footer />
     </div>
   );

@@ -34,6 +34,7 @@ const Header = () => {
           ? "bg-white/95 backdrop-blur-lg shadow-lg"
           : "bg-transparent"
       }`}
+      role="banner"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -49,7 +50,7 @@ const Header = () => {
             </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" role="navigation" aria-label="Основная навигация">
             <button
               onClick={() => scrollToSection("mfo-list")}
               className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
