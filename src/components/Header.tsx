@@ -91,7 +91,7 @@ const Header = () => {
               href="https://t.me/Microfinzaim"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground/80 hover:text-[#0088cc] transition-colors"
+              className="flex items-center gap-2 text-[#0088cc] hover:text-[#006699] transition-colors"
             >
               <Icon name="Send" size={20} />
               <span className="font-semibold">Telegram</span>
@@ -156,7 +156,7 @@ const Header = () => {
                 href="https://t.me/Microfinzaim"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 py-2 text-foreground/80 hover:text-[#0088cc] transition-colors"
+                className="flex items-center gap-2 py-2 text-[#0088cc] hover:text-[#006699] transition-colors"
               >
                 <Icon name="Send" size={18} />
                 <span className="font-semibold">Написать в Telegram</span>
