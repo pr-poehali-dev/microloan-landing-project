@@ -84,18 +84,14 @@ const FAQ = () => {
             <p className="text-muted-foreground mb-6">
               Наша служба поддержки работает круглосуточно и готова помочь вам в любое время
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
-                href="tel:88001234567"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+                href="https://t.me/Microfinzaim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                📞 8 800 123-45-67
-              </a>
-              <a
-                href="mailto:support@microloan.ru"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300"
-              >
-                ✉️ support@microloan.ru
+                📱 Написать в Telegram
               </a>
             </div>
           </div>
