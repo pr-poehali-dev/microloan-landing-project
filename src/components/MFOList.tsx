@@ -32,16 +32,16 @@ const MFOList = () => {
       url: "https://trk.ppdu.ru/click/3GyRuqoD?erid=2SDnjdmoM8q&siteId=8015"
     },
     {
-      name: "МигКредит",
+      name: "Умные наличные",
       logo: "⚡",
       rating: 4.8,
-      amount: "до 100 000 ₽",
-      term: "до 365 дней",
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
       rate: "от 0%",
       features: ["Без отказа", "Онлайн 24/7", "На карту"],
       approved: "96%",
       recommended: true,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/HbPsDylQ?erid=LjN8KKm44&siteId=8015"
     },
     {
       name: "Lime-Займ",
