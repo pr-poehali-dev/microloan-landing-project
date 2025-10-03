@@ -83,13 +83,13 @@ const MFOList = () => {
       name: "Е-Капуста",
       logo: "💵",
       rating: 4.6,
-      amount: "до 60 000 ₽",
-      term: "до 120 дней",
+      amount: "до 30 000 ₽",
+      term: "до 21 дня",
       rate: "от 0%",
       features: ["Круглосуточно", "Без отказа", "На карту"],
       approved: "92%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/wYdiPQjs?erid=LjN8KSpAc&siteId=8015"
     },
     {
       name: "СрочноДеньги",
