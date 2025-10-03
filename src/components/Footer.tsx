@@ -91,6 +91,17 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Контакты</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
+                <Icon name="Send" size={16} className="mt-1 text-[#0088cc]" />
+                <a 
+                  href="https://t.me/Microfinzaim" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#0088cc] transition-colors"
+                >
+                  @Microfinzaim
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
                 <Icon name="Mail" size={16} className="mt-1 text-secondary" />
                 <span>support@microloan.ru</span>
               </li>
