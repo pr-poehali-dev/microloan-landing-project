@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import MFOList from "@/components/MFOList";
 import WhatIsMicroloan from "@/components/WhatIsMicroloan";
 import HowToGetLoan from "@/components/HowToGetLoan";
 import OnlineProcess from "@/components/OnlineProcess";
@@ -18,6 +19,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <MFOList />
       <WhatIsMicroloan />
       <HowToGetLoan />
       <OnlineProcess />
