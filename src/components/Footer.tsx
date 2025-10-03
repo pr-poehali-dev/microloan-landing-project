@@ -26,17 +26,6 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-4">
               Быстрые микрозаймы онлайн. Деньги на карту за 5 минут.
             </p>
-            <div className="flex gap-3 mt-6">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-all duration-300 flex items-center justify-center">
-                <Icon name="Facebook" size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-all duration-300 flex items-center justify-center">
-                <Icon name="Instagram" size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-all duration-300 flex items-center justify-center">
-                <Icon name="Twitter" size={20} />
-              </a>
-            </div>
           </div>
 
           <div>
