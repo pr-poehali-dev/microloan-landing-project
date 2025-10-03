@@ -119,13 +119,13 @@ const MFOList = () => {
       name: "МаниМен",
       logo: "👨‍💼",
       rating: 4.4,
-      amount: "до 50 000 ₽",
-      term: "до 90 дней",
+      amount: "до 15 000 ₽",
+      term: "до 21 дня",
       rate: "от 0%",
       features: ["Без справок", "Онлайн", "На карту"],
       approved: "89%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/nZpz3ZjE?erid=2SDnjd4NP9c&siteId=8015"
     },
     {
       name: "Быстроденьги",
