@@ -6,7 +6,8 @@
       "path": "/",
       "body": {
         "full_name": "Иванов Иван Иванович",
-        "phone": "+7 (999) 123-45-67"
+        "phone": "+7 (999) 123-45-67",
+        "source": "test"
       },
       "expectedStatus": 200
     },
