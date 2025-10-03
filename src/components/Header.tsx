@@ -105,41 +105,41 @@ const Header = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden py-6 border-t animate-fade-in">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg shadow-2xl border-t animate-fade-in">
+            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("mfo-list")}
-                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
               >
                 МФО
               </button>
               <button
                 onClick={() => scrollToSection("calculator")}
-                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
               >
                 Калькулятор
               </button>
               <button
                 onClick={() => scrollToSection("conditions")}
-                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
               >
                 Условия
               </button>
               <button
                 onClick={() => scrollToSection("how-to-get")}
-                className="text-left py-2 text-foreground/80 hover:text-secondary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-secondary hover:bg-secondary/5 rounded-lg font-medium transition-all"
               >
                 Как получить
               </button>
               <button
                 onClick={() => scrollToSection("reviews")}
-                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
               >
                 Отзывы
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
-                className="text-left py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
               >
                 FAQ
               </button>
