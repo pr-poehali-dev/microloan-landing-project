@@ -102,10 +102,6 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Icon name="Mail" size={16} className="mt-1 text-secondary" />
-                <span>support@microloan.ru</span>
-              </li>
-              <li className="flex items-start gap-2">
                 <Icon name="Clock" size={16} className="mt-1 text-primary" />
                 <span>Поддержка 24/7</span>
               </li>
