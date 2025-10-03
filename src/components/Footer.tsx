@@ -1,0 +1,84 @@
+import Icon from "@/components/ui/icon";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              МикроЗайм
+            </h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Быстрые микрозаймы онлайн. Деньги на карту за 5 минут.
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-all duration-300 flex items-center justify-center">
+                <Icon name="Facebook" size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-all duration-300 flex items-center justify-center">
+                <Icon name="Instagram" size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-all duration-300 flex items-center justify-center">
+                <Icon name="Twitter" size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Компания</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-primary transition-colors">О нас</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Новости</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Карьера</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Информация</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-secondary transition-colors">Условия займа</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Тарифы</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Как получить займ</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Контакты</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <Icon name="Phone" size={16} className="mt-1 text-primary" />
+                <span>8 800 123-45-67<br/>(Бесплатно по РФ)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Mail" size={16} className="mt-1 text-secondary" />
+                <span>support@microloan.ru</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Clock" size={16} className="mt-1 text-primary" />
+                <span>Поддержка 24/7</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+            <p>© 2024 МикроЗайм. Все права защищены.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+              <a href="#" className="hover:text-white transition-colors">Пользовательское соглашение</a>
+            </div>
+          </div>
+          <div className="mt-4 text-xs text-gray-500 text-center md:text-left">
+            <p>Информация, размещенная на сайте, не является публичной офертой. МКК "МикроЗайм", рег. номер в госреестре 1234567890123.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
