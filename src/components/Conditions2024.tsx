@@ -13,9 +13,7 @@ const Conditions2024 = () => {
     <section className="py-20 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-            Выгодные условия микрозаймов в 2024 году
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Выгодные условия микрозаймов в 2025 году</h2>
           
           <p className="text-lg leading-relaxed text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
             Рынок микрофинансирования активно развивается, предлагая заемщикам все более выгодные условия:
