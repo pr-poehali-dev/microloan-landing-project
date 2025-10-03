@@ -13,6 +13,7 @@ import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import Conclusion from "@/components/Conclusion";
 import Footer from "@/components/Footer";
+import LiveCounter from "@/components/LiveCounter";
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
       <FAQ />
       <Conclusion />
       <Footer />
+      <LiveCounter />
     </div>
   );
 };
