@@ -1,6 +1,13 @@
 import Icon from "@/components/ui/icon";
 
 const Footer = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 overflow-hidden">
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
@@ -33,22 +40,50 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Компания</h4>
+            <h4 className="font-semibold mb-4">Сервисы</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-primary transition-colors">О нас</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Новости</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Карьера</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Контакты</a></li>
+              <li>
+                <button onClick={() => scrollToSection("mfo-list")} className="hover:text-primary transition-colors">
+                  МФО
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("calculator")} className="hover:text-primary transition-colors">
+                  Калькулятор займа
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("conditions")} className="hover:text-primary transition-colors">
+                  Условия
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("lead-form")} className="hover:text-primary transition-colors">
+                  Подать заявку
+                </button>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Информация</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-secondary transition-colors">Условия займа</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Тарифы</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Как получить займ</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">FAQ</a></li>
+              <li>
+                <button onClick={() => scrollToSection("how-to-get")} className="hover:text-secondary transition-colors">
+                  Как получить займ
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("reviews")} className="hover:text-secondary transition-colors">
+                  Отзывы
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("faq")} className="hover:text-secondary transition-colors">
+                  FAQ
+                </button>
+              </li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Контакты</a></li>
             </ul>
           </div>
 
