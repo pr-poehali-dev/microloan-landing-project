@@ -91,10 +91,6 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Контакты</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
-                <Icon name="Phone" size={16} className="mt-1 text-primary" />
-                <span>8 800 123-45-67<br/>(Бесплатно по РФ)</span>
-              </li>
-              <li className="flex items-start gap-2">
                 <Icon name="Mail" size={16} className="mt-1 text-secondary" />
                 <span>support@microloan.ru</span>
               </li>
