@@ -4,20 +4,8 @@ import Icon from "@/components/ui/icon";
 const Licenses = () => {
   const licenses = [
     {
-      icon: "Award",
-      title: "Лицензия ЦБ РФ",
-      number: "№ 651303045006549",
-      description: "Официальная регистрация в реестре Центрального Банка России"
-    },
-    {
-      icon: "Shield",
-      title: "Член СРО МФО",
-      number: "СРО «МиР»",
-      description: "Соответствие стандартам саморегулируемой организации"
-    },
-    {
       icon: "CheckCircle2",
-      title: "Проверенная МФО",
+      title: "Проверенный сервис",
       number: "С 2018 года",
       description: "Более 7 лет успешной работы на финансовом рынке"
     },
@@ -42,10 +30,10 @@ const Licenses = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Лицензии и сертификаты
+              Безопасность и надежность
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Мы работаем официально и соблюдаем все требования законодательства РФ
+              Мы гарантируем защиту ваших данных и прозрачные условия
             </p>
           </div>
 
@@ -53,16 +41,16 @@ const Licenses = () => {
             {licenses.map((license, index) => (
               <Card 
                 key={index}
-                className="p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white border-2 border-primary/10"
+                className="p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white border-2 border-primary/10"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                    <Icon name={license.icon as any} size={28} className="text-white" />
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                    <Icon name={license.icon as any} size={32} className="text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-1">{license.title}</h3>
-                    <p className="text-primary font-semibold mb-2">{license.number}</p>
-                    <p className="text-sm text-muted-foreground">{license.description}</p>
+                    <h3 className="text-2xl font-bold mb-2">{license.title}</h3>
+                    <p className="text-primary font-semibold text-lg mb-2">{license.number}</p>
+                    <p className="text-muted-foreground">{license.description}</p>
                   </div>
                 </div>
               </Card>
@@ -100,17 +88,7 @@ const Licenses = () => {
                   требования ФЗ-152 «О персональных данных».
                 </p>
               </div>
-              <div className="flex-shrink-0">
-                <a 
-                  href="https://www.cbr.ru/registries/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-green-600 text-green-700 rounded-xl font-semibold hover:bg-green-50 transition-all duration-300"
-                >
-                  Проверить в реестре ЦБ РФ
-                  <Icon name="ExternalLink" size={18} />
-                </a>
-              </div>
+
             </div>
           </Card>
         </div>
