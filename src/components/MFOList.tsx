@@ -107,13 +107,13 @@ const MFOList = () => {
       name: "ДоЗарплаты",
       logo: "💳",
       rating: 4.5,
-      amount: "до 35 000 ₽",
-      term: "до 30 дней",
+      amount: "до 100 000 ₽",
+      term: "до 365 дней",
       rate: "0%",
       features: ["До зарплаты", "Без процентов", "Быстро"],
       approved: "90%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/vZa8VguM?erid=2SDnjevZFtJ&siteId=8015"
     },
     {
       name: "МаниМен",
