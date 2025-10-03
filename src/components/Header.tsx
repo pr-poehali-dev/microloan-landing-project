@@ -87,15 +87,6 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://t.me/Microfinzaim"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-[#0088cc] hover:text-[#006699] transition-colors"
-            >
-              <Icon name="Send" size={20} />
-              <span className="font-semibold">Telegram</span>
-            </a>
             <Button 
               onClick={() => scrollToSection("lead-form")}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -152,15 +143,6 @@ const Header = () => {
               >
                 FAQ
               </button>
-              <a
-                href="https://t.me/Microfinzaim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 py-2 text-[#0088cc] hover:text-[#006699] transition-colors"
-              >
-                <Icon name="Send" size={18} />
-                <span className="font-semibold">Написать в Telegram</span>
-              </a>
               <Button 
                 onClick={() => scrollToSection("lead-form")}
                 className="bg-gradient-to-r from-primary to-secondary w-full mt-4"
