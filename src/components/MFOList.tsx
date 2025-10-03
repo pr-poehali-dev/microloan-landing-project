@@ -65,7 +65,7 @@ const MFOList = () => {
     },
     {
       name: "Турбозайм",
-      logo: "🚀",
+      logo: "https://cdn.poehali.dev/files/5685bc47-1b79-4e2f-8474-040ecca1da7e.jpeg",
       rating: 4.6,
       amount: "до 100 000 ₽",
       term: "до 168 дней",
@@ -156,8 +156,12 @@ const MFOList = () => {
               >
                 <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
                   <div className="flex items-center gap-4 flex-1">
-                    <div className="w-16 h-16 flex items-center justify-center text-4xl bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex-shrink-0">
-                      {mfo.logo}
+                    <div className="w-16 h-16 flex items-center justify-center text-4xl bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex-shrink-0 overflow-hidden">
+                      {mfo.logo.startsWith('http') ? (
+                        <img src={mfo.logo} alt={mfo.name} className="w-full h-full object-contain p-2" />
+                      ) : (
+                        mfo.logo
+                      )}
                     </div>
                     
                     <div className="flex-1">
