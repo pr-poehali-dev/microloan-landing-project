@@ -28,7 +28,8 @@ const MFOList = () => {
       rate: "0%",
       features: ["Первый займ 0%", "Без проверки КИ", "За 5 минут"],
       approved: "98%",
-      recommended: true
+      recommended: true,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "МигКредит",
@@ -39,7 +40,8 @@ const MFOList = () => {
       rate: "от 0%",
       features: ["Без отказа", "Онлайн 24/7", "На карту"],
       approved: "96%",
-      recommended: true
+      recommended: true,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "Lime-Займ",
@@ -50,18 +52,20 @@ const MFOList = () => {
       rate: "0%",
       features: ["С 18 лет", "Мгновенно", "Первый под 0%"],
       approved: "95%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "Веб-Займ",
       logo: "🌐",
       rating: 4.7,
-      amount: "до 80 000 ₽",
+      amount: "до 30 000 ₽",
       term: "до 180 дней",
       rate: "от 0%",
       features: ["Быстрое одобрение", "Без справок", "Продление займа"],
       approved: "94%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/cOBWm2j7?erid=2SDnjc5cRY8&siteId=8015"
     },
     {
       name: "Турбозайм",
@@ -72,7 +76,8 @@ const MFOList = () => {
       rate: "0%",
       features: ["Первый 0%", "Без проверок", "За 10 минут"],
       approved: "93%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "Е-Капуста",
@@ -83,7 +88,8 @@ const MFOList = () => {
       rate: "от 0%",
       features: ["Круглосуточно", "Без отказа", "На карту"],
       approved: "92%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "СрочноДеньги",
@@ -94,7 +100,8 @@ const MFOList = () => {
       rate: "от 0%",
       features: ["Моментально", "Без проверки", "24/7"],
       approved: "91%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "ДоЗарплаты",
@@ -105,7 +112,8 @@ const MFOList = () => {
       rate: "0%",
       features: ["До зарплаты", "Без процентов", "Быстро"],
       approved: "90%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "МаниМен",
@@ -116,7 +124,8 @@ const MFOList = () => {
       rate: "от 0%",
       features: ["Без справок", "Онлайн", "На карту"],
       approved: "89%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     },
     {
       name: "Быстроденьги",
@@ -127,7 +136,8 @@ const MFOList = () => {
       rate: "от 0%",
       features: ["Быстрое решение", "Без отказов", "Первый под 0%"],
       approved: "88%",
-      recommended: false
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
     }
   ];
 
@@ -230,7 +240,7 @@ const MFOList = () => {
                       asChild
                     >
                       <a 
-                        href="https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+                        href={mfo.url}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         onClick={() => trackClick(mfo.name)}
