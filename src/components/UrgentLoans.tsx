@@ -1,7 +1,17 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import Icon from "@/components/ui/icon";
 
 const UrgentLoans = () => {
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
   const situations = [
     { icon: "Heart", text: "Неотложные медицинские расходы" },
     { icon: "Car", text: "Ремонт автомобиля или техники" },
@@ -9,6 +19,75 @@ const UrgentLoans = () => {
     { icon: "Home", text: "Оплата коммунальных услуг" },
     { icon: "ShoppingCart", text: "Покупка необходимых товаров до зарплаты" }
   ];
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, '');
+    if (digits.length === 0) return '';
+    
+    let formatted = '+7';
+    if (digits.length > 1) {
+      formatted += ' (' + digits.substring(1, 4);
+    }
+    if (digits.length >= 5) {
+      formatted += ') ' + digits.substring(4, 7);
+    }
+    if (digits.length >= 8) {
+      formatted += '-' + digits.substring(7, 9);
+    }
+    if (digits.length >= 10) {
+      formatted += '-' + digits.substring(9, 11);
+    }
+    return formatted;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhone(e.target.value);
+    setPhone(formatted);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/77c76389-0e3c-4aa4-982b-6789a2f9cb26', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: fullName,
+          phone: phone,
+          source: 'urgent-section'
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время",
+        });
+        setFullName("");
+        setPhone("");
+      } else {
+        toast({
+          title: "Ошибка",
+          description: data.error || "Попробуйте еще раз",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка сети",
+        description: "Проверьте подключение к интернету",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-primary/5 to-secondary/5">
@@ -54,20 +133,64 @@ const UrgentLoans = () => {
           </div>
 
           <div className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-primary via-orange-500 to-secondary text-white shadow-2xl">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Icon name="Zap" size={32} className="text-white" />
-                </div>
-                <div>
-                  <h4 className="text-2xl font-bold mb-1">Деньги за 5 минут</h4>
-                  <p className="text-white/90">Круглосуточно, без выходных</p>
-                </div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <Icon name="Zap" size={32} className="text-white" />
               </div>
-              <button className="px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-xl whitespace-nowrap">
-                Получить срочно
-              </button>
+              <div>
+                <h4 className="text-2xl font-bold mb-1">Деньги за 5 минут</h4>
+                <p className="text-white/90">Круглосуточно, без выходных</p>
+              </div>
             </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="urgent-fullName" className="text-white font-semibold mb-2 block">
+                  Фамилия Имя Отчество
+                </Label>
+                <Input
+                  id="urgent-fullName"
+                  type="text"
+                  placeholder="Иванов Иван Иванович"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
+                  minLength={3}
+                  className="h-12 text-base bg-white"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="urgent-phone" className="text-white font-semibold mb-2 block">
+                  Номер телефона
+                </Label>
+                <Input
+                  id="urgent-phone"
+                  type="tel"
+                  placeholder="+7 (___) ___-__-__"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  required
+                  className="h-12 text-base bg-white"
+                />
+              </div>
+
+              <Button 
+                type="submit"
+                size="lg"
+                disabled={isSubmitting}
+                className="w-full bg-white text-primary hover:bg-white/90 font-bold h-12"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Icon name="Loader2" size={20} className="mr-2 animate-spin" />
+                    Отправка...
+                  </>
+                ) : (
+                  "Получить срочно"
+                )}
+              </Button>
+            </form>
           </div>
         </div>
       </div>
