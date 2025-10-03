@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background via-50% to-secondary/5">
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
@@ -25,12 +32,21 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <Button 
+              onClick={() => scrollToSection("lead-form")}
+              size="lg" 
+              className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
               Получить деньги за 5 минут
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
             
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-secondary/10 transition-all duration-300">
+            <Button 
+              onClick={() => scrollToSection("mfo-list")}
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-6 border-2 hover:bg-secondary/10 transition-all duration-300"
+            >
               <Icon name="Calculator" className="mr-2" size={20} />
               Выбрать МФО
             </Button>
