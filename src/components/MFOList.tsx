@@ -133,7 +133,7 @@ const MFOList = () => {
       rating: 4.4,
       amount: "до 100 000 ₽",
       term: "до 180 дней",
-      rate: "от 0%",
+      rate: "0,8% в день",
       features: ["Быстрое решение", "Без отказов", "Первый под 0%"],
       approved: "88%",
       recommended: false,
