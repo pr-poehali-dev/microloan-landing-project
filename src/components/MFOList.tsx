@@ -65,7 +65,7 @@ const MFOList = () => {
     },
     {
       name: "Турбозайм",
-      logo: "https://cdn.poehali.dev/files/5685bc47-1b79-4e2f-8474-040ecca1da7e.jpeg",
+      logo: "🚀",
       rating: 4.6,
       amount: "до 100 000 ₽",
       term: "до 168 дней",
