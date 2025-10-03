@@ -1,8 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import LoanConditions from "@/components/LoanConditions";
-import Benefits from "@/components/Benefits";
-import FAQ from "@/components/FAQ";
+import WhatIsMicroloan from "@/components/WhatIsMicroloan";
+import HowToGetLoan from "@/components/HowToGetLoan";
+import OnlineProcess from "@/components/OnlineProcess";
+import UrgentLoans from "@/components/UrgentLoans";
+import Security from "@/components/Security";
+import Conditions2024 from "@/components/Conditions2024";
+import Comparison from "@/components/Comparison";
+import RefinancingAndTips from "@/components/RefinancingAndTips";
+import Conclusion from "@/components/Conclusion";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -10,9 +16,15 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <LoanConditions />
-      <Benefits />
-      <FAQ />
+      <WhatIsMicroloan />
+      <HowToGetLoan />
+      <OnlineProcess />
+      <UrgentLoans />
+      <Security />
+      <Conditions2024 />
+      <Comparison />
+      <RefinancingAndTips />
+      <Conclusion />
       <Footer />
     </div>
   );

@@ -10,29 +10,29 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,53,0.1),transparent_50%)] opacity-40"></div>
       
       <div className="container mx-auto px-4 py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <div className="max-w-5xl mx-auto text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 animate-scale-in">
             <Icon name="Zap" size={20} />
-            <span className="font-semibold text-sm">Одобрение за 5 минут</span>
+            <span className="font-semibold text-sm">Срочно нужны деньги?</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-fade-in">
-            Деньги здесь и сейчас
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Микрозаймы онлайн: как быстро получить деньги на карту без отказа
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Получите микрозайм до 200 000 ₽ без справок и поручителей. Мгновенное решение онлайн.
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            Микрозайм — это быстрое решение ваших финансовых проблем! В современном мире непредвиденные расходы могут возникнуть в любой момент: внезапная поломка техники, медицинские счета или просто нехватка средств до зарплаты. Именно в таких ситуациях микрозаймы становятся настоящим спасением.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              Получить деньги
+              Получить деньги за 5 минут
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
             
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-secondary/10 transition-all duration-300">
               <Icon name="Calculator" className="mr-2" size={20} />
-              Рассчитать займ
+              Выбрать МФО
             </Button>
           </div>
           
@@ -42,18 +42,18 @@ const Hero = () => {
                 <Icon name="Clock" size={24} className="text-white" />
               </div>
               <div className="text-left">
-                <p className="font-bold text-lg">5 минут</p>
-                <p className="text-sm text-muted-foreground">на решение</p>
+                <p className="font-bold text-lg">5-15 минут</p>
+                <p className="text-sm text-muted-foreground">получение денег</p>
               </div>
             </div>
             
             <div className="flex items-center justify-center gap-3 p-4 rounded-2xl bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
-                <Icon name="ShieldCheck" size={24} className="text-white" />
+                <Icon name="FileCheck" size={24} className="text-white" />
               </div>
               <div className="text-left">
-                <p className="font-bold text-lg">100%</p>
-                <p className="text-sm text-muted-foreground">безопасно</p>
+                <p className="font-bold text-lg">Минимум</p>
+                <p className="text-sm text-muted-foreground">документов</p>
               </div>
             </div>
             
