@@ -2,17 +2,33 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import Icon from "@/components/ui/icon";
 
 const LoanCalculator = () => {
   const [amount, setAmount] = useState(15000);
   const [days, setDays] = useState(15);
   const [rate] = useState(0.8);
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: ""
+  });
 
   const dailyRate = rate / 100;
   const totalInterest = amount * dailyRate * days;
   const totalRepayment = amount + totalInterest;
   const dailyPayment = totalRepayment / days;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Заявка отправлена:", { ...formData, amount, days });
+    alert(`Спасибо, ${formData.firstName}! Ваша заявка на ${amount.toLocaleString('ru-RU')} ₽ принята. Мы свяжемся с вами по номеру ${formData.phone}`);
+    setShowForm(false);
+    setFormData({ firstName: "", lastName: "", phone: "" });
+  };
 
   return (
     <section id="calculator" className="py-20 bg-gradient-to-b from-background to-primary/5">
@@ -126,13 +142,68 @@ const LoanCalculator = () => {
                   </div>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-14"
-                >
-                  Получить займ
-                  <Icon name="ArrowRight" size={20} className="ml-2" />
-                </Button>
+                {!showForm ? (
+                  <Button 
+                    size="lg" 
+                    onClick={() => setShowForm(true)}
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-14"
+                  >
+                    Получить займ
+                    <Icon name="ArrowRight" size={20} className="ml-2" />
+                  </Button>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200">
+                    <h3 className="text-lg font-bold text-center mb-4">Оформление заявки</h3>
+                    
+                    <div>
+                      <Label htmlFor="firstName" className="text-sm font-semibold">Имя</Label>
+                      <Input
+                        id="firstName"
+                        type="text"
+                        required
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                        placeholder="Введите ваше имя"
+                        className="mt-1"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="lastName" className="text-sm font-semibold">Фамилия</Label>
+                      <Input
+                        id="lastName"
+                        type="text"
+                        required
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                        placeholder="Введите вашу фамилию"
+                        className="mt-1"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="phone" className="text-sm font-semibold">Номер телефона</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        placeholder="+7 (___) ___-__-__"
+                        className="mt-1"
+                      />
+                    </div>
+
+                    <div className="flex gap-2">
+                      <Button type="submit" className="flex-1 bg-gradient-to-r from-primary to-secondary">
+                        Отправить заявку
+                      </Button>
+                      <Button type="button" variant="outline" onClick={() => setShowForm(false)}>
+                        Отмена
+                      </Button>
+                    </div>
+                  </form>
+                )}
 
                 <div className="flex items-center gap-2 text-xs text-muted-foreground justify-center">
                   <Icon name="Shield" size={14} />
