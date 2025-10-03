@@ -9,6 +9,7 @@ import HowToGetLoan from "@/components/HowToGetLoan";
 import OnlineProcess from "@/components/OnlineProcess";
 import UrgentLoans from "@/components/UrgentLoans";
 import Security from "@/components/Security";
+import Licenses from "@/components/Licenses";
 import Conditions2024 from "@/components/Conditions2024";
 import Comparison from "@/components/Comparison";
 import RefinancingAndTips from "@/components/RefinancingAndTips";
@@ -33,6 +34,7 @@ const Index = () => {
       <OnlineProcess />
       <UrgentLoans />
       <Security />
+      <Licenses />
       <Conditions2024 />
       <Comparison />
       <RefinancingAndTips />
