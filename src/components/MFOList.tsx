@@ -128,16 +128,16 @@ const MFOList = () => {
       url: "https://trk.ppdu.ru/click/nZpz3ZjE?erid=2SDnjd4NP9c&siteId=8015"
     },
     {
-      name: "Быстроденьги",
+      name: "Деньги сразу",
       logo: "💸",
       rating: 4.4,
-      amount: "до 45 000 ₽",
-      term: "до 70 дней",
+      amount: "до 100 000 ₽",
+      term: "до 180 дней",
       rate: "от 0%",
       features: ["Быстрое решение", "Без отказов", "Первый под 0%"],
       approved: "88%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/ZekQIboa?erid=LjN8JxwGk&siteId=8015"
     }
   ];
 
