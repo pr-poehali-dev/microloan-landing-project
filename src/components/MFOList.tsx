@@ -95,13 +95,13 @@ const MFOList = () => {
       name: "СрочноДеньги",
       logo: "⏰",
       rating: 4.5,
-      amount: "до 40 000 ₽",
-      term: "до 60 дней",
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
       rate: "от 0%",
       features: ["Моментально", "Без проверки", "24/7"],
       approved: "91%",
       recommended: false,
-      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+      url: "https://trk.ppdu.ru/click/QBskke4v?erid=2SDnjdmVzVA&siteId=8015"
     },
     {
       name: "ДоЗарплаты",
