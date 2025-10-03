@@ -156,7 +156,7 @@ const UrgentLoans = () => {
                   onChange={(e) => setFullName(e.target.value)}
                   required
                   minLength={3}
-                  className="h-12 text-base bg-white"
+                  className="h-12 text-base bg-white text-gray-900 placeholder:text-gray-500"
                 />
               </div>
 
@@ -171,7 +171,7 @@ const UrgentLoans = () => {
                   value={phone}
                   onChange={handlePhoneChange}
                   required
-                  className="h-12 text-base bg-white"
+                  className="h-12 text-base bg-white text-gray-900 placeholder:text-gray-500"
                 />
               </div>
 
