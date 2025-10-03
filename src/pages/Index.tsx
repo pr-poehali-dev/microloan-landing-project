@@ -16,11 +16,13 @@ import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import Conclusion from "@/components/Conclusion";
 import Footer from "@/components/Footer";
+import ApprovalTicker from "@/components/ApprovalTicker";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ApprovalTicker />
       <Hero />
       <LoanQuiz />
       <MFOList />

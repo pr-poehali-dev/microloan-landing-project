@@ -39,7 +39,7 @@ const ApprovalTicker = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white py-3 overflow-hidden shadow-lg">
+    <div className="fixed top-20 left-0 right-0 z-30 bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white py-3 overflow-hidden shadow-lg">
       <div className="flex animate-scroll whitespace-nowrap">
         {approvals.map((approval, index) => (
           <div
