@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import BlogPost1 from "./pages/BlogPost1";
 import BlogPost2 from "./pages/BlogPost2";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import UserAgreement from "./pages/UserAgreement";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import Sitemap from "./pages/Sitemap";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/blog/chto-takoe-mikrozajmy" element={<BlogPost1 />} />
           <Route path="/blog/raznitsa-mikrozajm-kredit-karta" element={<BlogPost2 />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/user-agreement" element={<UserAgreement />} />
           <Route path="/sitemap.xml" element={<Sitemap />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
