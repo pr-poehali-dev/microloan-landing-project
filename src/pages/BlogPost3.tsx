@@ -67,12 +67,22 @@ const BlogPost3 = () => {
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50">
-        <BlogPostHeader 
-          title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
-          imageUrl="/img/670e08ee-8e93-4dc6-bd7b-47c842fcc93e.jpg"
-          date="4 октября 2024"
-          readTime="12 мин"
-        />
+        <div className="container mx-auto px-4 py-8">
+          <BlogPostHeader 
+            category="Безопасность"
+            date="4 октября 2024"
+            readTime="12 мин"
+            viewCount={null}
+            title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
+            imageUrl="/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg"
+            imageAlt="Как выбрать надёжную МФО"
+            breadcrumbs={{
+              home: "Главная",
+              blog: "Блог",
+              current: "Как выбрать надёжную МФО"
+            }}
+          />
+        </div>
         <BlogPostContent3 />
         <BlogPostFAQ items={faqItems} />
         <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
