@@ -1,9 +1,15 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent3 from "@/components/blog/BlogPost3Content";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
+import { useViewCounter } from "@/components/blog/useViewCounter";
+import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
 const BlogPost3 = () => {
+  const postSlug = 'kak-vybrat-nadezhnuyu-mfo';
+  const viewCount = useViewCounter(postSlug);
   const postUrl = `${window.location.origin}/blog/kak-vybrat-nadezhnuyu-mfo`;
   const postTitle = "Как выбрать надёжную МФО: проверенная инструкция";
 
@@ -30,28 +36,74 @@ const BlogPost3 = () => {
     }
   ];
 
+  useBlogPostMeta({
+    title: "Как выбрать надёжную МФО: полное руководство для безопасного получения займа",
+    description: "✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ",
+    ogTitle: "Как выбрать надёжную МФО: проверенная инструкция",
+    ogDescription: "✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ",
+    ogImage: "https://mikrofinru.ru/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg",
+    twitterImage: "https://mikrofinru.ru/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg",
+    url: "https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo",
+    datePublished: "2024-10-04",
+    dateModified: "2024-10-04",
+    category: "Безопасность",
+    keywords: ["как выбрать МФО", "проверить МФО", "надёжная МФО", "реестр ЦБ РФ"],
+    wordCount: 2800,
+    timeRequired: "PT12M",
+    breadcrumbs: [
+      {
+        position: 1,
+        name: "Главная",
+        item: "https://mikrofinru.ru/"
+      },
+      {
+        position: 2,
+        name: "Блог",
+        item: "https://mikrofinru.ru/blog"
+      },
+      {
+        position: 3,
+        name: "Как выбрать надёжную МФО",
+        item: "https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo"
+      }
+    ],
+    faqItems: faqItems
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50">
-        <div className="container mx-auto px-4 py-8">
-          <BlogPostHeader 
-            category="Безопасность"
-            date="4 октября 2024"
-            readTime="12 мин"
-            viewCount={null}
-            title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
-            imageUrl="/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg"
-            imageAlt="Как выбрать надёжную МФО"
-            breadcrumbs={{
-              home: "Главная",
-              blog: "Блог",
-              current: "Как выбрать надёжную МФО"
-            }}
-          />
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <Header />
+      
+      <article className="pt-32 pb-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <BlogPostHeader 
+              category="Безопасность"
+              date="4 октября 2024"
+              readTime="12 мин"
+              viewCount={viewCount}
+              title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
+              imageUrl="/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg"
+              imageAlt="Как выбрать надёжную МФО"
+              breadcrumbs={{
+                home: "Главная",
+                blog: "Блог",
+                current: "Как выбрать надёжную МФО"
+              }}
+            />
+
+            <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+              <BlogPostContent3 />
+              <BlogPostFAQ items={faqItems} />
+            </div>
+
+            <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
+          </div>
         </div>
-        <BlogPostContent3 />
-        <BlogPostFAQ items={faqItems} />
-        <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
-      </div>
+      </article>
+
+      <Footer />
+    </div>
   );
 };
 
