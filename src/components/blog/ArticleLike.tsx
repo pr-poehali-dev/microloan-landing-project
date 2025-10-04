@@ -48,8 +48,9 @@ const ArticleLike = ({ postSlug }: ArticleLikeProps) => {
       });
       
       if (response.ok) {
+        const data = await response.json();
         setLiked(true);
-        setLikeCount(prev => prev + 1);
+        setLikeCount(data.like_count || likeCount + 1);
         localStorage.setItem(`liked_${postSlug}`, 'true');
       }
     } catch (error) {
