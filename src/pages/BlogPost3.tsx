@@ -41,8 +41,8 @@ const BlogPost3 = () => {
     description: "✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ",
     ogTitle: "Как выбрать надёжную МФО: проверенная инструкция",
     ogDescription: "✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ",
-    ogImage: "https://mikrofinru.ru/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg",
-    twitterImage: "https://mikrofinru.ru/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg",
+    ogImage: "https://mikrofinru.ru/img/4de9f317-a7fa-4e0e-8d41-7449b1fc0bd9.jpg",
+    twitterImage: "https://mikrofinru.ru/img/4de9f317-a7fa-4e0e-8d41-7449b1fc0bd9.jpg",
     url: "https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo",
     datePublished: "2024-10-04",
     dateModified: "2024-10-04",
@@ -83,7 +83,7 @@ const BlogPost3 = () => {
               readTime="12 мин"
               viewCount={viewCount}
               title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
-              imageUrl="/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg"
+              imageUrl="/img/4de9f317-a7fa-4e0e-8d41-7449b1fc0bd9.jpg"
               imageAlt="Как выбрать надёжную МФО"
               breadcrumbs={{
                 home: "Главная",
