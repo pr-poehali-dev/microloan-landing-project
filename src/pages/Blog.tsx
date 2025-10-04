@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,6 +12,23 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    document.title = 'Микрозаймы, кредиты и финансы — блог о деньгах и займах';
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.');
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Микрозаймы, кредиты и финансы — блог о деньгах и займах');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.');
+    }
     
     // Fetch view counts for all blog posts
     const fetchViewCounts = async () => {
@@ -36,18 +52,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <Helmet>
-        <title>Микрозаймы, кредиты и финансы — блог о деньгах и займах</title>
-        <meta 
-          name="description" 
-          content="Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация." 
-        />
-        <meta property="og:title" content="Микрозаймы, кредиты и финансы — блог о деньгах и займах" />
-        <meta 
-          property="og:description" 
-          content="Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация." 
-        />
-      </Helmet>
       <Header />
       
       <main className="pt-32 pb-20">
