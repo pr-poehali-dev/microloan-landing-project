@@ -9,10 +9,12 @@ import ArticleLike from "@/components/blog/ArticleLike";
 import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
+import { useReadCompletion } from "@/components/blog/useReadCompletion";
 
 const BlogPost4 = () => {
   const postSlug = 'kak-rasschitat-pereplatu-po-mikrozajmu';
   const viewCount = useViewCounter(postSlug);
+  const { setEndMarker } = useReadCompletion(postSlug);
   
   useBlogPostMeta({
     title: "Как рассчитать переплату по микрозайму: формула и примеры",
@@ -77,6 +79,7 @@ const BlogPost4 = () => {
                   <BlogPost4Content />
                   <OverpaymentCalculator />
                   <ArticleLike postSlug={postSlug} />
+                  <div ref={setEndMarker} className="h-1" />
                 </div>
               </div>
               

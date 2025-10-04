@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const API_URL = 'https://d5ddt1mlaro0ln76gr6p.apigw.yandexcloud.net/read-completion';
+const API_URL = 'https://functions.poehali.dev/dd92c34f-8fd5-4ddd-bcd3-75817a33fca0';
 
 export function useReadCompletion(postSlug: string) {
   const [hasTracked, setHasTracked] = useState(false);

@@ -34,7 +34,11 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': 'Method not allowed'})
         }
     
-    body_data = json.loads(event.get('body', '{}'))
+    body_str = event.get('body', '{}')
+    if not body_str or body_str.strip() == '':
+        body_str = '{}'
+    
+    body_data = json.loads(body_str)
     post_slug: str = body_data.get('postSlug', '')
     
     if not post_slug:
