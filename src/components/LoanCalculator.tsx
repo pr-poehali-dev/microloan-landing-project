@@ -121,7 +121,6 @@ const LoanCalculator = () => {
   const totalInterest = amount * dailyRate * days;
   const totalRepayment = amount + totalInterest;
   const dailyPayment = totalRepayment / days;
-  const suitableMFOs = getSuitableMFOs();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -360,7 +359,7 @@ const LoanCalculator = () => {
             </div>
           </Card>
 
-          {suitableMFOs.length > 0 && (
+          {getSuitableMFOs().length > 0 && (
             <div className="mt-8">
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 mb-6">
                 <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
@@ -373,7 +372,7 @@ const LoanCalculator = () => {
               </div>
 
               <div className="grid gap-4">
-                {suitableMFOs.map((mfo, index) => (
+                {getSuitableMFOs().map((mfo, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2">
                     <div className="p-6">
                       <div className="flex items-start justify-between gap-4 mb-4">
