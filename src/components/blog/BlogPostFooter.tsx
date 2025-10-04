@@ -8,6 +8,9 @@ interface BlogPostFooterProps {
 }
 
 const BlogPostFooter = ({ postUrl, postTitle }: BlogPostFooterProps) => {
+  const openLeadForm = () => {
+    window.dispatchEvent(new CustomEvent('openLeadForm'));
+  };
   return (
     <div className="mt-12 pt-8 border-t px-8 md:px-12 pb-8">
       <div className="mb-8">
@@ -71,12 +74,13 @@ const BlogPostFooter = ({ postUrl, postTitle }: BlogPostFooterProps) => {
           </Button>
         </Link>
         
-        <Link to="/">
-          <Button className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 gap-2">
-            Получить займ сейчас
-            <Icon name="Sparkles" size={20} />
-          </Button>
-        </Link>
+        <Button 
+          onClick={openLeadForm}
+          className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 gap-2"
+        >
+          Оставить заявку
+          <Icon name="Sparkles" size={20} />
+        </Button>
       </div>
     </div>
   );

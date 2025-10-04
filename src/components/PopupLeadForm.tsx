@@ -27,6 +27,15 @@ const PopupLeadForm = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleOpenLeadForm = () => {
+      setIsVisible(true);
+    };
+
+    window.addEventListener('openLeadForm', handleOpenLeadForm);
+    return () => window.removeEventListener('openLeadForm', handleOpenLeadForm);
+  }, []);
+
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, '');
     if (digits.length === 0) return '';
