@@ -1,0 +1,1 @@
+UPDATE blog_post_views SET view_count = 127, last_viewed_at = CURRENT_TIMESTAMP WHERE post_slug = 'chto-takoe-mikrozajmy';
