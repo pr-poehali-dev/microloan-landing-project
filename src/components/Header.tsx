@@ -231,8 +231,6 @@ const Header = () => {
                 </>
               )}
               
-              <div className="pt-2 border-t">
-              
               {isHomePage ? (
                 <Button 
                   onClick={() => scrollToSection("lead-form")}
