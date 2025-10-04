@@ -203,31 +203,35 @@ const Header = () => {
                   </button>
                 </>
               ) : (
-                <Link
-                  to="/"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
-                >
-                  Главная
-                </Link>
+                <>
+                  <Link
+                    to="/"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all flex items-center gap-2"
+                  >
+                    <Icon name="Home" size={18} />
+                    Главная
+                  </Link>
+                  
+                  <Link
+                    to="/blog"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block text-left py-3 px-4 rounded-lg font-semibold transition-all ${
+                      location.pathname.startsWith("/blog")
+                        ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg" 
+                        : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <Icon name="BookOpen" size={18} />
+                      Блог
+                      <Icon name="Sparkles" size={16} className={location.pathname.startsWith("/blog") ? "animate-pulse" : ""} />
+                    </span>
+                  </Link>
+                </>
               )}
               
               <div className="pt-2 border-t">
-                <Link
-                  to="/blog"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-left py-3 px-4 rounded-lg font-semibold transition-all ${
-                    location.pathname.startsWith("/blog")
-                      ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg" 
-                      : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md"
-                  }`}
-                >
-                  <span className="flex items-center gap-2">
-                    📝 Блог
-                    <Icon name="Sparkles" size={16} className={location.pathname.startsWith("/blog") ? "animate-pulse" : ""} />
-                  </span>
-                </Link>
-              </div>
               
               {isHomePage ? (
                 <Button 
