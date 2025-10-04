@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Sitemap from "./pages/Sitemap";
 import FloatingTelegram from "./components/FloatingTelegram";
 import PopupLeadForm from "./components/PopupLeadForm";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Sonner />
       <FloatingTelegram />
       <PopupLeadForm />
+      <CookieConsent />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
