@@ -5,20 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "Что такое микрозаймы и как они работают",
-    description: "Что такое микрозаймы простыми словами: как работают займы онлайн, условия получения микрозайма на карту, процесс оформления, плюсы и минусы.",
-    date: "15 марта 2024",
-    readTime: "10 мин",
-    category: "Советы",
-    image: "/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
-    url: "/blog/chto-takoe-mikrozajmy",
-    slug: "chto-takoe-mikrozajmy"
-  }
-];
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   const [viewCounts, setViewCounts] = useState<Record<string, number>>({});

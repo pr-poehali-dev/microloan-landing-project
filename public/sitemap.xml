@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is auto-generated from src/data/blogPosts.ts -->
+<!-- To add new blog posts to sitemap, simply add them to blogPosts array -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mikrofinru.ru/</loc>
