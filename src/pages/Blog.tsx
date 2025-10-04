@@ -9,12 +9,13 @@ import Icon from "@/components/ui/icon";
 const blogPosts = [
   {
     id: 1,
-    title: "Как выбрать надежную МФО в 2024 году",
-    description: "Подробное руководство по выбору микрофинансовой организации: на что обратить внимание, как проверить лицензию и избежать мошенников.",
+    title: "Что такое микрозаймы и как они работают",
+    description: "Что такое микрозаймы простыми словами: как работают займы онлайн, условия получения микрозайма на карту, процесс оформления, плюсы и минусы.",
     date: "15 марта 2024",
-    readTime: "5 мин",
+    readTime: "10 мин",
     category: "Советы",
-    image: "/img/blog-mfo.jpg"
+    image: "/img/blog-mfo.jpg",
+    url: "/blog/chto-takoe-mikrozajmy"
   },
   {
     id: 2,
@@ -123,13 +124,26 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <Button 
-                      variant="outline" 
-                      className="w-full group-hover:bg-primary group-hover:text-white transition-all"
-                    >
-                      Читать статью
-                      <Icon name="ArrowRight" className="ml-2" size={16} />
-                    </Button>
+                    {post.url ? (
+                      <Link to={post.url}>
+                        <Button 
+                          variant="outline" 
+                          className="w-full group-hover:bg-primary group-hover:text-white transition-all"
+                        >
+                          Читать статью
+                          <Icon name="ArrowRight" className="ml-2" size={16} />
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button 
+                        variant="outline" 
+                        className="w-full group-hover:bg-primary group-hover:text-white transition-all"
+                        disabled
+                      >
+                        Скоро
+                        <Icon name="Clock" className="ml-2" size={16} />
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               ))}
