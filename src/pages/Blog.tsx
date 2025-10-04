@@ -13,22 +13,27 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    document.title = 'Микрозаймы, кредиты и финансы — блог о деньгах и займах';
+    const title = 'Микрозаймы, кредиты и финансы — блог о деньгах и займах';
+    const description = 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.';
+    
+    document.title = title;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.');
+      metaDescription.setAttribute('content', description);
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
-      ogTitle.setAttribute('content', 'Микрозаймы, кредиты и финансы — блог о деньгах и займах');
+      ogTitle.setAttribute('content', title);
     }
 
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {
-      ogDescription.setAttribute('content', 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.');
+      ogDescription.setAttribute('content', description);
     }
+    
+    console.log('✅ SEO теги обновлены для страницы блога:', { title, description });
     
     // Fetch view counts for all blog posts
     const fetchViewCounts = async () => {
