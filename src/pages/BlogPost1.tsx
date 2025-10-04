@@ -55,6 +55,75 @@ const BlogPost1 = () => {
     if (twitterImage) {
       twitterImage.setAttribute('content', 'https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg');
     }
+
+    // Add Schema.org structured data
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Что такое микрозаймы и как они работают",
+      "description": "Что такое микрозаймы простыми словами: как работают займы онлайн, условия получения микрозайма на карту, процесс оформления, плюсы и минусы.",
+      "image": "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "МикроФин.ру"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "МикроФин.ру",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mikrofinru.ru/logo.png"
+        }
+      },
+      "datePublished": "2024-03-15",
+      "dateModified": "2024-03-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
+      },
+      "articleSection": "Советы",
+      "keywords": ["микрозаймы", "микрозайм онлайн", "займ на карту", "МФО", "быстрый займ"],
+      "wordCount": 2500,
+      "timeRequired": "PT10M"
+    });
+    document.head.appendChild(schemaScript);
+
+    // Add BreadcrumbList schema
+    const breadcrumbSchema = document.createElement('script');
+    breadcrumbSchema.type = 'application/ld+json';
+    breadcrumbSchema.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://mikrofinru.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://mikrofinru.ru/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Что такое микрозаймы и как они работают",
+          "item": "https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
+        }
+      ]
+    });
+    document.head.appendChild(breadcrumbSchema);
+
+    return () => {
+      // Cleanup schemas on unmount
+      const scripts = document.head.querySelectorAll('script[type="application/ld+json"]');
+      scripts.forEach(script => script.remove());
+    };
   }, []);
 
   return (
