@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Header = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,59 +53,83 @@ const Header = () => {
             </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-8" role="navigation" aria-label="Основная навигация">
-            <button
-              onClick={() => scrollToSection("mfo-list")}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+          <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Основная навигация">
+            {isHomePage ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("mfo-list")}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  МФО
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
+                <button
+                  onClick={() => scrollToSection("calculator")}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  Калькулятор
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
+                <button
+                  onClick={() => scrollToSection("conditions")}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  Условия
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
+                <button
+                  onClick={() => scrollToSection("reviews")}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  Отзывы
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/"
+                className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+              >
+                Главная
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            )}
+            
+            <Link
+              to="/blog"
+              className={`font-medium transition-all relative group ${
+                location.pathname === "/blog"
+                  ? "text-primary"
+                  : "text-foreground/80 hover:text-primary"
+              }`}
             >
-              МФО
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("calculator")}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
-            >
-              Калькулятор
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("conditions")}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
-            >
-              Условия
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("how-to-get")}
-              className="text-foreground/80 hover:text-secondary font-medium transition-colors relative group"
-            >
-              Как получить
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("reviews")}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
-            >
-              Отзывы
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("faq")}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
-            >
-              FAQ
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </button>
+              Блог
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                location.pathname === "/blog" ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button 
-              onClick={() => scrollToSection("lead-form")}
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              Получить займ
-              <Icon name="ArrowRight" className="ml-2" size={16} />
-            </Button>
+            {isHomePage ? (
+              <Button 
+                onClick={() => scrollToSection("lead-form")}
+                className="relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] hover:bg-right shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
+              >
+                <span className="relative z-10 font-semibold">Получить займ</span>
+                <Icon name="Sparkles" className="ml-2 relative z-10 animate-pulse" size={16} />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              </Button>
+            ) : (
+              <Link to="/">
+                <Button 
+                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  Получить займ
+                  <Icon name="ArrowRight" className="ml-2" size={16} />
+                </Button>
+              </Link>
+            )}
           </div>
 
           <button
@@ -116,48 +143,67 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg shadow-2xl border-t animate-fade-in">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("mfo-list")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+              {isHomePage ? (
+                <>
+                  <button
+                    onClick={() => scrollToSection("mfo-list")}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                  >
+                    МФО
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("calculator")}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                  >
+                    Калькулятор
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("conditions")}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                  >
+                    Условия
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("reviews")}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                  >
+                    Отзывы
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                >
+                  Главная
+                </Link>
+              )}
+              
+              <Link
+                to="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-left py-3 px-4 hover:bg-primary/5 rounded-lg font-medium transition-all ${
+                  location.pathname === "/blog" ? "text-primary bg-primary/5" : "text-foreground/80 hover:text-primary"
+                }`}
               >
-                МФО
-              </button>
-              <button
-                onClick={() => scrollToSection("calculator")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
-              >
-                Калькулятор
-              </button>
-              <button
-                onClick={() => scrollToSection("conditions")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
-              >
-                Условия
-              </button>
-              <button
-                onClick={() => scrollToSection("how-to-get")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-secondary hover:bg-secondary/5 rounded-lg font-medium transition-all"
-              >
-                Как получить
-              </button>
-              <button
-                onClick={() => scrollToSection("reviews")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
-              >
-                Отзывы
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
-              >
-                FAQ
-              </button>
-              <Button 
-                onClick={() => scrollToSection("lead-form")}
-                className="bg-gradient-to-r from-primary to-secondary w-full mt-4"
-              >
-                Получить займ
-              </Button>
+                Блог
+              </Link>
+              
+              {isHomePage ? (
+                <Button 
+                  onClick={() => scrollToSection("lead-form")}
+                  className="bg-gradient-to-r from-primary to-secondary w-full mt-4"
+                >
+                  Получить займ
+                </Button>
+              ) : (
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="bg-gradient-to-r from-primary to-secondary w-full mt-4">
+                    Получить займ
+                  </Button>
+                </Link>
+              )}
             </nav>
           </div>
         )}
