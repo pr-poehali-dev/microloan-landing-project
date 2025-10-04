@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost4Content from "@/components/blog/BlogPost4Content";
-import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
+import OverpaymentCalculator from "@/components/blog/OverpaymentCalculator";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -92,7 +92,7 @@ const BlogPost4 = () => {
 
             <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
               <BlogPost4Content />
-              <BlogPostFAQ items={faqItems} />
+              <OverpaymentCalculator />
             </div>
 
             <BlogPostFooter
