@@ -14,7 +14,7 @@ const blogPosts = [
     date: "15 марта 2024",
     readTime: "10 мин",
     category: "Советы",
-    image: "/img/blog-mfo.jpg",
+    image: "/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
     url: "/blog/chto-takoe-mikrozajmy"
   },
   {
@@ -93,9 +93,17 @@ const Blog = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Icon name="FileText" size={64} className="text-primary/30" />
-                    </div>
+                    {post.image ? (
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Icon name="FileText" size={64} className="text-primary/30" />
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-primary">
                         {post.category}

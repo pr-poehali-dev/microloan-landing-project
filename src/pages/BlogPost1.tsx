@@ -15,6 +15,26 @@ const BlogPost1 = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Что такое микрозаймы простыми словами: как работают займы онлайн, условия получения микрозайма на карту, процесс оформления, плюсы и минусы. Полное руководство для заемщиков.');
     }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Что такое микрозаймы и как они работают: простыми словами о займах онлайн');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Что такое микрозаймы простыми словами: как работают займы онлайн, условия получения микрозайма на карту, процесс оформления, плюсы и минусы.');
+    }
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      ogImage.setAttribute('content', 'https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg');
+    }
+
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (twitterImage) {
+      twitterImage.setAttribute('content', 'https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg');
+    }
   }, []);
 
   return (
@@ -29,24 +49,35 @@ const BlogPost1 = () => {
               Вернуться к блогу
             </Link>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 animate-fade-in">
-              <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Icon name="Calendar" size={16} />
-                  <span>15 марта 2024</span>
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+              <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-orange-100 via-pink-50 to-teal-50 flex items-center justify-center">
+                <img 
+                  src="/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg" 
+                  alt="Что такое микрозаймы и как они работают - обложка статьи"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-6 left-6">
+                  <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-primary shadow-lg">
+                    Советы
+                  </span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Icon name="Clock" size={16} />
-                  <span>10 мин</span>
-                </div>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">
-                  Советы
-                </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
-                Что такое микрозаймы и как они работают
-              </h1>
+              <div className="p-8 md:p-12">
+                <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <Icon name="Calendar" size={16} />
+                    <span>15 марта 2024</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Icon name="Clock" size={16} />
+                    <span>10 мин</span>
+                  </div>
+                </div>
+
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
+                  Что такое микрозаймы и как они работают
+                </h1>
 
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -332,8 +363,9 @@ const BlogPost1 = () => {
                   </p>
                 </div>
               </div>
+              </div>
 
-              <div className="mt-12 pt-8 border-t">
+              <div className="mt-12 pt-8 border-t px-8 md:px-12 pb-8">
                 <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
                   <Link to="/blog">
                     <Button variant="outline" className="gap-2">
