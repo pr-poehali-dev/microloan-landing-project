@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost2Content from "@/components/blog/BlogPost2Content";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -74,6 +75,8 @@ const BlogPost2 = () => {
               postUrl="https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta"
               postTitle="В чём разница между микрозаймом, потребкредитом и кредитной картой"
             />
+            
+            <RelatedPosts currentPostId={2} />
           </div>
         </div>
       </article>

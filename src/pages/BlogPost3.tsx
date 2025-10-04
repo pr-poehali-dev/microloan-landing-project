@@ -4,6 +4,7 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent3 from "@/components/blog/BlogPost3Content";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -98,6 +99,8 @@ const BlogPost3 = () => {
             </div>
 
             <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
+            
+            <RelatedPosts currentPostId={3} />
           </div>
         </div>
       </article>

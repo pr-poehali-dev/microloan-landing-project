@@ -4,6 +4,7 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost4Content from "@/components/blog/BlogPost4Content";
 import OverpaymentCalculator from "@/components/blog/OverpaymentCalculator";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -75,6 +76,8 @@ const BlogPost4 = () => {
               postUrl="https://mikrofinru.ru/blog/kak-rasschitat-pereplatu-po-mikrozajmu"
               postTitle="Как рассчитать переплату по микрозайму"
             />
+            
+            <RelatedPosts currentPostId={4} />
           </div>
         </div>
       </article>

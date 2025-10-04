@@ -4,6 +4,7 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -97,6 +98,8 @@ const BlogPost1 = () => {
               postUrl="https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
               postTitle="Что такое микрозаймы и как они работают"
             />
+            
+            <RelatedPosts currentPostId={1} />
           </div>
         </div>
       </article>
