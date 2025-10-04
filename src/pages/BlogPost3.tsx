@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent3 from "@/components/blog/BlogPost3Content";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
@@ -32,41 +31,7 @@ const BlogPost3 = () => {
   ];
 
   return (
-    <>
-      <Helmet>
-        <title>Как выбрать надёжную МФО: проверенная инструкция</title>
-        <meta 
-          name="description" 
-          content="✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ" 
-        />
-        <meta name="keywords" content="как выбрать МФО, проверить МФО, надёжная МФО, реестр ЦБ РФ, микрофинансовая организация, избежать мошенников" />
-        <link rel="canonical" href={postUrl} />
-        
-        <meta property="og:title" content="Как выбрать надёжную МФО: проверенная инструкция" />
-        <meta property="og:description" content="✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={postUrl} />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Как выбрать надёжную МФО: проверенная инструкция" />
-        <meta name="twitter:description" content="✅ Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию. Избегайте мошенников - проверяйте МФО в реестре ЦБ РФ" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Как выбрать надёжную МФО: проверенная инструкция",
-            "description": "Пошаговая инструкция как выбрать надёжную МФО и проверить микрофинансовую организацию",
-            "datePublished": "2024-10-04",
-            "author": {
-              "@type": "Organization",
-              "name": "МикроФин"
-            }
-          })}
-        </script>
-      </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50">
         <div className="container mx-auto px-4 py-8">
           <BlogPostHeader 
             category="Безопасность"
@@ -87,7 +52,6 @@ const BlogPost3 = () => {
         <BlogPostFAQ items={faqItems} />
         <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
       </div>
-    </>
   );
 };
 
