@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import BlogPost1 from "./pages/BlogPost1";
 import BlogPost2 from "./pages/BlogPost2";
 import BlogPost3 from "./pages/BlogPost3";
+import BlogPost4 from "./pages/BlogPost4";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import UserAgreement from "./pages/UserAgreement";
 import Admin from "./pages/Admin";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/blog/chto-takoe-mikrozajmy" element={<BlogPost1 />} />
             <Route path="/blog/raznitsa-mikrozajm-kredit-karta" element={<BlogPost2 />} />
             <Route path="/blog/kak-vybrat-nadezhnuyu-mfo" element={<BlogPost3 />} />
+            <Route path="/blog/kak-rasschitat-pereplatu-po-mikrozajmu" element={<BlogPost4 />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/user-agreement" element={<UserAgreement />} />
             <Route path="/sitemap.xml" element={<Sitemap />} />
