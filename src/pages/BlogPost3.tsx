@@ -3,13 +3,10 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent3 from "@/components/blog/BlogPost3Content";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
-import useBlogPostMeta from "@/components/blog/useBlogPostMeta";
 
 const BlogPost3 = () => {
   const postUrl = `${window.location.origin}/blog/kak-vybrat-nadezhnuyu-mfo`;
   const postTitle = "Как выбрать надёжную МФО: проверенная инструкция";
-
-  useBlogPostMeta();
 
   const faqItems = [
     {
