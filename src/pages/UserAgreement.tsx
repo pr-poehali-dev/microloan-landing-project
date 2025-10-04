@@ -277,7 +277,7 @@ const UserAgreement = () => {
                     <Icon name="Building" size={20} className="text-primary" />
                     <div>
                       <p className="font-semibold text-foreground">Компания</p>
-                      <p className="text-muted-foreground">МКК "МикроЗайм"</p>
+                      <p className="text-muted-foreground">МКК "МикроФин"</p>
                     </div>
                   </div>
                 </div>
