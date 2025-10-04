@@ -4,6 +4,7 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost2Content from "@/components/blog/BlogPost2Content";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import ArticleLike from "@/components/blog/ArticleLike";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -69,6 +70,7 @@ const BlogPost2 = () => {
 
             <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
               <BlogPost2Content />
+              <ArticleLike postSlug={postSlug} />
             </div>
 
             <BlogPostFooter

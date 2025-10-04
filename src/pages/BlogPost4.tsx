@@ -5,6 +5,7 @@ import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost4Content from "@/components/blog/BlogPost4Content";
 import OverpaymentCalculator from "@/components/blog/OverpaymentCalculator";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import ArticleLike from "@/components/blog/ArticleLike";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -70,6 +71,7 @@ const BlogPost4 = () => {
             <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
               <BlogPost4Content />
               <OverpaymentCalculator />
+              <ArticleLike postSlug={postSlug} />
             </div>
 
             <BlogPostFooter

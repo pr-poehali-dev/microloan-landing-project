@@ -5,6 +5,7 @@ import BlogPostContent3 from "@/components/blog/BlogPost3Content";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import ArticleLike from "@/components/blog/ArticleLike";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -96,6 +97,7 @@ const BlogPost3 = () => {
             <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
               <BlogPostContent3 />
               <BlogPostFAQ items={faqItems} />
+              <ArticleLike postSlug={postSlug} />
             </div>
 
             <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
