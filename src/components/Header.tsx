@@ -134,22 +134,21 @@ const Header = () => {
               </>
             )}
           </nav>
-          
-          <Link
-            to="/blog"
-            className={`hidden md:flex px-4 py-2 rounded-full font-semibold transition-all duration-300 relative overflow-hidden group ${
-              location.pathname === "/blog"
-                ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg"
-                : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:from-orange-400 hover:via-pink-400 hover:to-teal-400 hover:text-white hover:shadow-lg"
-            }`}
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Блог
-              <Icon name="Sparkles" size={16} className={location.pathname === "/blog" ? "animate-pulse" : ""} />
-            </span>
-          </Link>
 
           <div className="hidden md:flex items-center gap-4">
+            <Link
+              to="/blog"
+              className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 relative overflow-hidden group ${
+                location.pathname === "/blog"
+                  ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg"
+                  : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:from-orange-400 hover:via-pink-400 hover:to-teal-400 hover:text-white hover:shadow-lg"
+              }`}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Блог
+                <Icon name="Sparkles" size={16} className={location.pathname === "/blog" ? "animate-pulse" : ""} />
+              </span>
+            </Link>
             {isHomePage ? (
               <Button 
                 onClick={() => scrollToSection("lead-form")}
