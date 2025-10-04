@@ -19,8 +19,8 @@ const BlogPost1 = () => {
     ogImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
     twitterImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
     url: "https://mikrofinru.ru/blog/chto-takoe-mikrozajmy",
-    datePublished: "2024-03-15",
-    dateModified: "2024-03-15",
+    datePublished: "2025-10-04",
+    dateModified: "2025-10-04",
     category: "Советы",
     keywords: ["микрозаймы", "микрозайм онлайн", "займ на карту", "МФО", "быстрый займ"],
     wordCount: 2500,
@@ -75,7 +75,7 @@ const BlogPost1 = () => {
           <div className="max-w-4xl mx-auto">
             <BlogPostHeader
               category="Советы"
-              date="15 марта 2024"
+              date="4 октября 2025"
               readTime="10 мин"
               viewCount={viewCount}
               title="Что такое микрозаймы и как они работают"
