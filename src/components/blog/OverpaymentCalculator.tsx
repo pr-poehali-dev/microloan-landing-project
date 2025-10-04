@@ -3,7 +3,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+
+interface MFO {
+  name: string;
+  logo: string;
+  rating: number;
+  amount: string;
+  term: string;
+  rate: string;
+  features: string[];
+  approved: string;
+  recommended: boolean;
+  url: string;
+}
 
 const OverpaymentCalculator = () => {
   const [amount, setAmount] = useState<string>("10000");
@@ -11,13 +25,103 @@ const OverpaymentCalculator = () => {
   const [rate, setRate] = useState<string>("1");
   const [calculated, setCalculated] = useState(false);
 
+  const mfoList: MFO[] = [
+    {
+      name: "Надо денег",
+      logo: "💰",
+      rating: 4.9,
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
+      rate: "0%",
+      features: ["Первый займ 0%", "Без проверки КИ", "За 5 минут"],
+      approved: "98%",
+      recommended: true,
+      url: "https://trk.ppdu.ru/click/3GyRuqoD?erid=2SDnjdmoM8q&siteId=8015"
+    },
+    {
+      name: "Умные наличные",
+      logo: "⚡",
+      rating: 4.8,
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
+      rate: "от 0%",
+      features: ["Без отказа", "Онлайн 24/7", "На карту"],
+      approved: "96%",
+      recommended: true,
+      url: "https://trk.ppdu.ru/click/HbPsDylQ?erid=LjN8KKm44&siteId=8015"
+    },
+    {
+      name: "Max.Credit",
+      logo: "🎯",
+      rating: 4.7,
+      amount: "до 30 000 ₽",
+      term: "до 30 дней",
+      rate: "0%",
+      features: ["С 18 лет", "Мгновенно", "Первый под 0%"],
+      approved: "95%",
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/OMRKMQnH?erid=2SDnjbuHuCz&siteId=8015"
+    },
+    {
+      name: "Турбозайм",
+      logo: "🚀",
+      rating: 4.6,
+      amount: "до 100 000 ₽",
+      term: "до 168 дней",
+      rate: "0%",
+      features: ["Первый 0%", "Без проверок", "За 10 минут"],
+      approved: "93%",
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015"
+    },
+    {
+      name: "ДоЗарплаты",
+      logo: "💳",
+      rating: 4.5,
+      amount: "до 100 000 ₽",
+      term: "до 365 дней",
+      rate: "0%",
+      features: ["До зарплаты", "Без процентов", "Быстро"],
+      approved: "90%",
+      recommended: false,
+      url: "https://trk.ppdu.ru/click/vZa8VguM?erid=2SDnjevZFtJ&siteId=8015"
+    }
+  ];
+
+  const trackClick = async (mfoName: string) => {
+    try {
+      await fetch('https://functions.poehali.dev/c591c6e9-075e-48d0-a487-6cfffa0136b7', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mfo_name: mfoName }),
+      });
+    } catch (error) {
+      console.error('Failed to track click:', error);
+    }
+  };
+
   const calculateOverpayment = () => {
     setCalculated(true);
+  };
+
+  const getSuitableMFOs = (): MFO[] => {
+    const requestedAmount = parseFloat(amount);
+    const requestedDays = parseFloat(days);
+
+    return mfoList.filter(mfo => {
+      const maxAmount = parseInt(mfo.amount.replace(/\D/g, ''));
+      const maxDays = parseInt(mfo.term.replace(/\D/g, ''));
+      
+      return requestedAmount <= maxAmount && requestedDays <= maxDays;
+    }).slice(0, 3);
   };
 
   const overpayment = parseFloat(amount) * (parseFloat(rate) / 100) * parseFloat(days);
   const totalReturn = parseFloat(amount) + overpayment;
   const yearlyRate = (parseFloat(rate) * 365).toFixed(0);
+  const suitableMFOs = getSuitableMFOs();
 
   return (
     <div className="my-12">
@@ -168,7 +272,7 @@ const OverpaymentCalculator = () => {
             )}
           </div>
 
-          <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6">
+          <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6 mb-8">
             <h4 className="font-semibold mb-3 flex items-center gap-2">
               <Icon name="AlertTriangle" size={18} className="text-orange-600" />
               Формула расчёта
@@ -180,6 +284,122 @@ const OverpaymentCalculator = () => {
               </p>
             </div>
           </div>
+
+          {calculated && suitableMFOs.length > 0 && (
+            <div className="mt-8 animate-fade-in">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 mb-6">
+                <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                  <Icon name="CheckCircle2" size={24} className="text-green-600" />
+                  Подходящие предложения для ваших условий
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  МФО, которые выдают {parseFloat(amount).toLocaleString('ru-RU')} ₽ на {days} {parseInt(days) === 1 ? 'день' : parseInt(days) < 5 ? 'дня' : 'дней'}
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                {suitableMFOs.map((mfo, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2">
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="text-4xl">{mfo.logo}</div>
+                          <div>
+                            <h4 className="font-bold text-lg">{mfo.name}</h4>
+                            <div className="flex items-center gap-2 mt-1">
+                              <div className="flex items-center gap-1">
+                                <Icon name="Star" size={16} className="fill-yellow-400 text-yellow-400" />
+                                <span className="font-semibold text-sm">{mfo.rating}</span>
+                              </div>
+                              <Badge variant="secondary" className="text-xs">
+                                Одобрение {mfo.approved}
+                              </Badge>
+                            </div>
+                          </div>
+                        </div>
+                        {mfo.recommended && (
+                          <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                            Рекомендуем
+                          </Badge>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4 mb-4 text-sm">
+                        <div>
+                          <p className="text-muted-foreground mb-1">Сумма</p>
+                          <p className="font-bold">{mfo.amount}</p>
+                        </div>
+                        <div>
+                          <p className="text-muted-foreground mb-1">Срок</p>
+                          <p className="font-bold">{mfo.term}</p>
+                        </div>
+                        <div>
+                          <p className="text-muted-foreground mb-1">Ставка</p>
+                          <p className="font-bold text-green-600">{mfo.rate}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {mfo.features.map((feature, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <Button 
+                        className="w-full gap-2" 
+                        size="lg"
+                        onClick={() => {
+                          trackClick(mfo.name);
+                          window.open(mfo.url, '_blank');
+                        }}
+                      >
+                        Получить займ
+                        <Icon name="ExternalLink" size={18} />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="mt-6 text-center">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => {
+                    const mfoSection = document.getElementById('mfo-list');
+                    if (mfoSection) {
+                      mfoSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      window.location.href = '/#mfo-list';
+                    }
+                  }}
+                  className="gap-2"
+                >
+                  Посмотреть все предложения
+                  <Icon name="ArrowRight" size={18} />
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {calculated && suitableMFOs.length === 0 && (
+            <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+              <Icon name="AlertCircle" size={48} className="text-amber-600 mx-auto mb-3" />
+              <h4 className="font-bold mb-2">Не нашли подходящих предложений</h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                Попробуйте изменить параметры займа или посмотрите все доступные МФО
+              </p>
+              <Button 
+                onClick={() => window.location.href = '/#mfo-list'}
+                className="gap-2"
+              >
+                Посмотреть все МФО
+                <Icon name="ArrowRight" size={18} />
+              </Button>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
