@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "4 октября 2025",
     readTime: "12 мин",
     category: "Советы",
-    image: "/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+    image: "/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg",
     url: "/blog/raznitsa-mikrozajm-kredit-karta",
     slug: "raznitsa-mikrozajm-kredit-karta"
   },

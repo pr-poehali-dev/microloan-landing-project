@@ -17,8 +17,8 @@ const BlogPost2 = () => {
     description: "Сравнение микрозайма, потребительского кредита и кредитной карты: условия, процентные ставки, сроки. Когда выбирать каждый финансовый инструмент.",
     ogTitle: "В чём разница между микрозаймом, потребкредитом и кредитной картой",
     ogDescription: "Сравнение микрозайма, потребительского кредита и кредитной карты: условия, процентные ставки, сроки. Когда выбирать каждый финансовый инструмент.",
-    ogImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
-    twitterImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+    ogImage: "https://mikrofinru.ru/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg",
+    twitterImage: "https://mikrofinru.ru/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg",
     url: "https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta",
     datePublished: "2025-10-04",
     dateModified: "2025-10-04",
@@ -59,7 +59,7 @@ const BlogPost2 = () => {
               readTime="12 мин"
               viewCount={viewCount}
               title="В чём разница между микрозаймом, потребкредитом и кредитной картой"
-              imageUrl="/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg"
+              imageUrl="/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg"
               imageAlt="В чём разница между микрозаймом, потребкредитом и кредитной картой - обложка статьи"
               breadcrumbs={{
                 home: "Главная",
