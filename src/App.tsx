@@ -19,6 +19,7 @@ import FloatingTelegram from "./components/FloatingTelegram";
 import PopupLeadForm from "./components/PopupLeadForm";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
+import InstallPWA from "./components/InstallPWA";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <PopupLeadForm />
           <CookieConsent />
           <ScrollToTop />
+          <InstallPWA />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
