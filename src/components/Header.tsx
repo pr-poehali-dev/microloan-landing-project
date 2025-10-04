@@ -17,6 +17,17 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -167,7 +178,12 @@ const Header = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-2xl border-t animate-fade-in max-h-[80vh] overflow-y-auto">
+          <>
+            <div 
+              className="md:hidden fixed inset-0 bg-black/20 z-40"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <div className="md:hidden fixed top-20 left-0 right-0 bottom-0 bg-white shadow-2xl border-t animate-fade-in overflow-y-auto z-50">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-3">
               {isHomePage ? (
                 <>
@@ -262,7 +278,8 @@ const Header = () => {
                 </Link>
               )}
             </nav>
-          </div>
+            </div>
+          </>
         )}
       </div>
     </header>
