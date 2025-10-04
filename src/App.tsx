@@ -23,10 +23,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <FloatingTelegram />
-      <PopupLeadForm />
-      <CookieConsent />
       <BrowserRouter>
+        <FloatingTelegram />
+        <PopupLeadForm />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
