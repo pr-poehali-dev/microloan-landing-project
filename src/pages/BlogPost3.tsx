@@ -44,8 +44,8 @@ const BlogPost3 = () => {
     ogImage: "https://mikrofinru.ru/img/75826ede-4073-4327-905a-4148e15193c9.jpg",
     twitterImage: "https://mikrofinru.ru/img/75826ede-4073-4327-905a-4148e15193c9.jpg",
     url: "https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo",
-    datePublished: "2024-10-04",
-    dateModified: "2024-10-04",
+    datePublished: "2025-10-04",
+    dateModified: "2025-10-04",
     category: "Безопасность",
     keywords: ["как выбрать МФО", "проверить МФО", "надёжная МФО", "реестр ЦБ РФ"],
     wordCount: 2800,
@@ -79,7 +79,7 @@ const BlogPost3 = () => {
           <div className="max-w-4xl mx-auto">
             <BlogPostHeader 
               category="Безопасность"
-              date="4 октября 2024"
+              date="4 октября 2025"
               readTime="12 мин"
               viewCount={viewCount}
               title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
