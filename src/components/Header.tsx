@@ -201,6 +201,20 @@ const Header = () => {
                   >
                     FAQ
                   </button>
+                  
+                  <div className="pt-3 border-t mt-2">
+                    <Link
+                      to="/blog"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block text-left py-3 px-4 rounded-lg font-semibold bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md transition-all"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Icon name="BookOpen" size={18} />
+                        Блог
+                        <Icon name="Sparkles" size={16} />
+                      </span>
+                    </Link>
+                  </div>
                 </>
               ) : (
                 <>
