@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -35,6 +36,18 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <Helmet>
+        <title>Микрозаймы, кредиты и финансы — блог о деньгах и займах</title>
+        <meta 
+          name="description" 
+          content="Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация." 
+        />
+        <meta property="og:title" content="Микрозаймы, кредиты и финансы — блог о деньгах и займах" />
+        <meta 
+          property="og:description" 
+          content="Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация." 
+        />
+      </Helmet>
       <Header />
       
       <main className="pt-32 pb-20">
