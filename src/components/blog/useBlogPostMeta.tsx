@@ -19,7 +19,7 @@ interface BlogPostMetaData {
     name: string;
     item: string;
   }>;
-  faqItems: Array<{
+  faqItems?: Array<{
     question: string;
     answer: string;
   }>;
@@ -101,21 +101,23 @@ export const useBlogPostMeta = (metadata: BlogPostMetaData) => {
     });
     document.head.appendChild(breadcrumbSchema);
 
-    const faqSchema = document.createElement('script');
-    faqSchema.type = 'application/ld+json';
-    faqSchema.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": metadata.faqItems.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    });
-    document.head.appendChild(faqSchema);
+    if (metadata.faqItems && metadata.faqItems.length > 0) {
+      const faqSchema = document.createElement('script');
+      faqSchema.type = 'application/ld+json';
+      faqSchema.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": metadata.faqItems.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      });
+      document.head.appendChild(faqSchema);
+    }
 
     return () => {
       const scripts = document.head.querySelectorAll('script[type="application/ld+json"]');
