@@ -167,8 +167,8 @@ const Header = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg shadow-2xl border-t animate-fade-in">
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg shadow-2xl border-t animate-fade-in max-h-[80vh] overflow-y-auto">
+            <nav className="container mx-auto px-4 py-6 flex flex-col gap-3">
               {isHomePage ? (
                 <>
                   <button
@@ -212,20 +212,22 @@ const Header = () => {
                 </Link>
               )}
               
-              <Link
-                to="/blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left py-3 px-4 rounded-lg font-semibold transition-all ${
-                  location.pathname === "/blog" 
-                    ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white" 
-                    : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  Блог
-                  <Icon name="Sparkles" size={16} />
-                </span>
-              </Link>
+              <div className="pt-2 border-t">
+                <Link
+                  to="/blog"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block text-left py-3 px-4 rounded-lg font-semibold transition-all ${
+                    location.pathname.startsWith("/blog")
+                      ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg" 
+                      : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md"
+                  }`}
+                >
+                  <span className="flex items-center gap-2">
+                    📝 Блог
+                    <Icon name="Sparkles" size={16} className={location.pathname.startsWith("/blog") ? "animate-pulse" : ""} />
+                  </span>
+                </Link>
+              </div>
               
               {isHomePage ? (
                 <Button 
