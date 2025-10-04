@@ -16,6 +16,7 @@ import Sitemap from "./pages/Sitemap";
 import FloatingTelegram from "./components/FloatingTelegram";
 import PopupLeadForm from "./components/PopupLeadForm";
 import CookieConsent from "./components/CookieConsent";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
         <FloatingTelegram />
         <PopupLeadForm />
         <CookieConsent />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
