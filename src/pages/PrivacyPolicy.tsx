@@ -87,10 +87,6 @@ const PrivacyPolicy = () => {
                   </li>
                   <li className="flex gap-2">
                     <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
-                    <span>Информация о доходах и занятости</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
                     <span>IP-адрес, данные cookies, информация о браузере и устройстве</span>
                   </li>
                   <li className="flex gap-2">
