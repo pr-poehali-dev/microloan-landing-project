@@ -9,12 +9,10 @@ import ArticleLike from "@/components/blog/ArticleLike";
 import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
-import { useReadCompletion } from "@/components/blog/useReadCompletion";
 
 const BlogPost3 = () => {
   const postSlug = 'kak-vybrat-nadezhnuyu-mfo';
   const viewCount = useViewCounter(postSlug);
-  const { setEndMarker } = useReadCompletion(postSlug);
   const postUrl = `${window.location.origin}/blog/kak-vybrat-nadezhnuyu-mfo`;
   const postTitle = "Как выбрать надёжную МФО: проверенная инструкция";
 
@@ -105,7 +103,6 @@ const BlogPost3 = () => {
                   <BlogPostContent3 />
                   <BlogPostFAQ items={faqItems} />
                   <ArticleLike postSlug={postSlug} />
-                  <div ref={setEndMarker} className="h-1" />
                 </div>
               </div>
               

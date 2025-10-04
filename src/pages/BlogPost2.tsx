@@ -8,12 +8,10 @@ import ArticleLike from "@/components/blog/ArticleLike";
 import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
-import { useReadCompletion } from "@/components/blog/useReadCompletion";
 
 const BlogPost2 = () => {
   const postSlug = 'raznitsa-mikrozajm-kredit-karta';
   const viewCount = useViewCounter(postSlug);
-  const { setEndMarker } = useReadCompletion(postSlug);
   
   useBlogPostMeta({
     title: "Разница между микрозаймом, кредитом и кредитной картой 2025 — что выгоднее выбрать",
@@ -78,7 +76,6 @@ const BlogPost2 = () => {
                 <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
                   <BlogPost2Content />
                   <ArticleLike postSlug={postSlug} />
-                  <div ref={setEndMarker} className="h-1" />
                 </div>
               </div>
               

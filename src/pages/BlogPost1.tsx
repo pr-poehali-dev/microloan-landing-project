@@ -9,12 +9,10 @@ import ArticleLike from "@/components/blog/ArticleLike";
 import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
-import { useReadCompletion } from "@/components/blog/useReadCompletion";
 
 const BlogPost1 = () => {
   const postSlug = 'chto-takoe-mikrozajmy';
   const viewCount = useViewCounter(postSlug);
-  const { setEndMarker } = useReadCompletion(postSlug);
   
   useBlogPostMeta({
     title: "Что такое микрозаймы и как они работают: простыми словами о займах онлайн",
@@ -101,7 +99,6 @@ const BlogPost1 = () => {
                   <BlogPostContent />
                   <BlogPostFAQ />
                   <ArticleLike postSlug={postSlug} />
-                  <div ref={setEndMarker} className="h-1" />
                 </div>
               </div>
               
