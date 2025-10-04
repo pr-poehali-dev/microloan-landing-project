@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,7 +15,8 @@ const blogPosts = [
     readTime: "10 мин",
     category: "Советы",
     image: "/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
-    url: "/blog/chto-takoe-mikrozajmy"
+    url: "/blog/chto-takoe-mikrozajmy",
+    slug: "chto-takoe-mikrozajmy"
   },
   {
     id: 2,
@@ -65,8 +66,29 @@ const blogPosts = [
 ];
 
 const Blog = () => {
+  const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch view counts for all blog posts
+    const fetchViewCounts = async () => {
+      try {
+        const response = await fetch('https://functions.poehali.dev/d23c653d-0229-4d5c-89fc-42c4195e0442?type=blog');
+        const data = await response.json();
+        if (data.views) {
+          const counts: Record<string, number> = {};
+          data.views.forEach((item: { post_slug: string; view_count: number }) => {
+            counts[item.post_slug] = item.view_count;
+          });
+          setViewCounts(counts);
+        }
+      } catch (error) {
+        console.error('Failed to fetch view counts:', error);
+      }
+    };
+    
+    fetchViewCounts();
   }, []);
 
   return (
@@ -121,7 +143,7 @@ const Blog = () => {
                   </CardHeader>
                   
                   <CardContent>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4 flex-wrap gap-2">
                       <div className="flex items-center gap-1">
                         <Icon name="Calendar" size={14} />
                         <span>{post.date}</span>
@@ -130,6 +152,12 @@ const Blog = () => {
                         <Icon name="Clock" size={14} />
                         <span>{post.readTime}</span>
                       </div>
+                      {post.slug && viewCounts[post.slug] !== undefined && (
+                        <div className="flex items-center gap-1">
+                          <Icon name="Eye" size={14} />
+                          <span>{viewCounts[post.slug].toLocaleString('ru-RU')}</span>
+                        </div>
+                      )}
                     </div>
                     
                     {post.url ? (

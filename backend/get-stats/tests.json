@@ -3,8 +3,33 @@
     {
       "name": "Get MFO statistics",
       "method": "GET",
-      "path": "/",
-      "expectedStatus": 200
+      "path": "/?type=mfo",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "stats": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Increment blog post view",
+      "method": "POST",
+      "path": "/?post_slug=test-article",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "view_count": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get blog post views",
+      "method": "GET",
+      "path": "/?type=blog&post_slug=test-article",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "view_count": "number"
+      },
+      "bodyMatcher": "partial"
     },
     {
       "name": "Handle OPTIONS request",

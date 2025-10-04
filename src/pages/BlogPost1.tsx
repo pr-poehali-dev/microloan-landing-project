@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,8 +6,28 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const BlogPost1 = () => {
+  const [viewCount, setViewCount] = useState<number | null>(null);
+  const postSlug = 'chto-takoe-mikrozajmy';
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Increment view count
+    const incrementView = async () => {
+      try {
+        const response = await fetch(`https://functions.poehali.dev/d23c653d-0229-4d5c-89fc-42c4195e0442?post_slug=${postSlug}`, {
+          method: 'POST'
+        });
+        const data = await response.json();
+        if (data.success) {
+          setViewCount(data.view_count);
+        }
+      } catch (error) {
+        console.error('Failed to increment view:', error);
+      }
+    };
+    
+    incrementView();
     
     document.title = "Что такое микрозаймы и как они работают: простыми словами о займах онлайн";
     
@@ -64,7 +84,7 @@ const BlogPost1 = () => {
               </div>
 
               <div className="p-8 md:p-12">
-                <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground flex-wrap">
                   <div className="flex items-center gap-1">
                     <Icon name="Calendar" size={16} />
                     <span>15 марта 2024</span>
@@ -73,6 +93,12 @@ const BlogPost1 = () => {
                     <Icon name="Clock" size={16} />
                     <span>10 мин</span>
                   </div>
+                  {viewCount !== null && (
+                    <div className="flex items-center gap-1">
+                      <Icon name="Eye" size={16} />
+                      <span>{viewCount.toLocaleString('ru-RU')} просмотров</span>
+                    </div>
+                  )}
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
