@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -65,49 +65,9 @@ const blogPosts = [
 ];
 
 const Blog = () => {
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Email validation
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!email || !emailPattern.test(email)) {
-      setSubscribeStatus('error');
-      setErrorMessage('Пожалуйста, введите корректный email');
-      return;
-    }
-
-    setSubscribeStatus('loading');
-    setErrorMessage('');
-
-    try {
-      // Save to localStorage as backup
-      const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
-      if (!subscribers.includes(email.toLowerCase())) {
-        subscribers.push(email.toLowerCase());
-        localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
-      }
-
-      // Simulate API call (since we hit the function limit)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      setSubscribeStatus('success');
-      setEmail('');
-      
-      // Reset after 3 seconds
-      setTimeout(() => setSubscribeStatus('idle'), 3000);
-    } catch (error) {
-      setSubscribeStatus('error');
-      setErrorMessage('Произошла ошибка. Попробуйте позже.');
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -197,86 +157,7 @@ const Blog = () => {
               ))}
             </div>
 
-            <div className="mt-20 mb-16">
-              <Card className="bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50 border-2 border-primary/20 shadow-xl overflow-hidden">
-                <div className="relative p-8 md:p-12">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
-                  
-                  <div className="relative z-10 max-w-2xl mx-auto text-center">
-                    <div className="mb-6">
-                      <Icon name="Mail" size={48} className="mx-auto text-primary" />
-                    </div>
-                    
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      Подпишитесь на новости
-                    </h2>
-                    
-                    <p className="text-muted-foreground mb-8 text-lg">
-                      Получайте полезные статьи о микрозаймах, эксклюзивные предложения и советы по финансовой грамотности
-                    </p>
-                    
-                    {subscribeStatus === 'success' ? (
-                      <div className="max-w-md mx-auto p-6 bg-green-50 border-2 border-green-200 rounded-lg animate-fade-in">
-                        <div className="flex items-center justify-center gap-2 text-green-700 font-semibold">
-                          <Icon name="CheckCircle" size={24} />
-                          <span>Спасибо за подписку!</span>
-                        </div>
-                        <p className="text-sm text-green-600 mt-2">
-                          Мы отправим вам письмо с подтверждением
-                        </p>
-                      </div>
-                    ) : (
-                      <>
-                        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                          <input
-                            type="email"
-                            placeholder="Ваш email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className={`flex-1 px-4 py-3 rounded-lg border-2 transition-colors ${
-                              subscribeStatus === 'error' 
-                                ? 'border-red-300 focus:border-red-500' 
-                                : 'border-primary/20 focus:border-primary'
-                            } focus:outline-none`}
-                            required
-                            disabled={subscribeStatus === 'loading'}
-                          />
-                          <Button 
-                            type="submit"
-                            disabled={subscribeStatus === 'loading'}
-                            className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-                          >
-                            {subscribeStatus === 'loading' ? (
-                              <>
-                                <Icon name="Loader2" className="mr-2 animate-spin" size={16} />
-                                Отправка...
-                              </>
-                            ) : (
-                              <>
-                                Подписаться
-                                <Icon name="Send" className="ml-2" size={16} />
-                              </>
-                            )}
-                          </Button>
-                        </form>
-                        
-                        {subscribeStatus === 'error' && errorMessage && (
-                          <p className="text-sm text-red-600 mt-3 animate-fade-in">
-                            {errorMessage}
-                          </p>
-                        )}
-                        
-                        <p className="text-xs text-muted-foreground mt-4">
-                          Нажимая "Подписаться", вы соглашаетесь с политикой конфиденциальности
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <div className="text-center">
+            <div className="mt-16 text-center">
               <Link to="/">
                 <Button variant="outline" size="lg" className="gap-2">
                   <Icon name="ArrowLeft" size={20} />
