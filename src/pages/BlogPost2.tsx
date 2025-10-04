@@ -5,6 +5,7 @@ import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import BlogPost2Content from "@/components/blog/BlogPost2Content";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import ArticleLike from "@/components/blog/ArticleLike";
+import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -52,33 +53,45 @@ const BlogPost2 = () => {
       
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <BlogPostHeader
-              category="Советы"
-              date="4 октября 2025"
-              readTime="12 мин"
-              viewCount={viewCount}
-              title="В чём разница между микрозаймом, потребкредитом и кредитной картой"
-              imageUrl="/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg"
-              imageAlt="В чём разница между микрозаймом, потребкредитом и кредитной картой - обложка статьи"
-              breadcrumbs={{
-                home: "Главная",
-                blog: "Блог",
-                current: "В чём разница между микрозаймом, потребкредитом и кредитной картой"
-              }}
-            />
-
-            <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
-              <BlogPost2Content />
-              <ArticleLike postSlug={postSlug} />
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <BlogPostHeader
+                category="Советы"
+                date="4 октября 2025"
+                readTime="12 мин"
+                viewCount={viewCount}
+                title="В чём разница между микрозаймом, потребкредитом и кредитной картой"
+                imageUrl="/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg"
+                imageAlt="В чём разница между микрозаймом, потребкредитом и кредитной картой - обложка статьи"
+                breadcrumbs={{
+                  home: "Главная",
+                  blog: "Блог",
+                  current: "В чём разница между микрозаймом, потребкредитом и кредитной картой"
+                }}
+              />
             </div>
 
-            <BlogPostFooter
-              postUrl="https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta"
-              postTitle="В чём разница между микрозаймом, потребкредитом и кредитной картой"
-            />
-            
-            <RelatedPosts currentPostId={2} />
+            <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8 max-w-7xl mx-auto">
+              <div className="max-w-4xl">
+                <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+                  <BlogPost2Content />
+                  <ArticleLike postSlug={postSlug} />
+                </div>
+              </div>
+              
+              <aside className="hidden lg:block">
+                <TableOfContents />
+              </aside>
+            </div>
+
+            <div className="max-w-4xl">
+              <BlogPostFooter
+                postUrl="https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta"
+                postTitle="В чём разница между микрозаймом, потребкредитом и кредитной картой"
+              />
+              
+              <RelatedPosts currentPostId={2} />
+            </div>
           </div>
         </div>
       </article>

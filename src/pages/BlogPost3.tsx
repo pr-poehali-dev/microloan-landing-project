@@ -6,6 +6,7 @@ import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import ArticleLike from "@/components/blog/ArticleLike";
+import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -78,31 +79,43 @@ const BlogPost3 = () => {
       
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <BlogPostHeader 
-              category="Безопасность"
-              date="4 октября 2025"
-              readTime="12 мин"
-              viewCount={viewCount}
-              title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
-              imageUrl="/img/75826ede-4073-4327-905a-4148e15193c9.jpg"
-              imageAlt="Как выбрать надёжную МФО"
-              breadcrumbs={{
-                home: "Главная",
-                blog: "Блог",
-                current: "Как выбрать надёжную МФО"
-              }}
-            />
-
-            <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
-              <BlogPostContent3 />
-              <BlogPostFAQ items={faqItems} />
-              <ArticleLike postSlug={postSlug} />
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <BlogPostHeader 
+                category="Безопасность"
+                date="4 октября 2025"
+                readTime="12 мин"
+                viewCount={viewCount}
+                title="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
+                imageUrl="/img/75826ede-4073-4327-905a-4148e15193c9.jpg"
+                imageAlt="Как выбрать надёжную МФО"
+                breadcrumbs={{
+                  home: "Главная",
+                  blog: "Блог",
+                  current: "Как выбрать надёжную МФО"
+                }}
+              />
             </div>
 
-            <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
-            
-            <RelatedPosts currentPostId={3} />
+            <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8 max-w-7xl mx-auto">
+              <div className="max-w-4xl">
+                <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+                  <BlogPostContent3 />
+                  <BlogPostFAQ items={faqItems} />
+                  <ArticleLike postSlug={postSlug} />
+                </div>
+              </div>
+              
+              <aside className="hidden lg:block">
+                <TableOfContents />
+              </aside>
+            </div>
+
+            <div className="max-w-4xl">
+              <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
+              
+              <RelatedPosts currentPostId={3} />
+            </div>
           </div>
         </div>
       </article>
