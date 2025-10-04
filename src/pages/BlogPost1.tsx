@@ -6,6 +6,7 @@ import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import ArticleLike from "@/components/blog/ArticleLike";
+import TableOfContents from "@/components/blog/TableOfContents";
 import { useViewCounter } from "@/components/blog/useViewCounter";
 import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 
@@ -74,34 +75,46 @@ const BlogPost1 = () => {
       
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <BlogPostHeader
-              category="Советы"
-              date="4 октября 2025"
-              readTime="10 мин"
-              viewCount={viewCount}
-              title="Что такое микрозаймы и как они работают"
-              imageUrl="/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg"
-              imageAlt="Что такое микрозаймы и как они работают - обложка статьи"
-              breadcrumbs={{
-                home: "Главная",
-                blog: "Блог",
-                current: "Что такое микрозаймы и как они работают"
-              }}
-            />
-
-            <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
-              <BlogPostContent />
-              <BlogPostFAQ />
-              <ArticleLike postSlug={postSlug} />
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <BlogPostHeader
+                category="Советы"
+                date="4 октября 2025"
+                readTime="10 мин"
+                viewCount={viewCount}
+                title="Что такое микрозаймы и как они работают"
+                imageUrl="/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg"
+                imageAlt="Что такое микрозаймы и как они работают - обложка статьи"
+                breadcrumbs={{
+                  home: "Главная",
+                  blog: "Блог",
+                  current: "Что такое микрозаймы и как они работают"
+                }}
+              />
             </div>
 
-            <BlogPostFooter
-              postUrl="https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
-              postTitle="Что такое микрозаймы и как они работают"
-            />
-            
-            <RelatedPosts currentPostId={1} />
+            <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8 max-w-7xl mx-auto">
+              <div className="max-w-4xl">
+                <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+                  <BlogPostContent />
+                  <BlogPostFAQ />
+                  <ArticleLike postSlug={postSlug} />
+                </div>
+              </div>
+              
+              <aside className="hidden lg:block">
+                <TableOfContents />
+              </aside>
+            </div>
+
+            <div className="max-w-4xl">
+              <BlogPostFooter
+                postUrl="https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
+                postTitle="Что такое микрозаймы и как они работают"
+              />
+              
+              <RelatedPosts currentPostId={1} />
+            </div>
           </div>
         </div>
       </article>
