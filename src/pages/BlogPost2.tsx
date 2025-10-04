@@ -1,34 +1,75 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import BlogPostFooter from "@/components/blog/BlogPostFooter";
+import { useViewCounter } from "@/components/blog/useViewCounter";
+import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const BlogPost2 = () => {
+  const postSlug = 'raznitsa-mikrozajm-kredit-karta';
+  const viewCount = useViewCounter(postSlug);
+  
+  useBlogPostMeta({
+    title: "В чём разница между микрозаймом, потребкредитом и кредитной картой",
+    description: "Сравнение микрозайма, потребительского кредита и кредитной карты: условия, процентные ставки, сроки. Когда выбирать каждый финансовый инструмент.",
+    ogTitle: "В чём разница между микрозаймом, потребкредитом и кредитной картой",
+    ogDescription: "Сравнение микрозайма, потребительского кредита и кредитной карты: условия, процентные ставки, сроки. Когда выбирать каждый финансовый инструмент.",
+    ogImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+    twitterImage: "https://mikrofinru.ru/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+    url: "https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta",
+    datePublished: "2025-10-04",
+    dateModified: "2025-10-04",
+    category: "Советы",
+    keywords: ["микрозайм", "потребительский кредит", "кредитная карта", "разница", "сравнение"],
+    wordCount: 3200,
+    timeRequired: "PT12M",
+    breadcrumbs: [
+      {
+        position: 1,
+        name: "Главная",
+        item: "https://mikrofinru.ru/"
+      },
+      {
+        position: 2,
+        name: "Блог",
+        item: "https://mikrofinru.ru/blog"
+      },
+      {
+        position: 3,
+        name: "В чём разница между микрозаймом, потребкредитом и кредитной картой",
+        item: "https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta"
+      }
+    ],
+    faqItems: []
+  });
+
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Header />
       
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <article className="max-w-4xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center text-primary hover:text-primary/80 mb-6">
-            <Icon name="ArrowLeft" className="mr-2" size={20} />
-            Вернуться к блогу
-          </Link>
+      <article className="pt-32 pb-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <BlogPostHeader
+              category="Советы"
+              date="4 октября 2025"
+              readTime="12 мин"
+              viewCount={viewCount}
+              title="В чём разница между микрозаймом, потребкредитом и кредитной картой"
+              imageUrl="/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg"
+              imageAlt="В чём разница между микрозаймом, потребкредитом и кредитной картой - обложка статьи"
+              breadcrumbs={{
+                home: "Главная",
+                blog: "Блог",
+                current: "В чём разница между микрозаймом, потребкредитом и кредитной картой"
+              }}
+            />
 
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full">Советы</span>
-              <span>4 октября 2025</span>
-              <span>•</span>
-              <span>12 мин чтения</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-              В чём разница между микрозаймом, потребкредитом и кредитной картой
-            </h1>
-
-            <div className="prose prose-lg max-w-none">
+            <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+              <div className="prose prose-lg max-w-none">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 Когда срочно нужны деньги, многие теряются в разнообразии финансовых продуктов. На рынке доступны микрозаймы, потребительские кредиты и кредитные карты — каждый инструмент имеет свои особенности. Понимание их различий поможет выбрать оптимальный вариант и избежать переплат.
               </p>
@@ -234,19 +275,24 @@ const BlogPost2 = () => {
                   Главное правило: если сомневаетесь в своей способности вернуть деньги в срок, лучше поискать альтернативные способы решения финансовых проблем.
                 </p>
               </div>
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <Link to="/">
+                    <Button size="lg" className="w-full md:w-auto">
+                      Получить займ
+                      <Icon name="ArrowRight" className="ml-2" size={20} />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <Link to="/">
-                <Button size="lg" className="w-full md:w-auto">
-                  Получить займ
-                  <Icon name="ArrowRight" className="ml-2" size={20} />
-                </Button>
-              </Link>
-            </div>
+            <BlogPostFooter
+              postUrl="https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta"
+              postTitle="В чём разница между микрозаймом, потребкредитом и кредитной картой"
+            />
           </div>
-        </article>
-      </main>
+        </div>
+      </article>
 
       <Footer />
     </div>
