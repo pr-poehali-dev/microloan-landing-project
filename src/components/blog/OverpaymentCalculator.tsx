@@ -121,7 +121,6 @@ const OverpaymentCalculator = () => {
   const overpayment = parseFloat(amount) * (parseFloat(rate) / 100) * parseFloat(days);
   const totalReturn = parseFloat(amount) + overpayment;
   const yearlyRate = (parseFloat(rate) * 365).toFixed(0);
-  const suitableMFOs = getSuitableMFOs();
 
   return (
     <div className="my-12">
@@ -285,7 +284,7 @@ const OverpaymentCalculator = () => {
             </div>
           </div>
 
-          {calculated && suitableMFOs.length > 0 && (
+          {calculated && getSuitableMFOs().length > 0 && (
             <div className="mt-8 animate-fade-in">
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 mb-6">
                 <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
@@ -298,7 +297,7 @@ const OverpaymentCalculator = () => {
               </div>
 
               <div className="grid gap-4">
-                {suitableMFOs.map((mfo, index) => (
+                {getSuitableMFOs().map((mfo, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between gap-4 mb-4">
@@ -384,7 +383,7 @@ const OverpaymentCalculator = () => {
             </div>
           )}
 
-          {calculated && suitableMFOs.length === 0 && (
+          {calculated && getSuitableMFOs().length === 0 && (
             <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
               <Icon name="AlertCircle" size={48} className="text-amber-600 mx-auto mb-3" />
               <h4 className="font-bold mb-2">Не нашли подходящих предложений</h4>
