@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import BlogPost1 from "./pages/BlogPost1";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import Sitemap from "./pages/Sitemap";
 import FloatingTelegram from "./components/FloatingTelegram";
 import PopupLeadForm from "./components/PopupLeadForm";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/chto-takoe-mikrozajmy" element={<BlogPost1 />} />
+          <Route path="/sitemap.xml" element={<Sitemap />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
