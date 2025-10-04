@@ -157,7 +157,49 @@ const Blog = () => {
               ))}
             </div>
 
-            <div className="mt-16 text-center">
+            <div className="mt-20 mb-16">
+              <Card className="bg-gradient-to-br from-orange-50 via-pink-50 to-teal-50 border-2 border-primary/20 shadow-xl overflow-hidden">
+                <div className="relative p-8 md:p-12">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
+                  
+                  <div className="relative z-10 max-w-2xl mx-auto text-center">
+                    <div className="mb-6">
+                      <Icon name="Mail" size={48} className="mx-auto text-primary" />
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      Подпишитесь на новости
+                    </h2>
+                    
+                    <p className="text-muted-foreground mb-8 text-lg">
+                      Получайте полезные статьи о микрозаймах, эксклюзивные предложения и советы по финансовой грамотности
+                    </p>
+                    
+                    <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                      <input
+                        type="email"
+                        placeholder="Ваш email"
+                        className="flex-1 px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition-colors"
+                        required
+                      />
+                      <Button 
+                        type="submit"
+                        className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
+                      >
+                        Подписаться
+                        <Icon name="Send" className="ml-2" size={16} />
+                      </Button>
+                    </form>
+                    
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Нажимая "Подписаться", вы соглашаетесь с политикой конфиденциальности
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="text-center">
               <Link to="/">
                 <Button variant="outline" size="lg" className="gap-2">
                   <Icon name="ArrowLeft" size={20} />
