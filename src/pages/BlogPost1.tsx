@@ -64,10 +64,29 @@ const BlogPost1 = () => {
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8 transition-colors">
-              <Icon name="ArrowLeft" size={20} />
-              Вернуться к блогу
-            </Link>
+            <nav className="mb-8" aria-label="Навигационная цепочка">
+              <ol className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+                <li>
+                  <Link to="/" className="hover:text-primary transition-colors">
+                    Главная
+                  </Link>
+                </li>
+                <li>
+                  <Icon name="ChevronRight" size={16} />
+                </li>
+                <li>
+                  <Link to="/blog" className="hover:text-primary transition-colors">
+                    Блог
+                  </Link>
+                </li>
+                <li>
+                  <Icon name="ChevronRight" size={16} />
+                </li>
+                <li className="text-foreground font-medium">
+                  Что такое микрозаймы и как они работают
+                </li>
+              </ol>
+            </nav>
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
               <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-orange-100 via-pink-50 to-teal-50 flex items-center justify-center">
