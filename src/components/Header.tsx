@@ -84,29 +84,56 @@ const Header = () => {
                   Отзывы
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
                 </button>
+                <button
+                  onClick={() => scrollToSection("faq")}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  FAQ
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
               </>
             ) : (
-              <Link
-                to="/"
-                className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
-              >
-                Главная
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-              </Link>
+              <>
+                <Link
+                  to="/"
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group"
+                >
+                  Главная
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </Link>
+                <button
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group cursor-not-allowed opacity-50"
+                  disabled
+                >
+                  МФО
+                </button>
+                <button
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group cursor-not-allowed opacity-50"
+                  disabled
+                >
+                  Калькулятор
+                </button>
+                <button
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors relative group cursor-not-allowed opacity-50"
+                  disabled
+                >
+                  Условия
+                </button>
+              </>
             )}
             
             <Link
               to="/blog"
-              className={`font-medium transition-all relative group ${
+              className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 relative overflow-hidden group ${
                 location.pathname === "/blog"
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-primary"
+                  ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg"
+                  : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:from-orange-400 hover:via-pink-400 hover:to-teal-400 hover:text-white hover:shadow-lg"
               }`}
             >
-              Блог
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                location.pathname === "/blog" ? "w-full" : "w-0 group-hover:w-full"
-              }`}></span>
+              <span className="relative z-10 flex items-center gap-2">
+                Блог
+                <Icon name="Sparkles" size={16} className={location.pathname === "/blog" ? "animate-pulse" : ""} />
+              </span>
             </Link>
           </nav>
 
@@ -114,19 +141,18 @@ const Header = () => {
             {isHomePage ? (
               <Button 
                 onClick={() => scrollToSection("lead-form")}
-                className="relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] hover:bg-right shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
+                className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
               >
-                <span className="relative z-10 font-semibold">Получить займ</span>
-                <Icon name="Sparkles" className="ml-2 relative z-10 animate-pulse" size={16} />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                Получить займ
+                <Icon name="Sparkles" className="ml-2" size={16} />
               </Button>
             ) : (
               <Link to="/">
                 <Button 
-                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
                 >
                   Получить займ
-                  <Icon name="ArrowRight" className="ml-2" size={16} />
+                  <Icon name="Sparkles" className="ml-2" size={16} />
                 </Button>
               </Link>
             )}
@@ -169,6 +195,12 @@ const Header = () => {
                   >
                     Отзывы
                   </button>
+                  <button
+                    onClick={() => scrollToSection("faq")}
+                    className="text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all"
+                  >
+                    FAQ
+                  </button>
                 </>
               ) : (
                 <Link
@@ -183,24 +215,31 @@ const Header = () => {
               <Link
                 to="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left py-3 px-4 hover:bg-primary/5 rounded-lg font-medium transition-all ${
-                  location.pathname === "/blog" ? "text-primary bg-primary/5" : "text-foreground/80 hover:text-primary"
+                className={`text-left py-3 px-4 rounded-lg font-semibold transition-all ${
+                  location.pathname === "/blog" 
+                    ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white" 
+                    : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground"
                 }`}
               >
-                Блог
+                <span className="flex items-center gap-2">
+                  Блог
+                  <Icon name="Sparkles" size={16} />
+                </span>
               </Link>
               
               {isHomePage ? (
                 <Button 
                   onClick={() => scrollToSection("lead-form")}
-                  className="bg-gradient-to-r from-primary to-secondary w-full mt-4"
+                  className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 w-full mt-4 font-semibold"
                 >
                   Получить займ
+                  <Icon name="Sparkles" className="ml-2" size={16} />
                 </Button>
               ) : (
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button className="bg-gradient-to-r from-primary to-secondary w-full mt-4">
+                  <Button className="bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 w-full mt-4 font-semibold">
                     Получить займ
+                    <Icon name="Sparkles" className="ml-2" size={16} />
                   </Button>
                 </Link>
               )}
