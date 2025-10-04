@@ -79,11 +79,11 @@ const PrivacyPolicy = () => {
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex gap-2">
                     <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
-                    <span>ФИО, дата рождения, паспортные данные</span>
+                    <span>ФИО</span>
                   </li>
                   <li className="flex gap-2">
                     <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
-                    <span>Контактная информация (телефон, email, адрес)</span>
+                    <span>Контактная информация (телефон)</span>
                   </li>
                   <li className="flex gap-2">
                     <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
