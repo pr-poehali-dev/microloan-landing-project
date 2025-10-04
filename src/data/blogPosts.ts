@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "4 октября 2024",
     readTime: "12 мин",
     category: "Безопасность",
-    image: "/img/670e08ee-8e93-4dc6-bd7b-47c842ffc93e.jpg",
+    image: "/img/75826ede-4073-4327-905a-4148e15193c9.jpg",
     url: "/blog/kak-vybrat-nadezhnuyu-mfo",
     slug: "kak-vybrat-nadezhnuyu-mfo"
   },
