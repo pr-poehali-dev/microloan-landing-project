@@ -54,6 +54,8 @@ const FAQ = () => {
     const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": "https://mikrofinru.ru/#faq",
+      "url": "https://mikrofinru.ru/#faq",
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,
