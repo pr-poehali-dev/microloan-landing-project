@@ -27,6 +27,8 @@ interface BlogPostMetaData {
 
 export const useBlogPostMeta = (metadata: BlogPostMetaData) => {
   useEffect(() => {
+    const createdScripts: HTMLScriptElement[] = [];
+    
     document.title = metadata.title;
     
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -54,9 +56,7 @@ export const useBlogPostMeta = (metadata: BlogPostMetaData) => {
       twitterImage.setAttribute('content', metadata.twitterImage);
     }
 
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.text = JSON.stringify({
+    const articleSchema: any = {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": metadata.title,
@@ -84,8 +84,24 @@ export const useBlogPostMeta = (metadata: BlogPostMetaData) => {
       "keywords": metadata.keywords,
       "wordCount": metadata.wordCount,
       "timeRequired": metadata.timeRequired
-    });
+    };
+
+    if (metadata.faqItems && metadata.faqItems.length > 0) {
+      articleSchema.mainEntity = metadata.faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }));
+    }
+
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.text = JSON.stringify(articleSchema);
     document.head.appendChild(schemaScript);
+    createdScripts.push(schemaScript);
 
     const breadcrumbSchema = document.createElement('script');
     breadcrumbSchema.type = 'application/ld+json';
@@ -100,28 +116,14 @@ export const useBlogPostMeta = (metadata: BlogPostMetaData) => {
       }))
     });
     document.head.appendChild(breadcrumbSchema);
-
-    if (metadata.faqItems && metadata.faqItems.length > 0) {
-      const faqSchema = document.createElement('script');
-      faqSchema.type = 'application/ld+json';
-      faqSchema.text = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": metadata.faqItems.map(item => ({
-          "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      });
-      document.head.appendChild(faqSchema);
-    }
+    createdScripts.push(breadcrumbSchema);
 
     return () => {
-      const scripts = document.head.querySelectorAll('script[type="application/ld+json"]');
-      scripts.forEach(script => script.remove());
+      createdScripts.forEach(script => {
+        if (script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
+      });
     };
   }, [metadata]);
 };
