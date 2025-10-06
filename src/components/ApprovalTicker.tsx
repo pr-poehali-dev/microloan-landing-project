@@ -29,17 +29,24 @@ const ApprovalTicker = () => {
   });
 
   useEffect(() => {
-    const initialApprovals = Array.from({ length: 10 }, (_, i) => generateApproval(i));
+    const initialApprovals = [];
+    for (let i = 0; i < 10; i++) {
+      initialApprovals.push(generateApproval(i));
+    }
     setApprovals(initialApprovals);
 
-    const interval = setInterval(() => {
-      setApprovals(prev => {
+    const interval = setInterval(function() {
+      setApprovals(function(prev) {
         const newApproval = generateApproval(Date.now());
-        return [...prev.slice(1), newApproval];
+        const newArray = prev.slice(1);
+        newArray.push(newApproval);
+        return newArray;
       });
     }, 5000);
 
-    return () => clearInterval(interval);
+    return function() {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
