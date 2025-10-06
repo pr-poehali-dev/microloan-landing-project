@@ -16,6 +16,10 @@ const ApprovalTicker = () => {
   const cities = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Челябинск", "Самара", "Омск", "Ростов-на-Дону", "Уфа", "Красноярск", "Воронеж", "Пермь", "Волгоград", "Краснодар", "Саратов", "Тюмень", "Тольятти", "Ижевск", "Барнаул", "Ульяновск", "Иркутск", "Хабаровск", "Ярославль", "Владивосток", "Махачкала", "Томск", "Оренбург", "Кемерово", "Рязань", "Набережные Челны", "Астрахань", "Пенза", "Липецк", "Киров", "Чебоксары", "Калининград", "Тула", "Курск", "Сочи", "Ставрополь", "Брянск", "Иваново", "Магнитогорск"];
   const mfos = ["Надо денег", "Умные наличные", "Max.Credit", "Веб-Займ", "Турбозайм", "Е-Капуста", "СрочноДеньги", "ДоЗарплаты", "МаниМен", "Деньги сразу"];
 
+  const formatNumber = (num: number): string => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
   const generateApproval = (id: number): Approval => ({
     id,
     name: names[Math.floor(Math.random() * names.length)],
@@ -49,7 +53,7 @@ const ApprovalTicker = () => {
             <Icon name="CheckCircle2" size={20} className="text-white" />
             <span className="font-semibold">{approval.name}</span>
             <span className="text-white/80">из {approval.city}</span>
-            <span className="font-bold text-yellow-300">{approval.amount.toLocaleString('ru-RU')} ₽</span>
+            <span className="font-bold text-yellow-300">{formatNumber(approval.amount)} ₽</span>
             <span className="text-white/80">•</span>
             <span className="text-white/90">{approval.mfo}</span>
           </div>
@@ -62,7 +66,7 @@ const ApprovalTicker = () => {
             <Icon name="CheckCircle2" size={20} className="text-white" />
             <span className="font-semibold">{approval.name}</span>
             <span className="text-white/80">из {approval.city}</span>
-            <span className="font-bold text-yellow-300">{approval.amount.toLocaleString('ru-RU')} ₽</span>
+            <span className="font-bold text-yellow-300">{formatNumber(approval.amount)} ₽</span>
             <span className="text-white/80">•</span>
             <span className="text-white/90">{approval.mfo}</span>
           </div>

@@ -102,11 +102,11 @@
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(function(registrations) {
-      for (let registration of registrations) {
-        registration.unregister().then(() => {
+      registrations.forEach(function(registration) {
+        registration.unregister().then(function() {
           console.log('Service Worker unregistered');
         });
-      }
+      });
     });
   }
 </script>
