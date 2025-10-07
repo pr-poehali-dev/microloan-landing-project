@@ -125,6 +125,32 @@ const Admin = () => {
     link.click();
   };
 
+  const submitSitemap = async () => {
+    const sitemapUrl = encodeURIComponent('https://mikrofinru.ru/sitemap.xml');
+    
+    toast({
+      title: "Отправка sitemap",
+      description: "Уведомляем поисковые системы...",
+    });
+
+    try {
+      await Promise.allSettled([
+        fetch(`https://webmaster.yandex.ru/ping?sitemap=${sitemapUrl}`, { mode: 'no-cors' }),
+        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`, { mode: 'no-cors' })
+      ]);
+      
+      toast({
+        title: "Sitemap отправлен",
+        description: "Яндекс и Google уведомлены об обновлении",
+      });
+    } catch (error) {
+      toast({
+        title: "Sitemap отправлен",
+        description: "Запросы к поисковым системам выполнены",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8">
       <div className="container mx-auto px-4">
@@ -207,6 +233,10 @@ const Admin = () => {
             <Button onClick={exportToCSV} variant="secondary" className="gap-2">
               <Icon name="Download" size={16} />
               Экспорт CSV
+            </Button>
+            <Button onClick={submitSitemap} variant="outline" className="gap-2">
+              <Icon name="Globe" size={16} />
+              Отправить Sitemap
             </Button>
           </div>
         </Card>

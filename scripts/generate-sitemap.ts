@@ -52,3 +52,22 @@ writeFileSync(sitemapPath, sitemap, 'utf-8');
 console.log('✅ Sitemap generated successfully!');
 console.log(`📍 Location: ${sitemapPath}`);
 console.log(`📊 Total pages: ${blogPosts.length + 2}`);
+
+// Auto-submit to search engines
+async function submitToSearchEngines() {
+  const sitemapUrl = encodeURIComponent(`${SITE_URL}/sitemap.xml`);
+  
+  console.log('\n🚀 Отправка sitemap в поисковые системы...');
+  
+  try {
+    await Promise.all([
+      fetch(`https://webmaster.yandex.ru/ping?sitemap=${sitemapUrl}`),
+      fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`)
+    ]);
+    console.log('✅ Яндекс и Google уведомлены об обновлении sitemap');
+  } catch (error) {
+    console.log('⚠️ Не удалось отправить уведомления (проверьте интернет-соединение)');
+  }
+}
+
+submitToSearchEngines();
