@@ -57,17 +57,25 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     database_url = os.environ.get('DATABASE_URL')
     
+    # Escape single quotes for SQL
+    first_name_escaped = first_name.replace("'", "''")
+    last_name_escaped = last_name.replace("'", "''")
+    phone_escaped = phone.replace("'", "''")
+    form_type_escaped = form_type.replace("'", "''")
+    source_ip_escaped = source_ip.replace("'", "''")
+    
     conn = psycopg2.connect(database_url)
-    cur = conn.cursor(cursor_factory=RealDictCursor)
+    cur = conn.cursor()
     
-    cur.execute(
-        "INSERT INTO applications (first_name, last_name, phone, amount, days, form_type, ip_address) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
-        (first_name, last_name, phone, amount, days, form_type, source_ip)
-    )
+    # Use simple query protocol (no parameterized queries)
+    full_name = f"{first_name_escaped} {last_name_escaped}".strip()
+    query = f"INSERT INTO t_p19837706_microloan_landing_pr.leads (full_name, phone, amount, days, source, ip_address) VALUES ('{full_name}', '{phone_escaped}', {amount if amount else 'NULL'}, {days if days else 'NULL'}, '{form_type_escaped}', '{source_ip_escaped}') RETURNING id"
     
+    cur.execute(query)
     result = cur.fetchone()
-    conn.commit()
+    lead_id = result[0] if result else None
     
+    conn.commit()
     cur.close()
     conn.close()
     
@@ -80,7 +88,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         'isBase64Encoded': False,
         'body': json.dumps({
             'success': True,
-            'id': result['id'],
+            'id': lead_id,
             'message': 'Application submitted successfully'
         })
     }

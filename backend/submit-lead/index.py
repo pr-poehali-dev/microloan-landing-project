@@ -68,17 +68,23 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': 'Database not configured'})
         }
     
+    # Escape single quotes for SQL
+    full_name_escaped = full_name.replace("'", "''")
+    phone_escaped = phone.replace("'", "''")
+    source_escaped = source.replace("'", "''")
+    source_ip_escaped = source_ip.replace("'", "''")
+    
     conn = psycopg2.connect(database_url)
-    cur = conn.cursor(cursor_factory=RealDictCursor)
+    cur = conn.cursor()
     
-    cur.execute(
-        "INSERT INTO leads (full_name, phone, source, ip_address) VALUES (%s, %s, %s, %s) RETURNING id",
-        (full_name, phone, source, source_ip)
-    )
+    # Use simple query protocol (no parameterized queries)
+    query = f"INSERT INTO t_p19837706_microloan_landing_pr.leads (full_name, phone, source, ip_address) VALUES ('{full_name_escaped}', '{phone_escaped}', '{source_escaped}', '{source_ip_escaped}') RETURNING id"
     
+    cur.execute(query)
     result = cur.fetchone()
-    conn.commit()
+    lead_id = result[0] if result else None
     
+    conn.commit()
     cur.close()
     conn.close()
     
@@ -91,7 +97,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         'isBase64Encoded': False,
         'body': json.dumps({
             'success': True,
-            'id': result['id'],
+            'id': lead_id,
             'message': 'Lead submitted successfully'
         })
     }
