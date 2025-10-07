@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+      "name": "Submit valid lead",
+      "method": "POST",
+      "body": {
+        "full_name": "Иванов Иван Иванович",
+        "phone": "+7 (985) 123-45-67",
+        "source": "leadform"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "id": "number",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing required fields",
+      "method": "POST",
+      "body": {
+        "phone": "+7 (985) 123-45-67"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "expectedStatus": 200
+    }
+  ]
+}

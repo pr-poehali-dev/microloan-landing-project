@@ -43,7 +43,7 @@ const LeadForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://functions.poehali.dev/77c76389-0e3c-4aa4-982b-6789a2f9cb26', {
+      const response = await fetch('https://functions.poehali.dev/48150556-6ec8-4546-80b5-d194c240f3e5', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
