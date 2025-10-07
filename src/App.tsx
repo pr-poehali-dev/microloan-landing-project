@@ -12,6 +12,7 @@ import BlogPost3 from "./pages/BlogPost3";
 import BlogPost4 from "./pages/BlogPost4";
 import BlogPost5 from "./pages/BlogPost5";
 import BlogPost6 from "./pages/BlogPost6";
+import BlogPost7 from "./pages/BlogPost7";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import UserAgreement from "./pages/UserAgreement";
 import Admin from "./pages/Admin";
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/blog/kak-rasschitat-pereplatu-po-mikrozajmu" element={<BlogPost4 />} />
             <Route path="/blog/prolongatsiya-i-refinansirovanie-mikrozajmov" element={<BlogPost5 />} />
             <Route path="/blog/kakie-dokumenty-nuzhny-dlya-mikrozajma" element={<BlogPost6 />} />
+            <Route path="/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu" element={<BlogPost7 />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/user-agreement" element={<UserAgreement />} />
             <Route path="/sitemap.xml" element={<Sitemap />} />

@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 7,
+    title: "Как взять микрозайм и не попасть в долговую яму",
+    description: "✅ Узнайте, как безопасно взять микрозайм и избежать долговой ямы. Основные ошибки заемщиков, советы по выбору МФО и альтернативы микрозаймам.",
+    date: "7 октября 2025",
+    readTime: "12 мин",
+    category: "Советы",
+    image: "/img/75826ede-4073-4327-905a-4148e15193c9.jpg",
+    url: "/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu",
+    slug: "kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu"
+  },
+  {
     id: 6,
     title: "Какие документы нужны для микрозайма в МФО",
     description: "✅ Узнайте, какие документы требуются для получения микрозайма в МФО. Паспорт, дополнительные справки, особенности онлайн-оформления.",
