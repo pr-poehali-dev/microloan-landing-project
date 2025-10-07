@@ -4,37 +4,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mikrofinru.ru/</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mikrofinru.ru/blog</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mikrofinru.ru/blog/chto-takoe-mikrozajmy</loc>
-    <lastmod>2025-10-04</lastmod>
+    <loc>https://mikrofinru.ru/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu</loc>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta</loc>
-    <lastmod>2025-10-04</lastmod>
+    <loc>https://mikrofinru.ru/blog/kakie-dokumenty-nuzhny-dlya-mikrozajma</loc>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo</loc>
-    <lastmod>2025-10-04</lastmod>
+    <loc>https://mikrofinru.ru/blog/prolongatsiya-i-refinansirovanie-mikrozajmov</loc>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mikrofinru.ru/blog/kak-rasschitat-pereplatu-po-mikrozajmu</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mikrofinru.ru/blog/raznitsa-mikrozajm-kredit-karta</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mikrofinru.ru/blog/chto-takoe-mikrozajmy</loc>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
