@@ -126,7 +126,7 @@ const LoanCalculator = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://functions.poehali.dev/77c76389-0e3c-4aa4-982b-6789a2f9cb26', {
+      const response = await fetch('https://functions.poehali.dev/b9da9fa5-3556-4583-abca-0916eb435b8b', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
