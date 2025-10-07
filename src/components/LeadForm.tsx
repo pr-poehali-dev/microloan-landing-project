@@ -73,9 +73,10 @@ const LeadForm = () => {
         });
       }
     } catch (error) {
+      console.error('Ошибка отправки формы:', error);
       toast({
-        title: "Ошибка сети",
-        description: "Проверьте подключение к интернету",
+        title: "Ошибка отправки",
+        description: error instanceof Error ? error.message : "Не удалось отправить заявку. Попробуйте позже.",
         variant: "destructive",
       });
     } finally {
