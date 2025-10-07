@@ -78,7 +78,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     }
     
     leads_query = f'''
-        SELECT id, first_name, last_name, phone, amount, days, source, created_at, ip_address
+        SELECT id, full_name, phone, amount, days, source, created_at, ip_address
         FROM t_p19837706_microloan_landing_pr.leads
         {where_clause}
         ORDER BY created_at DESC
@@ -90,16 +90,15 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     leads: List[Dict[str, Any]] = []
     for row in rows:
-        full_name = f"{row[1]} {row[2]}".strip() if row[1] and row[2] else (row[1] or row[2] or 'Не указано')
         leads.append({
             'id': row[0],
-            'full_name': full_name,
-            'phone': row[3],
-            'amount': row[4],
-            'days': row[5],
-            'source': row[6],
-            'created_at': row[7].isoformat() if row[7] else None,
-            'ip_address': row[8]
+            'full_name': row[1] or 'Не указано',
+            'phone': row[2],
+            'amount': row[3],
+            'days': row[4],
+            'source': row[5],
+            'created_at': row[6].isoformat() if row[6] else None,
+            'ip_address': row[7]
         })
     
     cursor.close()
