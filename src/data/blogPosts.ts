@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 8,
+    title: "Топ ошибок при оформлении микрозаймов: как избежать переплат и долгов",
+    description: "5 главных ошибок заемщиков при оформлении микрозайма онлайн. Узнайте, как избежать скрытых комиссий, переплат и долговой ямы.",
+    date: "8 октября 2025",
+    readTime: "9 мин",
+    category: "Советы",
+    image: "/img/b12b359a-2234-487b-a7ec-1a54f978f94d.jpg",
+    url: "/blog/top-oshibok-pri-oformlenii-mikrozajmov",
+    slug: "top-oshibok-pri-oformlenii-mikrozajmov"
+  },
+  {
     id: 7,
     title: "Как взять микрозайм и не попасть в долговую яму",
     description: "✅ Узнайте, как безопасно взять микрозайм и избежать долговой ямы. Основные ошибки заемщиков, советы по выбору МФО и альтернативы микрозаймам.",
