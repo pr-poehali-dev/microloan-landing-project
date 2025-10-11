@@ -49,31 +49,49 @@ const BlogPost9 = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Header />
-      <main className="container mx-auto px-4 py-8 mt-16">
-        <div className="max-w-4xl mx-auto">
-          <BlogPostHeader
-            title="МФО с моментальным одобрением — топ-5 лучших в 2025 году"
-            date="11 октября 2025"
-            readTime="8 мин"
-            views={viewCount}
-            coverImage="https://mikrofinru.ru/img/27a7256b-9570-4cf4-8afc-9ac4caa43c42.jpg"
-          />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-8 mt-8">
-            <div>
-              <BlogPost9Content />
-              <ArticleLike postSlug={postSlug} />
-              <BlogPostFooter />
+      
+      <article className="pt-32 pb-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <BlogPostHeader
+                category="Советы"
+                date="11 октября 2025"
+                readTime="8 мин"
+                viewCount={viewCount}
+                title="МФО с моментальным одобрением — топ-5 лучших в 2025 году"
+                imageUrl="/img/27a7256b-9570-4cf4-8afc-9ac4caa43c42.jpg"
+                imageAlt="МФО с моментальным одобрением"
+                breadcrumbs={{
+                  home: "Главная",
+                  blog: "Блог",
+                  current: "МФО с моментальным одобрением"
+                }}
+              />
             </div>
-            
-            <aside className="lg:sticky lg:top-24 h-fit">
-              <TableOfContents />
-            </aside>
+
+            <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8 max-w-7xl mx-auto">
+              <div className="max-w-4xl">
+                <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
+                  <div className="lg:hidden mb-6">
+                    <TableOfContents />
+                  </div>
+                  <BlogPost9Content />
+                  <ArticleLike postSlug={postSlug} />
+                  <BlogPostFooter />
+                </div>
+                
+                <RelatedPosts currentPostUrl="/blog/mfo-s-momentalnym-odobreniem" />
+              </div>
+
+              <aside className="hidden lg:block lg:sticky lg:top-32 h-fit">
+                <TableOfContents />
+              </aside>
+            </div>
           </div>
-          
-          <RelatedPosts currentPostUrl="/blog/mfo-s-momentalnym-odobreniem" />
         </div>
-      </main>
+      </article>
+      
       <Footer />
     </div>
   );
