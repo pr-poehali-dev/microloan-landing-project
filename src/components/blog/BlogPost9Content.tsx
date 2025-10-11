@@ -420,7 +420,7 @@ const BlogPost9Content = () => {
 
       <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
         <p className="text-muted-foreground leading-relaxed m-0">
-          Нужна помощь в выборе займа? Изучите также наши статьи про <Link to="/blog/mikrozajmy-onlajn-na-kartu" className="text-primary hover:underline">микрозаймы онлайн на карту</Link> и <Link to="/blog/kakie-dokumenty-nuzhny-dlya-mikrozajma" className="text-primary hover:underline">необходимые документы для оформления</Link>. Это поможет вам быстрее получить нужную сумму на выгодных условиях.
+          Нужна помощь в выборе займа? Изучите также наши статьи: <Link to="/blog/chto-takoe-mikrozajmy" className="text-primary hover:underline">что такое микрозаймы и как они работают</Link>, <Link to="/blog/kak-vybrat-nadezhnuyu-mfo" className="text-primary hover:underline">как выбрать надёжную МФО</Link> и <Link to="/blog/kakie-dokumenty-nuzhny-dlya-mikrozajma" className="text-primary hover:underline">необходимые документы для оформления</Link>. Это поможет вам быстрее получить нужную сумму на выгодных условиях.
         </p>
       </div>
     </article>
