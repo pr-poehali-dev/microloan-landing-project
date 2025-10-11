@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { Link } from "react-router-dom";
 
 const BlogPostContent = () => {
   return (
@@ -61,7 +62,7 @@ const BlogPostContent = () => {
         Шаг 2. Рассмотрение заявки
       </h3>
       <p className="text-foreground/80 leading-relaxed mb-6">
-        МФО проверяет ваши данные и кредитную историю. Это занимает от 5 до 30 минут. Даже если у вас плохая кредитная история, шансы на одобрение остаются высокими.
+        МФО проверяет ваши данные и кредитную историю. Это занимает от 5 до 30 минут. Даже если у вас <Link to="/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej" className="text-primary hover:underline">плохая кредитная история</Link>, шансы на одобрение остаются высокими.
       </p>
 
       <h3 className="text-xl md:text-2xl font-bold mt-8 mb-4 text-foreground">
@@ -101,7 +102,7 @@ const BlogPostContent = () => {
       </h2>
 
       <p className="text-foreground/80 leading-relaxed mb-4">
-        Условия получения микрозайма максимально простые:
+        <Link to="/blog/kakie-dokumenty-nuzhny-dlya-mikrozajma" className="text-primary hover:underline">Условия получения микрозайма</Link> максимально простые:
       </p>
 
       <ul className="space-y-3 mb-6">
@@ -177,7 +178,7 @@ const BlogPostContent = () => {
           <ul className="space-y-2">
             <li className="flex gap-2 text-red-800">
               <Icon name="X" className="text-red-600 flex-shrink-0 mt-0.5" size={18} />
-              <span>Очень высокие проценты</span>
+              <span><Link to="/blog/kak-rasschitat-pereplatu-po-mikrozajmu" className="text-red-800 hover:underline">Очень высокие проценты</Link></span>
             </li>
             <li className="flex gap-2 text-red-800">
               <Icon name="X" className="text-red-600 flex-shrink-0 mt-0.5" size={18} />
@@ -185,7 +186,7 @@ const BlogPostContent = () => {
             </li>
             <li className="flex gap-2 text-red-800">
               <Icon name="X" className="text-red-600 flex-shrink-0 mt-0.5" size={18} />
-              <span>Риск попасть в долговую яму</span>
+              <span><Link to="/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu" className="text-red-800 hover:underline">Риск попасть в долговую яму</Link></span>
             </li>
             <li className="flex gap-2 text-red-800">
               <Icon name="X" className="text-red-600 flex-shrink-0 mt-0.5" size={18} />
@@ -226,7 +227,7 @@ const BlogPostContent = () => {
             2. Сравнивайте условия разных МФО
           </h3>
           <p className="text-blue-800">
-            Ставки могут отличаться в 2-3 раза. Изучите предложения минимум 3-5 компаний.
+            Ставки могут отличаться в 2-3 раза. <Link to="/blog/kak-vybrat-nadezhnuyu-mfo" className="text-blue-900 hover:underline font-semibold">Изучите предложения</Link> минимум 3-5 компаний.
           </p>
         </div>
 
@@ -273,7 +274,7 @@ const BlogPostContent = () => {
       </h2>
 
       <p className="text-foreground/80 leading-relaxed mb-6">
-        Микрозайм может стать полезным финансовым инструментом для решения срочных вопросов, если пользоваться им ответственно. Это быстрый способ получить нужную сумму без походов в банк и сбора справок. Однако высокие проценты и короткие сроки требуют четкого понимания своих финансовых возможностей.
+        Микрозайм может стать полезным финансовым инструментом для решения срочных вопросов, если пользоваться им ответственно. Это быстрый способ получить нужную сумму без походов в банк и сбора справок. Однако высокие проценты и короткие сроки требуют четкого понимания своих финансовых возможностей. Не забывайте избегать <Link to="/blog/top-oshibok-pri-oformlenii-mikrozajmov" className="text-primary hover:underline">типичных ошибок при оформлении</Link>.
       </p>
 
       <p className="text-foreground/80 leading-relaxed mb-6">
