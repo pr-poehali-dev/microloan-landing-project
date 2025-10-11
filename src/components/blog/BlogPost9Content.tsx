@@ -22,7 +22,59 @@ const BlogPost9Content = () => {
       <div className="space-y-6">
         <div className="bg-card border-2 border-primary/20 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-start justify-between mb-4">
-            <h3 className="text-2xl font-bold text-foreground m-0">1. Lime Займ</h3>
+            <h3 className="text-2xl font-bold text-foreground m-0">1. Надо денег</h3>
+            <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
+              <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
+              <span className="text-sm font-semibold text-yellow-700">4.9</span>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
+            <div>
+              <p className="text-muted-foreground m-0">Сумма</p>
+              <p className="font-semibold text-foreground m-0">до 30 000 ₽</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Ставка</p>
+              <p className="font-semibold text-foreground m-0">0%</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Срок</p>
+              <p className="font-semibold text-foreground m-0">до 30 дней</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Одобрение</p>
+              <p className="font-semibold text-primary m-0">98%</p>
+            </div>
+          </div>
+
+          <div className="bg-muted/50 rounded-lg p-4 mb-4">
+            <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+              <Icon name="CheckCircle2" size={18} className="text-green-600" />
+              Особенности:
+            </p>
+            <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
+              <li>Первый займ 0%</li>
+              <li>Без проверки КИ</li>
+              <li>За 5 минут</li>
+              <li>Высокий процент одобрения</li>
+            </ul>
+          </div>
+
+          <a 
+            href="https://trk.ppdu.ru/click/3GyRuqoD?erid=2SDnjdmoM8q&siteId=8015" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
+          >
+            Получить займ
+            <Icon name="ArrowRight" size={18} />
+          </a>
+        </div>
+
+        <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start justify-between mb-4">
+            <h3 className="text-2xl font-bold text-foreground m-0">2. Умные наличные</h3>
             <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
               <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
               <span className="text-sm font-semibold text-yellow-700">4.8</span>
@@ -32,19 +84,19 @@ const BlogPost9Content = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
             <div>
               <p className="text-muted-foreground m-0">Сумма</p>
-              <p className="font-semibold text-foreground m-0">1 000 - 70 000 ₽</p>
+              <p className="font-semibold text-foreground m-0">до 30 000 ₽</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Ставка</p>
-              <p className="font-semibold text-foreground m-0">от 0% годовых</p>
+              <p className="font-semibold text-foreground m-0">от 0%</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Срок</p>
-              <p className="font-semibold text-foreground m-0">7 - 365 дней</p>
+              <p className="font-semibold text-foreground m-0">до 30 дней</p>
             </div>
             <div>
-              <p className="text-muted-foreground m-0">Решение</p>
-              <p className="font-semibold text-primary m-0">1 минута</p>
+              <p className="text-muted-foreground m-0">Одобрение</p>
+              <p className="font-semibold text-primary m-0">96%</p>
             </div>
           </div>
 
@@ -54,15 +106,15 @@ const BlogPost9Content = () => {
               Особенности:
             </p>
             <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
-              <li>Первый займ 0% — до 10 000 ₽ под 0% на 7 дней</li>
-              <li>Моментальное решение по заявке</li>
-              <li>Перевод на карту любого банка за 5 минут</li>
-              <li>Возможность продления срока займа</li>
+              <li>Без отказа</li>
+              <li>Онлайн 24/7</li>
+              <li>На карту</li>
+              <li>Моментальное решение</li>
             </ul>
           </div>
 
           <a 
-            href="https://lime-zaim.ru" 
+            href="https://trk.ppdu.ru/click/HbPsDylQ?erid=LjN8KKm44&siteId=8015" 
             target="_blank" 
             rel="nofollow noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
@@ -74,7 +126,7 @@ const BlogPost9Content = () => {
 
         <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-start justify-between mb-4">
-            <h3 className="text-2xl font-bold text-foreground m-0">2. Турбозайм</h3>
+            <h3 className="text-2xl font-bold text-foreground m-0">3. Max.Credit</h3>
             <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
               <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
               <span className="text-sm font-semibold text-yellow-700">4.7</span>
@@ -84,19 +136,19 @@ const BlogPost9Content = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
             <div>
               <p className="text-muted-foreground m-0">Сумма</p>
-              <p className="font-semibold text-foreground m-0">1 000 - 30 000 ₽</p>
+              <p className="font-semibold text-foreground m-0">до 30 000 ₽</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Ставка</p>
-              <p className="font-semibold text-foreground m-0">от 0% годовых</p>
+              <p className="font-semibold text-foreground m-0">0%</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Срок</p>
-              <p className="font-semibold text-foreground m-0">5 - 365 дней</p>
+              <p className="font-semibold text-foreground m-0">до 30 дней</p>
             </div>
             <div>
-              <p className="text-muted-foreground m-0">Решение</p>
-              <p className="font-semibold text-primary m-0">2 минуты</p>
+              <p className="text-muted-foreground m-0">Одобрение</p>
+              <p className="font-semibold text-primary m-0">95%</p>
             </div>
           </div>
 
@@ -106,15 +158,15 @@ const BlogPost9Content = () => {
               Особенности:
             </p>
             <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
-              <li>Автоматическое одобрение без звонков</li>
-              <li>Для новых клиентов 0% на первый займ</li>
-              <li>Круглосуточная работа, выдача 24/7</li>
-              <li>Не требуются справки о доходах</li>
+              <li>С 18 лет</li>
+              <li>Мгновенно</li>
+              <li>Первый под 0%</li>
+              <li>Простое оформление</li>
             </ul>
           </div>
 
           <a 
-            href="https://turbozaim.ru" 
+            href="https://trk.ppdu.ru/click/OMRKMQnH?erid=2SDnjbuHuCz&siteId=8015" 
             target="_blank" 
             rel="nofollow noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
@@ -126,7 +178,59 @@ const BlogPost9Content = () => {
 
         <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-start justify-between mb-4">
-            <h3 className="text-2xl font-bold text-foreground m-0">3. Займер</h3>
+            <h3 className="text-2xl font-bold text-foreground m-0">4. Веб-Займ</h3>
+            <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
+              <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
+              <span className="text-sm font-semibold text-yellow-700">4.7</span>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
+            <div>
+              <p className="text-muted-foreground m-0">Сумма</p>
+              <p className="font-semibold text-foreground m-0">до 30 000 ₽</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Ставка</p>
+              <p className="font-semibold text-foreground m-0">от 0%</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Срок</p>
+              <p className="font-semibold text-foreground m-0">до 30 дней</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground m-0">Одобрение</p>
+              <p className="font-semibold text-primary m-0">94%</p>
+            </div>
+          </div>
+
+          <div className="bg-muted/50 rounded-lg p-4 mb-4">
+            <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+              <Icon name="CheckCircle2" size={18} className="text-green-600" />
+              Особенности:
+            </p>
+            <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
+              <li>Быстрое одобрение</li>
+              <li>Без справок</li>
+              <li>Продление займа</li>
+              <li>Моментальное решение</li>
+            </ul>
+          </div>
+
+          <a 
+            href="https://trk.ppdu.ru/click/cOBWm2j7?erid=2SDnjc5cRY8&siteId=8015" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
+          >
+            Получить займ
+            <Icon name="ArrowRight" size={18} />
+          </a>
+        </div>
+
+        <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start justify-between mb-4">
+            <h3 className="text-2xl font-bold text-foreground m-0">5. Турбозайм</h3>
             <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
               <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
               <span className="text-sm font-semibold text-yellow-700">4.6</span>
@@ -136,19 +240,19 @@ const BlogPost9Content = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
             <div>
               <p className="text-muted-foreground m-0">Сумма</p>
-              <p className="font-semibold text-foreground m-0">2 000 - 80 000 ₽</p>
+              <p className="font-semibold text-foreground m-0">до 100 000 ₽</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Ставка</p>
-              <p className="font-semibold text-foreground m-0">от 0% годовых</p>
+              <p className="font-semibold text-foreground m-0">0%</p>
             </div>
             <div>
               <p className="text-muted-foreground m-0">Срок</p>
-              <p className="font-semibold text-foreground m-0">1 - 30 дней</p>
+              <p className="font-semibold text-foreground m-0">до 168 дней</p>
             </div>
             <div>
-              <p className="text-muted-foreground m-0">Решение</p>
-              <p className="font-semibold text-primary m-0">1 минута</p>
+              <p className="text-muted-foreground m-0">Одобрение</p>
+              <p className="font-semibold text-primary m-0">93%</p>
             </div>
           </div>
 
@@ -158,119 +262,15 @@ const BlogPost9Content = () => {
               Особенности:
             </p>
             <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
-              <li>Мгновенное решение по скорингу</li>
-              <li>Перевод на карту Visa/MasterCard/МИР</li>
-              <li>Возможность повторных займов на более выгодных условиях</li>
-              <li>Простая анкета — всего 3 минуты на заполнение</li>
+              <li>Первый 0%</li>
+              <li>Без проверок</li>
+              <li>За 10 минут</li>
+              <li>До 100 000 рублей</li>
             </ul>
           </div>
 
           <a 
-            href="https://zaimer.com" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
-          >
-            Получить займ
-            <Icon name="ArrowRight" size={18} />
-          </a>
-        </div>
-
-        <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between mb-4">
-            <h3 className="text-2xl font-bold text-foreground m-0">4. Веббанкир</h3>
-            <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
-              <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
-              <span className="text-sm font-semibold text-yellow-700">4.5</span>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
-            <div>
-              <p className="text-muted-foreground m-0">Сумма</p>
-              <p className="font-semibold text-foreground m-0">1 000 - 50 000 ₽</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Ставка</p>
-              <p className="font-semibold text-foreground m-0">от 0% годовых</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Срок</p>
-              <p className="font-semibold text-foreground m-0">7 - 30 дней</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Решение</p>
-              <p className="font-semibold text-primary m-0">3 минуты</p>
-            </div>
-          </div>
-
-          <div className="bg-muted/50 rounded-lg p-4 mb-4">
-            <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Icon name="CheckCircle2" size={18} className="text-green-600" />
-              Особенности:
-            </p>
-            <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
-              <li>Одобряет заявки даже с плохой КИ</li>
-              <li>Быстрая выдача — деньги приходят за 5-10 минут</li>
-              <li>Без проверки занятости и справок</li>
-              <li>Лояльные условия для постоянных клиентов</li>
-            </ul>
-          </div>
-
-          <a 
-            href="https://webbankir.com" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
-          >
-            Получить займ
-            <Icon name="ArrowRight" size={18} />
-          </a>
-        </div>
-
-        <div className="bg-card border-2 border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between mb-4">
-            <h3 className="text-2xl font-bold text-foreground m-0">5. MoneyMan</h3>
-            <div className="flex items-center gap-1 bg-yellow-500/20 px-3 py-1 rounded-full">
-              <Icon name="Star" size={16} className="text-yellow-600 fill-yellow-600" />
-              <span className="text-sm font-semibold text-yellow-700">4.5</span>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
-            <div>
-              <p className="text-muted-foreground m-0">Сумма</p>
-              <p className="font-semibold text-foreground m-0">2 000 - 40 000 ₽</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Ставка</p>
-              <p className="font-semibold text-foreground m-0">от 0% годовых</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Срок</p>
-              <p className="font-semibold text-foreground m-0">5 - 30 дней</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground m-0">Решение</p>
-              <p className="font-semibold text-primary m-0">5 минут</p>
-            </div>
-          </div>
-
-          <div className="bg-muted/50 rounded-lg p-4 mb-4">
-            <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Icon name="CheckCircle2" size={18} className="text-green-600" />
-              Особенности:
-            </p>
-            <ul className="text-sm text-muted-foreground space-y-1 m-0 pl-7">
-              <li>Программа лояльности с кэшбэком</li>
-              <li>0% на первый займ до 15 000 ₽</li>
-              <li>Удобное мобильное приложение</li>
-              <li>Выдача без посещения офиса</li>
-            </ul>
-          </div>
-
-          <a 
-            href="https://moneyman.ru" 
+            href="https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015" 
             target="_blank" 
             rel="nofollow noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors no-underline"
@@ -369,7 +369,7 @@ const BlogPost9Content = () => {
         <div className="bg-card border border-border rounded-lg p-6">
           <h3 className="text-xl font-bold text-foreground mt-0 mb-3">Можно ли получить займ с плохой кредитной историей?</h3>
           <p className="text-muted-foreground leading-relaxed m-0">
-            Да, некоторые МФО (например, Веббанкир) одобряют займы даже при плохой кредитной истории. Однако условия могут быть менее выгодными: меньшая сумма или более высокая ставка. Также можно попробовать несколько МФО — каждая использует свою скоринговую модель.
+            Да, некоторые МФО (например, Надо денег) одобряют займы даже при плохой кредитной истории и вообще не проверяют КИ. Однако условия могут быть менее выгодными: меньшая сумма или более высокая ставка. Также можно попробовать несколько МФО — каждая использует свою скоринговую модель.
           </p>
         </div>
       </div>
@@ -391,19 +391,19 @@ const BlogPost9Content = () => {
         <ul className="space-y-3 m-0">
           <li className="flex items-start gap-3 text-muted-foreground">
             <Icon name="CircleCheck" size={20} className="text-green-600 mt-1 flex-shrink-0" />
-            <span><strong>Для первого займа</strong> выбирайте МФО с акцией 0% — это Lime Займ, Турбозайм или Займер</span>
+            <span><strong>Для первого займа</strong> выбирайте МФО с акцией 0% — это Надо денег, Умные наличные или Max.Credit</span>
           </li>
           <li className="flex items-start gap-3 text-muted-foreground">
             <Icon name="CircleCheck" size={20} className="text-green-600 mt-1 flex-shrink-0" />
-            <span><strong>Для срочных ситуаций</strong> лучше всего Lime Займ или Займер — решение за 1 минуту</span>
+            <span><strong>Для срочных ситуаций</strong> лучше всего Надо денег — 98% одобрение и решение за 5 минут</span>
           </li>
           <li className="flex items-start gap-3 text-muted-foreground">
             <Icon name="CircleCheck" size={20} className="text-green-600 mt-1 flex-shrink-0" />
-            <span><strong>При плохой кредитной истории</strong> попробуйте Веббанкир — они более лояльны к заемщикам</span>
+            <span><strong>При плохой кредитной истории</strong> попробуйте Надо денег — они не проверяют КИ</span>
           </li>
           <li className="flex items-start gap-3 text-muted-foreground">
             <Icon name="CircleCheck" size={20} className="text-green-600 mt-1 flex-shrink-0" />
-            <span><strong>Для постоянных займов</strong> обратите внимание на MoneyMan с программой кэшбэка</span>
+            <span><strong>Для больших сумм</strong> обратите внимание на Турбозайм — до 100 000 рублей на срок до 168 дней</span>
           </li>
         </ul>
       </div>
