@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 10,
+    title: "Как я получил МФО-кредит с плохой кредитной историей: личный опыт",
+    description: "Личный опыт: как оформить МФО-кредит с плохой кредитной историей. Советы, ошибки, на что обратить внимание, чтобы получить онлайн-займ без отказа.",
+    date: "11 октября 2025",
+    readTime: "10 мин",
+    category: "Советы",
+    image: "/img/421ccd30-dc7e-46c0-a5d1-9beed22a4725.jpg",
+    url: "/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej",
+    slug: "mfo-kredit-s-plohoj-kreditnoj-istoriej"
+  },
+  {
     id: 9,
     title: "МФО с моментальным одобрением — топ-5 лучших в 2025 году",
     description: "Сравнение 5 лучших МФО с моментальным одобрением. Условия, суммы, ставки и особенности. Выберите лучший онлайн-займ!",
