@@ -5,5 +5,14 @@ http://www.mikrofinru.ru/* https://mikrofinru.ru/:splat 301!
 # Redirect http to https
 http://mikrofinru.ru/* https://mikrofinru.ru/:splat 301!
 
-# SPA fallback
-/*    /index.html   200
+# Known pages - serve SPA (200)
+/                           /index.html   200
+/blog                       /index.html   200
+/blog/*                     /index.html   200
+/privacy-policy             /index.html   200
+/user-agreement             /index.html   200
+/sitemap.xml                /sitemap.xml  200
+/admin                      /index.html   200
+
+# Unknown pages - return 404
+/*                          /404.html     404
