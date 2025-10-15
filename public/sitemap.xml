@@ -10,9 +10,15 @@
   </url>
   <url>
     <loc>https://mikrofinru.ru/blog</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikrofinru.ru/blog/zajm-na-kartu-sberbanka-onlajn</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mikrofinru.ru/blog/pochemu-banki-i-mfo-otkazyvayut</loc>
