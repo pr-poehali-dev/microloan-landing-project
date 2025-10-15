@@ -17,6 +17,7 @@ import BlogPost8 from "./pages/BlogPost8";
 import BlogPost9 from "./pages/BlogPost9";
 import BlogPost10 from "./pages/BlogPost10";
 import BlogPost11 from "./pages/BlogPost11";
+import BlogPost12 from "./pages/BlogPost12";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import UserAgreement from "./pages/UserAgreement";
 import Admin from "./pages/Admin";
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/blog/mfo-s-momentalnym-odobreniem" element={<BlogPost9 />} />
             <Route path="/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej" element={<BlogPost10 />} />
             <Route path="/blog/pochemu-banki-i-mfo-otkazyvayut" element={<BlogPost11 />} />
+            <Route path="/blog/zajm-na-kartu-sberbanka-onlajn" element={<BlogPost12 />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/user-agreement" element={<UserAgreement />} />
             <Route path="/sitemap.xml" element={<Sitemap />} />
