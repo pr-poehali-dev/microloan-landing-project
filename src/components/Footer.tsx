@@ -59,9 +59,14 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Информация</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <button onClick={() => scrollToSection("how-to-get")} className="hover:text-secondary transition-colors">
-                  Как получить займ
-                </button>
+                <Link to="/blog" className="hover:text-secondary transition-colors">
+                  Блог
+                </Link>
+              </li>
+              <li>
+                <Link to="/journal" className="hover:text-secondary transition-colors">
+                  Журнал новостей
+                </Link>
               </li>
               <li>
                 <button onClick={() => scrollToSection("reviews")} className="hover:text-secondary transition-colors">
@@ -73,7 +78,6 @@ const Footer = () => {
                   FAQ
                 </button>
               </li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Контакты</a></li>
             </ul>
           </div>
 

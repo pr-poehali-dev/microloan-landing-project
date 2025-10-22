@@ -138,11 +138,20 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/blog"
+              className="px-4 py-2 rounded-full font-semibold transition-all duration-300 text-foreground/80 hover:text-primary"
+            >
+              <span className="flex items-center gap-2">
+                <Icon name="BookOpen" size={16} />
+                Блог
+              </span>
+            </Link>
+            <Link
+              to="/journal"
               className="px-4 py-2 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:from-orange-400 hover:via-pink-400 hover:to-teal-400 hover:text-white hover:shadow-lg"
             >
               <span className="flex items-center gap-2">
-                Блог
-                <Icon name="Sparkles" size={16} />
+                <Icon name="Newspaper" size={16} />
+                Журнал
               </span>
             </Link>
             {isHomePage ? (
@@ -221,6 +230,18 @@ const Header = () => {
                         <Icon name="Sparkles" size={16} />
                       </span>
                     </Link>
+                    
+                    <Link
+                      to="/journal"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block text-left py-3 px-4 mt-3 rounded-lg font-semibold bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md transition-all"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Icon name="Newspaper" size={18} />
+                        Журнал
+                        <Icon name="Sparkles" size={16} />
+                      </span>
+                    </Link>
                   </div>
                 </>
               ) : (
@@ -247,6 +268,22 @@ const Header = () => {
                       <Icon name="BookOpen" size={18} />
                       Блог
                       <Icon name="Sparkles" size={16} className={location.pathname.startsWith("/blog") ? "animate-pulse" : ""} />
+                    </span>
+                  </Link>
+                  
+                  <Link
+                    to="/journal"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block text-left py-3 px-4 mt-3 rounded-lg font-semibold transition-all ${
+                      location.pathname.startsWith("/journal")
+                        ? "bg-gradient-to-r from-orange-400 via-pink-400 to-teal-400 text-white shadow-lg" 
+                        : "bg-gradient-to-r from-orange-400/10 via-pink-400/10 to-teal-400/10 text-foreground hover:shadow-md"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <Icon name="Newspaper" size={18} />
+                      Журнал
+                      <Icon name="Sparkles" size={16} className={location.pathname.startsWith("/journal") ? "animate-pulse" : ""} />
                     </span>
                   </Link>
                 </>

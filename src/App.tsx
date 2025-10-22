@@ -12,6 +12,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const Index = lazy(() => import("./pages/Index"));
 const Blog = lazy(() => import("./pages/Blog"));
+const Journal = lazy(() => import("./pages/Journal"));
+const JournalPost1 = lazy(() => import("./pages/JournalPost1"));
 const BlogPost1 = lazy(() => import("./pages/BlogPost1"));
 const BlogPost2 = lazy(() => import("./pages/BlogPost2"));
 const BlogPost3 = lazy(() => import("./pages/BlogPost3"));
@@ -48,6 +50,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/journal" element={<Journal />} />
+              <Route path="/journal/novye-pravila-mikrozajmov-2025" element={<JournalPost1 />} />
               <Route path="/blog/chto-takoe-mikrozajmy" element={<BlogPost1 />} />
               <Route path="/blog/raznitsa-mikrozajm-kredit-karta" element={<BlogPost2 />} />
               <Route path="/blog/kak-vybrat-nadezhnuyu-mfo" element={<BlogPost3 />} />

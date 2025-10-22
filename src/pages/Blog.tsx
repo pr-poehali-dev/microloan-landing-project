@@ -71,6 +71,19 @@ const Blog = () => {
               </p>
             </div>
 
+            <div className="flex gap-4 mb-8 justify-center flex-wrap">
+              <Button variant="default" size="lg">
+                <Icon name="BookOpen" className="mr-2" size={20} />
+                Блог с советами
+              </Button>
+              <Link to="/journal">
+                <Button variant="outline" size="lg">
+                  <Icon name="Newspaper" className="mr-2" size={20} />
+                  Журнал новостей
+                </Button>
+              </Link>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
                 <Card 
