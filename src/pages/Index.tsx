@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import MFOList from "@/components/MFOList";
 import LoanQuiz from "@/components/LoanQuiz";
 import ApprovalTicker from "@/components/ApprovalTicker";
+import LatestNews from "@/components/LatestNews";
 
 const LeadForm = lazy(() => import("@/components/LeadForm"));
 const LoanCalculator = lazy(() => import("@/components/LoanCalculator"));
@@ -58,6 +59,7 @@ const Index = () => {
         <Hero />
         <LoanQuiz />
         <MFOList />
+        <LatestNews />
         <Suspense fallback={<div className="h-20"></div>}>
           <LeadForm />
           <LoanCalculator />
