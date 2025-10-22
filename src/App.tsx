@@ -16,6 +16,7 @@ const Journal = lazy(() => import("./pages/Journal"));
 const JournalPost2 = lazy(() => import("./pages/JournalPost2"));
 const JournalPost3 = lazy(() => import("./pages/JournalPost3"));
 const JournalPost4 = lazy(() => import("./pages/JournalPost4"));
+const JournalPost5 = lazy(() => import("./pages/JournalPost5"));
 const BlogPost1 = lazy(() => import("./pages/BlogPost1"));
 const BlogPost2 = lazy(() => import("./pages/BlogPost2"));
 const BlogPost3 = lazy(() => import("./pages/BlogPost3"));
@@ -53,6 +54,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/journal" element={<Journal />} />
+              <Route path="/journal/kak-vstupit-v-nasledstvo-2025" element={<JournalPost5 />} />
               <Route path="/journal/transportnyj-nalog-tri-regiona-2025" element={<JournalPost3 />} />
               <Route path="/journal/ipoteka-ot-mfo-2025" element={<JournalPost2 />} />
               <Route path="/journal/reshenie-cb-24-oktyabrya-vklady-obligacii" element={<JournalPost4 />} />
