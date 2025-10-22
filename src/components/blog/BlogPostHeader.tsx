@@ -58,6 +58,8 @@ const BlogPostHeader = ({
             src={imageUrl} 
             alt={imageAlt}
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute top-6 left-6">
             <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-primary shadow-lg">

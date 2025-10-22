@@ -1,24 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MFOList from "@/components/MFOList";
 import LoanQuiz from "@/components/LoanQuiz";
-import LeadForm from "@/components/LeadForm";
-import LoanCalculator from "@/components/LoanCalculator";
-import WhatIsMicroloan from "@/components/WhatIsMicroloan";
-import HowToGetLoan from "@/components/HowToGetLoan";
-import OnlineProcess from "@/components/OnlineProcess";
-import UrgentLoans from "@/components/UrgentLoans";
-import Security from "@/components/Security";
-import Licenses from "@/components/Licenses";
-import Conditions2024 from "@/components/Conditions2024";
-import Comparison from "@/components/Comparison";
-import RefinancingAndTips from "@/components/RefinancingAndTips";
-import Reviews from "@/components/Reviews";
-import FAQ from "@/components/FAQ";
-import Conclusion from "@/components/Conclusion";
-import Footer from "@/components/Footer";
 import ApprovalTicker from "@/components/ApprovalTicker";
+
+const LeadForm = lazy(() => import("@/components/LeadForm"));
+const LoanCalculator = lazy(() => import("@/components/LoanCalculator"));
+const WhatIsMicroloan = lazy(() => import("@/components/WhatIsMicroloan"));
+const HowToGetLoan = lazy(() => import("@/components/HowToGetLoan"));
+const OnlineProcess = lazy(() => import("@/components/OnlineProcess"));
+const UrgentLoans = lazy(() => import("@/components/UrgentLoans"));
+const Security = lazy(() => import("@/components/Security"));
+const Licenses = lazy(() => import("@/components/Licenses"));
+const Conditions2024 = lazy(() => import("@/components/Conditions2024"));
+const Comparison = lazy(() => import("@/components/Comparison"));
+const RefinancingAndTips = lazy(() => import("@/components/RefinancingAndTips"));
+const Reviews = lazy(() => import("@/components/Reviews"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Conclusion = lazy(() => import("@/components/Conclusion"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   useEffect(() => {
@@ -57,22 +58,26 @@ const Index = () => {
         <Hero />
         <LoanQuiz />
         <MFOList />
-        <LeadForm />
-        <LoanCalculator />
-        <WhatIsMicroloan />
-        <HowToGetLoan />
-        <OnlineProcess />
-        <UrgentLoans />
-        <Security />
-        <Licenses />
-        <Conditions2024 />
-        <Comparison />
-        <RefinancingAndTips />
-        <Reviews />
-        <FAQ />
-        <Conclusion />
+        <Suspense fallback={<div className="h-20"></div>}>
+          <LeadForm />
+          <LoanCalculator />
+          <WhatIsMicroloan />
+          <HowToGetLoan />
+          <OnlineProcess />
+          <UrgentLoans />
+          <Security />
+          <Licenses />
+          <Conditions2024 />
+          <Comparison />
+          <RefinancingAndTips />
+          <Reviews />
+          <FAQ />
+          <Conclusion />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-20"></div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

@@ -15,6 +15,21 @@
     <meta name="yandex-verification" content="70da5fb0d7f5bee6" />
     <meta name="google-site-verification" content="NinRLjRryHrQI9IL0vsZYeKZ7rAB2ikB_B57dCdOCxc" />
     <link rel="icon" type="image/png" href="https://cdn.poehali.dev/files/e5ff303e-e251-46c5-95bb-6287eb92c85a.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Preconnect для ускорения загрузки внешних ресурсов -->
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://cdn.poehali.dev">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="dns-prefetch" href="https://cdn.poehali.dev">
+    
+    <!-- Critical CSS для ускорения загрузки -->
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      #root { min-height: 100vh; }
+      .animate-spin { animation: spin 1s linear infinite; }
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
     <!-- Open Graph / Facebook / VK -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mikrofinru.ru/">
