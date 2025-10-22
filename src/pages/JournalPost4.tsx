@@ -20,8 +20,8 @@ const JournalPost4 = () => {
     ogImage: "https://cdn.poehali.dev/files/42bc6b2d-3302-47b3-b4bf-5f4e889fe11c.jpg",
     twitterImage: "https://cdn.poehali.dev/files/42bc6b2d-3302-47b3-b4bf-5f4e889fe11c.jpg",
     url: "https://mikrofinru.ru/journal/reshenie-cb-24-oktyabrya-vklady-obligacii",
-    datePublished: "2025-10-23",
-    dateModified: "2025-10-23",
+    datePublished: "2025-10-22",
+    dateModified: "2025-10-22",
     category: "Аналитика",
     keywords: ["ЦБ", "ключевая ставка", "вклады", "облигации", "Центробанк", "доходность вкладов", "инвестиции", "17 процентов"],
     wordCount: 2100,
@@ -55,7 +55,7 @@ const JournalPost4 = () => {
             <div className="max-w-4xl mx-auto">
               <BlogPostHeader
                 category="Аналитика"
-                date="23 октября 2025"
+                date="22 октября 2025"
                 readTime="8 мин"
                 viewCount={viewCount}
                 title="Что решит ЦБ 24 октября: как это ударит по вашим вкладам и облигациям"
