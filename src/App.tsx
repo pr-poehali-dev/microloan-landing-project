@@ -30,6 +30,7 @@ const BlogPost9 = lazy(() => import("./pages/BlogPost9"));
 const BlogPost10 = lazy(() => import("./pages/BlogPost10"));
 const BlogPost11 = lazy(() => import("./pages/BlogPost11"));
 const BlogPost12 = lazy(() => import("./pages/BlogPost12"));
+const BlogPost13 = lazy(() => import("./pages/BlogPost13"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const UserAgreement = lazy(() => import("./pages/UserAgreement"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -71,6 +72,7 @@ const App = () => (
               <Route path="/blog/mfo-s-momentalnym-odobreniem" element={<BlogPost9 />} />
               <Route path="/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej" element={<BlogPost10 />} />
               <Route path="/blog/pochemu-banki-i-mfo-otkazyvayut" element={<BlogPost11 />} />
+              <Route path="/blog/zajm-30000-rublej-srochno" element={<BlogPost13 />} />
               <Route path="/blog/zajm-na-kartu-sberbanka-onlajn" element={<BlogPost12 />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/user-agreement" element={<UserAgreement />} />
