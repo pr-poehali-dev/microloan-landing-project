@@ -1,4 +1,25 @@
+import { Button } from "@/components/ui/button";
+
 const BlogPost13Content = () => {
+  const trackClick = async (mfoName: string) => {
+    try {
+      await fetch('https://functions.poehali.dev/c591c6e9-075e-48d0-a487-6cfffa0136b7', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mfo_name: mfoName }),
+      });
+    } catch (error) {
+      console.error('Failed to track click:', error);
+    }
+  };
+
+  const handleMFOClick = (mfoName: string, url: string) => {
+    trackClick(mfoName);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="prose prose-lg max-w-none">
       <p className="text-xl font-medium text-muted-foreground">
@@ -51,11 +72,12 @@ const BlogPost13Content = () => {
       </p>
 
       <div className="space-y-6 my-8">
+        {/* 1. Надо денег */}
         <div className="bg-white border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-1">1. Займер</h3>
-              <p className="text-sm text-muted-foreground">Лидер рынка микрозаймов</p>
+              <h3 className="text-2xl font-bold text-primary mb-1">1. Надо денег 💰</h3>
+              <p className="text-sm text-muted-foreground">Лидер рынка микрозаймов — одобрение 98%</p>
             </div>
             <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
               ТОП-1
@@ -65,12 +87,12 @@ const BlogPost13Content = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Сумма:</span> до 30 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Срок:</span> до 12 месяцев</p>
-              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0,8% в день</p>
+              <p className="text-sm"><span className="font-semibold">Срок:</span> до 30 дней</p>
+              <p className="text-sm"><span className="font-semibold">Ставка:</span> 0%</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Решение:</span> 5 минут</p>
-              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0% до 30 дней</p>
+              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0%</p>
               <p className="text-sm"><span className="font-semibold">Возраст:</span> от 18 лет</p>
             </div>
           </div>
@@ -79,26 +101,27 @@ const BlogPost13Content = () => {
             <p className="font-semibold text-green-800 mb-2">✨ Преимущества:</p>
             <ul className="text-sm space-y-1 text-green-900 mb-0">
               <li>• Первый займ под 0% — экономия до 9000 ₽</li>
-              <li>• Одобряют с плохой КИ</li>
-              <li>• Деньги на карту за 1 минуту</li>
-              <li>• Можно продлить онлайн</li>
+              <li>• Одобряют с плохой КИ — 98% одобрений</li>
+              <li>• Деньги на карту за 5 минут</li>
+              <li>• Без проверки кредитной истории</li>
             </ul>
           </div>
 
-          <div className="bg-red-50 p-4 rounded-lg">
-            <p className="font-semibold text-red-800 mb-2">⚠️ Недостатки:</p>
-            <ul className="text-sm space-y-1 text-red-900 mb-0">
-              <li>• Высокая ставка после первого займа</li>
-              <li>• Штрафы за просрочку — 20% от суммы</li>
-            </ul>
-          </div>
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={() => handleMFOClick('Надо денег', 'https://trk.ppdu.ru/click/3GyRuqoD?erid=2SDnjdmoM8q&siteId=8015')}
+          >
+            Получить займ →
+          </Button>
         </div>
 
+        {/* 2. Умные наличные */}
         <div className="bg-white border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-1">2. Вебзайм</h3>
-              <p className="text-sm text-muted-foreground">Низкие ставки для постоянных клиентов</p>
+              <h3 className="text-2xl font-bold text-primary mb-1">2. Умные наличные ⚡</h3>
+              <p className="text-sm text-muted-foreground">Быстрое одобрение онлайн 24/7</p>
             </div>
             <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
               ТОП-2
@@ -108,40 +131,41 @@ const BlogPost13Content = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Сумма:</span> до 30 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Срок:</span> до 6 месяцев</p>
-              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0,5% в день</p>
+              <p className="text-sm"><span className="font-semibold">Срок:</span> до 30 дней</p>
+              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0%</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Решение:</span> 3 минуты</p>
-              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0% до 15 дней</p>
-              <p className="text-sm"><span className="font-semibold">Возраст:</span> от 21 года</p>
+              <p className="text-sm"><span className="font-semibold">Первый займ:</span> от 0%</p>
+              <p className="text-sm"><span className="font-semibold">Одобрение:</span> 96%</p>
             </div>
           </div>
 
           <div className="bg-green-50 p-4 rounded-lg mb-4">
             <p className="font-semibold text-green-800 mb-2">✨ Преимущества:</p>
             <ul className="text-sm space-y-1 text-green-900 mb-0">
-              <li>• Самая низкая ставка — от 0,5%</li>
-              <li>• Программа лояльности со скидками</li>
-              <li>• Рефинансирование других займов</li>
-              <li>• Без скрытых комиссий</li>
+              <li>• Без отказа для постоянных клиентов</li>
+              <li>• Онлайн круглосуточно</li>
+              <li>• На карту любого банка</li>
+              <li>• Моментальное одобрение</li>
             </ul>
           </div>
 
-          <div className="bg-red-50 p-4 rounded-lg">
-            <p className="font-semibold text-red-800 mb-2">⚠️ Недостатки:</p>
-            <ul className="text-sm space-y-1 text-red-900 mb-0">
-              <li>• Строже проверяют КИ</li>
-              <li>• Первый займ максимум 15 000 ₽</li>
-            </ul>
-          </div>
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={() => handleMFOClick('Умные наличные', 'https://trk.ppdu.ru/click/HbPsDylQ?erid=LjN8KKm44&siteId=8015')}
+          >
+            Получить займ →
+          </Button>
         </div>
 
+        {/* 3. Max.Credit */}
         <div className="bg-white border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-1">3. МигКредит</h3>
-              <p className="text-sm text-muted-foreground">Работают с любой кредитной историей</p>
+              <h3 className="text-2xl font-bold text-primary mb-1">3. Max.Credit 🎯</h3>
+              <p className="text-sm text-muted-foreground">С 18 лет — первый займ под 0%</p>
             </div>
             <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
               ТОП-3
@@ -151,40 +175,41 @@ const BlogPost13Content = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Сумма:</span> до 30 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Срок:</span> до 12 месяцев</p>
-              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 1% в день</p>
+              <p className="text-sm"><span className="font-semibold">Срок:</span> до 30 дней</p>
+              <p className="text-sm"><span className="font-semibold">Ставка:</span> 0%</p>
             </div>
             <div className="space-y-2">
-              <p className="text-sm"><span className="font-semibold">Решение:</span> 7 минут</p>
-              <p className="text-sm"><span className="font-semibold">Первый займ:</span> до 10 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Возраст:</span> от 18 лет</p>
+              <p className="text-sm"><span className="font-semibold">Решение:</span> мгновенно</p>
+              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0%</p>
+              <p className="text-sm"><span className="font-semibold">Одобрение:</span> 95%</p>
             </div>
           </div>
 
           <div className="bg-green-50 p-4 rounded-lg mb-4">
             <p className="font-semibold text-green-800 mb-2">✨ Преимущества:</p>
             <ul className="text-sm space-y-1 text-green-900 mb-0">
-              <li>• Одобряют 85% заявок</li>
-              <li>• Выдают даже с просрочками</li>
-              <li>• Можно получить наличными в офисе</li>
-              <li>• Круглосуточная поддержка</li>
+              <li>• Работают с 18 лет</li>
+              <li>• Мгновенное решение</li>
+              <li>• Первый займ под 0%</li>
+              <li>• Без скрытых комиссий</li>
             </ul>
           </div>
 
-          <div className="bg-red-50 p-4 rounded-lg">
-            <p className="font-semibold text-red-800 mb-2">⚠️ Недостатки:</p>
-            <ul className="text-sm space-y-1 text-red-900 mb-0">
-              <li>• Нужно подтверждение дохода</li>
-              <li>• Ставка выше среднего</li>
-            </ul>
-          </div>
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={() => handleMFOClick('Max.Credit', 'https://trk.ppdu.ru/click/OMRKMQnH?erid=2SDnjbuHuCz&siteId=8015')}
+          >
+            Получить займ →
+          </Button>
         </div>
 
+        {/* 4. Веб-Займ */}
         <div className="bg-white border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-1">4. Турбозайм</h3>
-              <p className="text-sm text-muted-foreground">Самое быстрое одобрение</p>
+              <h3 className="text-2xl font-bold text-primary mb-1">4. Веб-Займ 🌐</h3>
+              <p className="text-sm text-muted-foreground">Быстрое одобрение без справок</p>
             </div>
             <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
               ТОП-4
@@ -194,40 +219,41 @@ const BlogPost13Content = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="space-y-2">
               <p className="text-sm"><span className="font-semibold">Сумма:</span> до 30 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Срок:</span> до 4 месяцев</p>
-              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0,9% в день</p>
+              <p className="text-sm"><span className="font-semibold">Срок:</span> до 30 дней</p>
+              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0%</p>
             </div>
             <div className="space-y-2">
-              <p className="text-sm"><span className="font-semibold">Решение:</span> 2 минуты</p>
-              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0% до 7 дней</p>
-              <p className="text-sm"><span className="font-semibold">Возраст:</span> от 20 лет</p>
+              <p className="text-sm"><span className="font-semibold">Решение:</span> 5-10 минут</p>
+              <p className="text-sm"><span className="font-semibold">Первый займ:</span> от 0%</p>
+              <p className="text-sm"><span className="font-semibold">Одобрение:</span> 94%</p>
             </div>
           </div>
 
           <div className="bg-green-50 p-4 rounded-lg mb-4">
             <p className="font-semibold text-green-800 mb-2">✨ Преимущества:</p>
             <ul className="text-sm space-y-1 text-green-900 mb-0">
-              <li>• Рекордно быстрое одобрение — 2 мин</li>
-              <li>• Простая анкета — 5 полей</li>
-              <li>• Не звонят на работу</li>
-              <li>• Акции и кешбэк</li>
+              <li>• Быстрое одобрение за 5 минут</li>
+              <li>• Без справок о доходах</li>
+              <li>• Можно продлить займ онлайн</li>
+              <li>• Лояльные условия</li>
             </ul>
           </div>
 
-          <div className="bg-red-50 p-4 rounded-lg">
-            <p className="font-semibold text-red-800 mb-2">⚠️ Недостатки:</p>
-            <ul className="text-sm space-y-1 text-red-900 mb-0">
-              <li>• Короткие сроки — макс 4 месяца</li>
-              <li>• Не работают с регионами РФ</li>
-            </ul>
-          </div>
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={() => handleMFOClick('Веб-Займ', 'https://trk.ppdu.ru/click/cOBWm2j7?erid=2SDnjc5cRY8&siteId=8015')}
+          >
+            Получить займ →
+          </Button>
         </div>
 
+        {/* 5. Турбозайм */}
         <div className="bg-white border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-1">5. Лайм-Займ</h3>
-              <p className="text-sm text-muted-foreground">Лучшие условия для пенсионеров</p>
+              <h3 className="text-2xl font-bold text-primary mb-1">5. Турбозайм 🚀</h3>
+              <p className="text-sm text-muted-foreground">До 100К — первый займ под 0%</p>
             </div>
             <div className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-semibold">
               ТОП-5
@@ -236,34 +262,34 @@ const BlogPost13Content = () => {
           
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="space-y-2">
-              <p className="text-sm"><span className="font-semibold">Сумма:</span> до 30 000 ₽</p>
-              <p className="text-sm"><span className="font-semibold">Срок:</span> до 5 месяцев</p>
-              <p className="text-sm"><span className="font-semibold">Ставка:</span> от 0,7% в день</p>
+              <p className="text-sm"><span className="font-semibold">Сумма:</span> до 100 000 ₽</p>
+              <p className="text-sm"><span className="font-semibold">Срок:</span> до 168 дней</p>
+              <p className="text-sm"><span className="font-semibold">Ставка:</span> 0%</p>
             </div>
             <div className="space-y-2">
-              <p className="text-sm"><span className="font-semibold">Решение:</span> 4 минуты</p>
-              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0% до 21 дня</p>
-              <p className="text-sm"><span className="font-semibold">Возраст:</span> до 70 лет</p>
+              <p className="text-sm"><span className="font-semibold">Решение:</span> 10 минут</p>
+              <p className="text-sm"><span className="font-semibold">Первый займ:</span> 0%</p>
+              <p className="text-sm"><span className="font-semibold">Одобрение:</span> 93%</p>
             </div>
           </div>
 
           <div className="bg-green-50 p-4 rounded-lg mb-4">
             <p className="font-semibold text-green-800 mb-2">✨ Преимущества:</p>
             <ul className="text-sm space-y-1 text-green-900 mb-0">
-              <li>• Работают с пенсионерами до 70 лет</li>
-              <li>• Низкие штрафы за просрочку</li>
-              <li>• Можно взять повторно через 24 часа</li>
-              <li>• Бонусы за положительную КИ</li>
+              <li>• Большие суммы до 100 000 ₽</li>
+              <li>• Первый займ под 0%</li>
+              <li>• Без проверки кредитной истории</li>
+              <li>• Решение за 10 минут</li>
             </ul>
           </div>
 
-          <div className="bg-red-50 p-4 rounded-lg">
-            <p className="font-semibold text-red-800 mb-2">⚠️ Недостатки:</p>
-            <ul className="text-sm space-y-1 text-red-900 mb-0">
-              <li>• Деньги приходят до 3 часов</li>
-              <li>• Нужна регистрация на Госуслугах</li>
-            </ul>
-          </div>
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={() => handleMFOClick('Турбозайм', 'https://trk.ppdu.ru/click/kxajeYKr?erid=LjN8K737T&siteId=8015')}
+          >
+            Получить займ →
+          </Button>
         </div>
       </div>
 
@@ -282,39 +308,39 @@ const BlogPost13Content = () => {
           </thead>
           <tbody>
             <tr className="border-b hover:bg-muted/50">
-              <td className="p-3 font-semibold">Займер</td>
-              <td className="p-3 text-center">от 0,8%</td>
-              <td className="p-3 text-center">до 12 мес</td>
-              <td className="p-3 text-center">5 мин</td>
-              <td className="p-3 text-center">✅ 30 дней</td>
+              <td className="p-3 font-semibold">Надо денег</td>
+              <td className="p-3 text-center">0%</td>
+              <td className="p-3 text-center">до 30 дней</td>
+              <td className="p-3 text-center">98%</td>
+              <td className="p-3 text-center">✅ Да</td>
             </tr>
             <tr className="border-b hover:bg-muted/50">
-              <td className="p-3 font-semibold">Вебзайм</td>
-              <td className="p-3 text-center">от 0,5%</td>
-              <td className="p-3 text-center">до 6 мес</td>
-              <td className="p-3 text-center">3 мин</td>
-              <td className="p-3 text-center">✅ 15 дней</td>
+              <td className="p-3 font-semibold">Умные наличные</td>
+              <td className="p-3 text-center">от 0%</td>
+              <td className="p-3 text-center">до 30 дней</td>
+              <td className="p-3 text-center">96%</td>
+              <td className="p-3 text-center">✅ Да</td>
             </tr>
             <tr className="border-b hover:bg-muted/50">
-              <td className="p-3 font-semibold">МигКредит</td>
-              <td className="p-3 text-center">от 1%</td>
-              <td className="p-3 text-center">до 12 мес</td>
-              <td className="p-3 text-center">7 мин</td>
-              <td className="p-3 text-center">❌ Нет</td>
+              <td className="p-3 font-semibold">Max.Credit</td>
+              <td className="p-3 text-center">0%</td>
+              <td className="p-3 text-center">до 30 дней</td>
+              <td className="p-3 text-center">95%</td>
+              <td className="p-3 text-center">✅ Да</td>
+            </tr>
+            <tr className="border-b hover:bg-muted/50">
+              <td className="p-3 font-semibold">Веб-Займ</td>
+              <td className="p-3 text-center">от 0%</td>
+              <td className="p-3 text-center">до 30 дней</td>
+              <td className="p-3 text-center">94%</td>
+              <td className="p-3 text-center">✅ Да</td>
             </tr>
             <tr className="border-b hover:bg-muted/50">
               <td className="p-3 font-semibold">Турбозайм</td>
-              <td className="p-3 text-center">от 0,9%</td>
-              <td className="p-3 text-center">до 4 мес</td>
-              <td className="p-3 text-center">2 мин</td>
-              <td className="p-3 text-center">✅ 7 дней</td>
-            </tr>
-            <tr className="border-b hover:bg-muted/50">
-              <td className="p-3 font-semibold">Лайм-Займ</td>
-              <td className="p-3 text-center">от 0,7%</td>
-              <td className="p-3 text-center">до 5 мес</td>
-              <td className="p-3 text-center">4 мин</td>
-              <td className="p-3 text-center">✅ 21 день</td>
+              <td className="p-3 text-center">0%</td>
+              <td className="p-3 text-center">до 168 дней</td>
+              <td className="p-3 text-center">93%</td>
+              <td className="p-3 text-center">✅ Да</td>
             </tr>
           </tbody>
         </table>
@@ -323,11 +349,11 @@ const BlogPost13Content = () => {
       <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl my-8 border-l-4 border-blue-500">
         <p className="font-bold text-lg mb-3">💡 Наша рекомендация:</p>
         <ul className="space-y-2 mb-0">
-          <li>🥇 <strong>Для первого займа:</strong> Займер — 0% на 30 дней, максимальная экономия</li>
-          <li>🥈 <strong>Для постоянных клиентов:</strong> Вебзайм — низкая ставка 0,5%</li>
-          <li>🥉 <strong>С плохой КИ:</strong> МигКредит — одобряют 85% заявок</li>
-          <li>⚡ <strong>Нужны деньги за 2 минуты:</strong> Турбозайм</li>
-          <li>👴 <strong>Для пенсионеров:</strong> Лайм-Займ — до 70 лет</li>
+          <li>🥇 <strong>Для первого займа:</strong> Надо денег — 0% + одобрение 98%</li>
+          <li>🥈 <strong>Круглосуточно:</strong> Умные наличные — 24/7 без выходных</li>
+          <li>🥉 <strong>С 18 лет:</strong> Max.Credit — мгновенное решение</li>
+          <li>⚡ <strong>Можно продлить:</strong> Веб-Займ — гибкие условия</li>
+          <li>💰 <strong>Большая сумма:</strong> Турбозайм — до 100 000 ₽</li>
         </ul>
       </div>
 
@@ -343,7 +369,7 @@ const BlogPost13Content = () => {
               <p className="font-semibold text-lg mb-2">Выберите МФО</p>
               <p className="text-sm mb-0">
                 Сравните условия из нашей таблицы. Если первый займ — выбирайте МФО с 0%. 
-                Если нужна большая сумма — берите с длинным сроком (6-12 месяцев).
+                Рекомендуем начать с "Надо денег" (98% одобрений).
               </p>
             </div>
           </div>
@@ -369,7 +395,7 @@ const BlogPost13Content = () => {
               3
             </div>
             <div>
-              <p className="font-semibold text-lg mb-2">Дождитесь решения (2-7 минут)</p>
+              <p className="font-semibold text-lg mb-2">Дождитесь решения (2-10 минут)</p>
               <p className="text-sm mb-0">
                 МФО автоматически проверит вашу кредитную историю, доход и другие факторы. 
                 Если одобрят — придет СМС с суммой и условиями.
@@ -397,7 +423,7 @@ const BlogPost13Content = () => {
             <div>
               <p className="font-semibold text-lg mb-2">Получите деньги на карту</p>
               <p className="text-sm mb-0">
-                Обычно деньги приходят за 1-5 минут. В редких случаях — до 3 часов. 
+                Обычно деньги приходят за 1-10 минут. В редких случаях — до 3 часов. 
                 Проверьте баланс карты или СМС от банка.
               </p>
             </div>
@@ -426,15 +452,15 @@ const BlogPost13Content = () => {
             </li>
             <li className="flex gap-2">
               <span className="text-green-600">•</span>
-              <span>Подтвердите доход справкой или выпиской</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">•</span>
-              <span>Выберите срок 6-12 месяцев (меньше риск для МФО)</span>
+              <span>Выберите меньший срок (14-30 дней — меньше риск)</span>
             </li>
             <li className="flex gap-2">
               <span className="text-green-600">•</span>
               <span>Подайте заявки в 2-3 МФО одновременно</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-green-600">•</span>
+              <span>Выбирайте МФО с высоким % одобрения</span>
             </li>
           </ul>
         </div>
@@ -452,7 +478,7 @@ const BlogPost13Content = () => {
             </li>
             <li className="flex gap-2">
               <span className="text-red-600">•</span>
-              <span>Не берите макс. сумму сразу — лучше 20К с хорошей КИ</span>
+              <span>Не берите макс. сумму сразу</span>
             </li>
             <li className="flex gap-2">
               <span className="text-red-600">•</span>
@@ -460,73 +486,10 @@ const BlogPost13Content = () => {
             </li>
             <li className="flex gap-2">
               <span className="text-red-600">•</span>
-              <span>Не игнорируйте звонок от МФО — могут отказать</span>
+              <span>Не игнорируйте звонок от МФО</span>
             </li>
           </ul>
         </div>
-      </div>
-
-      <h2 id="skolko-pereplata">💸 Сколько реально переплатить за займ 30 000 рублей?</h2>
-
-      <p>
-        Давайте посчитаем <strong>реальную переплату</strong> в зависимости от срока и ставки:
-      </p>
-
-      <div className="overflow-x-auto my-8">
-        <table className="w-full border-collapse bg-white">
-          <thead>
-            <tr className="bg-gradient-to-r from-primary to-primary/80 text-white">
-              <th className="p-3 text-left">Срок займа</th>
-              <th className="p-3 text-center">Ставка 0,8%/день</th>
-              <th className="p-3 text-center">Ставка 1%/день</th>
-              <th className="p-3 text-center">Выгода 0%</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-b hover:bg-muted/30">
-              <td className="p-3 font-semibold">7 дней</td>
-              <td className="p-3 text-center">1 680 ₽</td>
-              <td className="p-3 text-center">2 100 ₽</td>
-              <td className="p-3 text-center bg-green-50 font-bold">0 ₽</td>
-            </tr>
-            <tr className="border-b hover:bg-muted/30">
-              <td className="p-3 font-semibold">14 дней</td>
-              <td className="p-3 text-center">3 360 ₽</td>
-              <td className="p-3 text-center">4 200 ₽</td>
-              <td className="p-3 text-center bg-green-50 font-bold">0 ₽</td>
-            </tr>
-            <tr className="border-b hover:bg-muted/30">
-              <td className="p-3 font-semibold">30 дней</td>
-              <td className="p-3 text-center">7 200 ₽</td>
-              <td className="p-3 text-center">9 000 ₽</td>
-              <td className="p-3 text-center bg-green-50 font-bold">0 ₽</td>
-            </tr>
-            <tr className="border-b hover:bg-muted/30">
-              <td className="p-3 font-semibold">3 месяца</td>
-              <td className="p-3 text-center">21 600 ₽</td>
-              <td className="p-3 text-center">27 000 ₽</td>
-              <td className="p-3 text-center bg-red-50">Не действует</td>
-            </tr>
-            <tr className="border-b hover:bg-muted/30">
-              <td className="p-3 font-semibold">6 месяцев</td>
-              <td className="p-3 text-center">43 200 ₽</td>
-              <td className="p-3 text-center">54 000 ₽</td>
-              <td className="p-3 text-center bg-red-50">Не действует</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl my-8 border-l-4 border-yellow-500">
-        <p className="font-bold text-lg mb-3">💡 Важный вывод:</p>
-        <p className="mb-3">
-          Если берете <strong>первый займ под 0%</strong> — экономите от 1 680 до 9 000 рублей! 
-          Именно поэтому мы рекомендуем начать с Займера (30 дней под 0%) или Лайм-Займа (21 день под 0%).
-        </p>
-        <p className="mb-0 text-sm">
-          ⚠️ <strong>Важно:</strong> после окончания беспроцентного периода начинает начисляться 
-          обычная ставка. Верните займ вовремя!
-        </p>
       </div>
 
       <h2 id="faq">❓ Ответы на частые вопросы</h2>
@@ -535,48 +498,38 @@ const BlogPost13Content = () => {
         <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
           <p className="font-semibold mb-2">❓ Дадут ли 30 000 рублей с плохой кредитной историей?</p>
           <p className="mb-0 text-muted-foreground">
-            Да, МФО более лояльны, чем банки. МигКредит и Займер одобряют до 85% заявок, 
-            даже с просрочками. Но ставка будет выше, а срок — короче.
+            Да, МФО более лояльны, чем банки. "Надо денег" одобряют 98% заявок, 
+            даже с просрочками. Но ставка может быть выше.
           </p>
         </div>
 
         <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
           <p className="font-semibold mb-2">❓ Можно ли взять 30 000 ₽ без паспорта?</p>
           <p className="mb-0 text-muted-foreground">
-            Нет. Паспорт РФ — обязательное требование по закону №151-ФЗ. Некоторые МФО 
-            принимают временное удостоверение личности.
+            Нет. Паспорт РФ — обязательное требование по закону №151-ФЗ.
           </p>
         </div>
 
         <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
           <p className="font-semibold mb-2">❓ За сколько реально приходят деньги на карту?</p>
           <p className="mb-0 text-muted-foreground">
-            В 90% случаев — за 1-5 минут после подписания договора. Задержки возможны 
-            по выходным и после 23:00 (межбанк работает медленнее).
+            В 90% случаев — за 1-10 минут после подписания договора. Задержки возможны 
+            по выходным и после 23:00.
           </p>
         </div>
 
         <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
           <p className="font-semibold mb-2">❓ Что будет, если не вернуть 30 000 рублей вовремя?</p>
           <p className="mb-0 text-muted-foreground">
-            Штраф 20% от суммы (6 000 ₽) + пени каждый день. Через 90 дней долг передают 
-            коллекторам. Через 6 месяцев — суд и арест счетов. Лучше договориться о реструктуризации.
+            Штраф + пени каждый день. Через 90 дней долг передают коллекторам. 
+            Лучше договориться о реструктуризации заранее.
           </p>
         </div>
 
         <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
-          <p className="font-semibold mb-2">❓ Можно ли взять два займа по 30 000 ₽ одновременно?</p>
+          <p className="font-semibold mb-2">❓ Можно ли взять несколько займов по 30 000 ₽ одновременно?</p>
           <p className="mb-0 text-muted-foreground">
-            Технически да, но опасно. Долговая нагрузка удвоится, а кредитная история испортится. 
-            МФО видят ваши активные займы — второй могут не одобрить.
-          </p>
-        </div>
-
-        <div className="bg-white border-2 border-primary/20 p-5 rounded-xl">
-          <p className="font-semibold mb-2">❓ Нужна ли справка 2-НДФЛ для займа 30 000?</p>
-          <p className="mb-0 text-muted-foreground">
-            В большинстве МФО — нет. Достаточно паспорта. Но если подтвердите доход — 
-            шанс одобрения вырастет до 95%, а ставка может снизиться на 0,2-0,3%.
+            Технически да, но опасно. Долговая нагрузка удвоится, а кредитная история испортится.
           </p>
         </div>
       </div>
@@ -589,34 +542,34 @@ const BlogPost13Content = () => {
         <div className="space-y-4">
           <div className="bg-white/10 p-4 rounded-lg">
             <p className="font-bold mb-2">1️⃣ Если это первый займ:</p>
-            <p className="mb-0">Берите <strong>Займер</strong> — 30 дней под 0%, сэкономите до 9 000 ₽</p>
+            <p className="mb-0">Берите <strong>Надо денег</strong> — 98% одобрений + 0%</p>
           </div>
 
           <div className="bg-white/10 p-4 rounded-lg">
-            <p className="font-bold mb-2">2️⃣ Если нужна низкая ставка:</p>
-            <p className="mb-0">Выбирайте <strong>Вебзайм</strong> — от 0,5% в день (в 2 раза дешевле конкурентов)</p>
+            <p className="font-bold mb-2">2️⃣ Если нужно срочно 24/7:</p>
+            <p className="mb-0">Выбирайте <strong>Умные наличные</strong> — работают круглосуточно</p>
           </div>
 
           <div className="bg-white/10 p-4 rounded-lg">
-            <p className="font-bold mb-2">3️⃣ Если плохая кредитная история:</p>
-            <p className="mb-0">Подавайте в <strong>МигКредит</strong> — одобряют 85% заявок с просрочками</p>
+            <p className="font-bold mb-2">3️⃣ Если вам 18 лет:</p>
+            <p className="mb-0">Подавайте в <strong>Max.Credit</strong> — мгновенное решение</p>
           </div>
 
           <div className="bg-white/10 p-4 rounded-lg">
-            <p className="font-bold mb-2">4️⃣ Если нужны деньги прямо сейчас:</p>
-            <p className="mb-0">Идите в <strong>Турбозайм</strong> — решение за 2 минуты</p>
+            <p className="font-bold mb-2">4️⃣ Если нужна гибкость:</p>
+            <p className="mb-0">Идите в <strong>Веб-Займ</strong> — можно продлить онлайн</p>
           </div>
 
           <div className="bg-white/10 p-4 rounded-lg">
-            <p className="font-bold mb-2">5️⃣ Если вам 60+:</p>
-            <p className="mb-0">Выбирайте <strong>Лайм-Займ</strong> — работают до 70 лет, мягкие условия</p>
+            <p className="font-bold mb-2">5️⃣ Если нужно до 100К:</p>
+            <p className="mb-0">Выбирайте <strong>Турбозайм</strong> — большие суммы</p>
           </div>
         </div>
 
         <div className="mt-6 pt-6 border-t border-white/20">
           <p className="text-lg mb-0">
             💡 <strong>Главный совет:</strong> Берите займ только если уверены, что вернете вовремя. 
-            Просрочка = штрафы + испорченная кредитная история. Планируйте бюджет заранее!
+            Просрочка = штрафы + испорченная кредитная история!
           </p>
         </div>
       </div>
@@ -624,9 +577,8 @@ const BlogPost13Content = () => {
       <div className="bg-amber-50 p-6 rounded-xl border-2 border-amber-200 my-8">
         <p className="font-bold text-lg text-amber-900 mb-3">⚠️ Финальное предупреждение</p>
         <p className="text-amber-900 mb-0">
-          Микрозаймы — это дорогой способ получить деньги. Переплата может достигать 100-200% годовых. 
-          Используйте займы только в крайних случаях. Если есть возможность — обратитесь в банк 
-          (ставка в 3-5 раз ниже) или попросите в долг у друзей.
+          Микрозаймы — это дорогой способ получить деньги. Используйте займы только в крайних случаях. 
+          Если есть возможность — обратитесь в банк (ставка в 3-5 раз ниже).
         </p>
       </div>
     </div>
