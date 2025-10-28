@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 14,
+    title: "Как выбраться из долгов по микрозаймам? Реальная история из Москвы",
+    description: "История Тимофея из Москвы: как долг в 120 тыс. ₽ превратился в 450 тыс., и что помогло выйти из долговой ямы. Практические советы — как не попасть в капкан и погасить всё за год.",
+    date: "28 октября 2025",
+    readTime: "16 мин",
+    category: "Советы",
+    image: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/6f0fa51d-2ea9-4195-978c-0d684229063f.jpg",
+    url: "/blog/kak-vybratsya-iz-dolgov-po-mikrozajmam",
+    slug: "kak-vybratsya-iz-dolgov-po-mikrozajmam"
+  },
+  {
     id: 13,
     title: "Займ 30 000 рублей на карту срочно — где одобрят за 5 минут",
     description: "Нужны срочно 30 тысяч рублей? ТОП-5 МФО с моментальным одобрением, без отказа и проверки КИ. Сравниваем условия, ставки и способы получения денег за 5 минут на карту.",
