@@ -23,12 +23,12 @@ const BlogPost13 = () => {
         <meta property="og:description" content="ТОП-5 МФО с моментальным одобрением займа 30000 рублей. Сравниваем условия, ставки и способы получения денег за 5 минут" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://mikrofinru.ru/blog/zajm-30000-rublej-srochno" />
-        <meta property="og:image" content="https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/ac6a1890-ddb1-427f-af5d-cf9643f0bc32.jpg" />
+        <meta property="og:image" content="https://cdn.poehali.dev/files/9080e042-ac90-4dba-9904-cf9d82114dd0.jpg" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Займ 30 000 рублей на карту срочно — где одобрят за 5 минут" />
         <meta name="twitter:description" content="ТОП-5 МФО с моментальным одобрением займа 30000 рублей" />
-        <meta name="twitter:image" content="https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/ac6a1890-ddb1-427f-af5d-cf9643f0bc32.jpg" />
+        <meta name="twitter:image" content="https://cdn.poehali.dev/files/9080e042-ac90-4dba-9904-cf9d82114dd0.jpg" />
 
         <link rel="canonical" href="https://mikrofinru.ru/blog/zajm-30000-rublej-srochno" />
         
@@ -38,7 +38,7 @@ const BlogPost13 = () => {
             "@type": "Article",
             "headline": "Займ 30 000 рублей на карту срочно — где одобрят за 5 минут",
             "description": "Нужны срочно 30 тысяч рублей? ТОП-5 МФО с моментальным одобрением, без отказа и проверки КИ. Сравниваем условия, ставки и способы получения денег за 5 минут на карту.",
-            "image": "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/ac6a1890-ddb1-427f-af5d-cf9643f0bc32.jpg",
+            "image": "https://cdn.poehali.dev/files/9080e042-ac90-4dba-9904-cf9d82114dd0.jpg",
             "datePublished": "2025-10-28",
             "dateModified": "2025-10-28",
             "author": {
@@ -77,7 +77,7 @@ const BlogPost13 = () => {
 
               <div className="relative w-full h-[400px] rounded-2xl overflow-hidden mb-8 shadow-2xl">
                 <img 
-                  src="https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/ac6a1890-ddb1-427f-af5d-cf9643f0bc32.jpg"
+                  src="https://cdn.poehali.dev/files/9080e042-ac90-4dba-9904-cf9d82114dd0.jpg"
                   alt="30000 рублей на карту - быстрый займ онлайн"
                   className="w-full h-full object-cover"
                 />

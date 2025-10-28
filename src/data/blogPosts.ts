@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "28 октября 2025",
     readTime: "12 мин",
     category: "Советы",
-    image: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/ac6a1890-ddb1-427f-af5d-cf9643f0bc32.jpg",
+    image: "https://cdn.poehali.dev/files/9080e042-ac90-4dba-9904-cf9d82114dd0.jpg",
     url: "/blog/zajm-30000-rublej-srochno",
     slug: "zajm-30000-rublej-srochno"
   },
