@@ -1,4 +1,5 @@
 import { blogPosts } from '../data/blogPosts';
+import { journalPosts } from '../data/journalPosts';
 
 const SITE_URL = 'https://mikrofinru.ru';
 
@@ -17,6 +18,12 @@ export function generateSitemapXML(): string {
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.8'
+    },
+    {
+      loc: `${SITE_URL}/journal`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
     }
   ];
 
@@ -27,7 +34,14 @@ export function generateSitemapXML(): string {
     priority: '0.7'
   }));
 
-  const allPages = [...staticPages, ...blogPages];
+  const journalPages = journalPosts.map(post => ({
+    loc: `${SITE_URL}${post.url}`,
+    lastmod: today,
+    changefreq: 'monthly',
+    priority: '0.7'
+  }));
+
+  const allPages = [...staticPages, ...blogPages, ...journalPages];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
