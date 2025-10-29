@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
-import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostFAQ from "@/components/blog/BlogPostFAQ";
 import BlogPostFooter from "@/components/blog/BlogPostFooter";
 import RelatedPosts from "@/components/blog/RelatedPosts";
@@ -159,7 +158,7 @@ const BlogPost15 = () => {
 
         <TableOfContents sections={sections} />
 
-        <BlogPostContent>
+        <div className="prose prose-lg max-w-none mt-8">
           <section id="why-choose">
             <h2>Почему выбирают займы на карту ВТБ</h2>
             <p>
@@ -395,7 +394,7 @@ const BlogPost15 = () => {
               Помните: ответственный подход к займам поможет избежать проблем с переплатой и сохранить хорошую кредитную историю. Если сомневаетесь в своих возможностях, проконсультируйтесь с финансовым специалистом. Больше полезных советов вы найдёте в нашей статье <a href="/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu" className="text-primary hover:underline">«Как взять микрозайм и не попасть в долговую яму»</a>.
             </p>
           </section>
-        </BlogPostContent>
+        </div>
 
         <BlogPostFAQ items={faqItems} />
         
