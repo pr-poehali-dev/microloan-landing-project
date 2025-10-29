@@ -21,9 +21,9 @@ const BlogPost10CreditImprovement = () => {
             className="text-primary flex-shrink-0 mt-0.5"
           />
           <div>
-            <h4 className="font-semibold text-foreground mt-0 mb-1">
+            <h3 className="font-semibold text-foreground mt-0 mb-1">
               Погашайте микрозаймы вовремя
-            </h4>
+            </h3>
             <p className="text-muted-foreground text-sm m-0">
               Каждый вовремя погашенный займ добавляет положительную запись в
               БКИ. Даже микрозаймы учитываются.
@@ -38,9 +38,9 @@ const BlogPost10CreditImprovement = () => {
             className="text-primary flex-shrink-0 mt-0.5"
           />
           <div>
-            <h4 className="font-semibold text-foreground mt-0 mb-1">
+            <h3 className="font-semibold text-foreground mt-0 mb-1">
               Закройте старые долги
-            </h4>
+            </h3>
             <p className="text-muted-foreground text-sm m-0">
               Даже если прошло много времени, закрытие долга улучшает КИ.
               Договоритесь с банком о реструктуризации.
@@ -55,9 +55,9 @@ const BlogPost10CreditImprovement = () => {
             className="text-primary flex-shrink-0 mt-0.5"
           />
           <div>
-            <h4 className="font-semibold text-foreground mt-0 mb-1">
+            <h3 className="font-semibold text-foreground mt-0 mb-1">
               Оформите кредитную карту с небольшим лимитом
-            </h4>
+            </h3>
             <p className="text-muted-foreground text-sm m-0">
               Некоторые банки (например, Тинькофф, Альфа-Банк) выдают карты с
               лимитом 10-20 тысяч даже с плохой КИ. Пользуйтесь ею и вовремя
@@ -73,9 +73,9 @@ const BlogPost10CreditImprovement = () => {
             className="text-primary flex-shrink-0 mt-0.5"
           />
           <div>
-            <h4 className="font-semibold text-foreground mt-0 mb-1">
+            <h3 className="font-semibold text-foreground mt-0 mb-1">
               Проверяйте свою КИ раз в полгода
-            </h4>
+            </h3>
             <p className="text-muted-foreground text-sm m-0">
               Получите бесплатный отчёт на сайте Госуслуг. Убедитесь, что нет
               ошибок и все платежи отражены правильно.
@@ -90,9 +90,9 @@ const BlogPost10CreditImprovement = () => {
             className="text-primary flex-shrink-0 mt-0.5"
           />
           <div>
-            <h4 className="font-semibold text-foreground mt-0 mb-1">
+            <h3 className="font-semibold text-foreground mt-0 mb-1">
               Не подавайте много заявок одновременно
-            </h4>
+            </h3>
             <p className="text-muted-foreground text-sm m-0">
               Каждая заявка на кредит фиксируется в БКИ. Большое количество
               заявок за короткий период снижает рейтинг.
