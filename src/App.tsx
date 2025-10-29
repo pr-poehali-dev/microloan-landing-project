@@ -32,6 +32,7 @@ const BlogPost11 = lazy(() => import("./pages/BlogPost11"));
 const BlogPost12 = lazy(() => import("./pages/BlogPost12"));
 const BlogPost13 = lazy(() => import("./pages/BlogPost13"));
 const BlogPost14 = lazy(() => import("./pages/BlogPost14"));
+const BlogPost15 = lazy(() => import("./pages/BlogPost15"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const UserAgreement = lazy(() => import("./pages/UserAgreement"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -76,6 +77,7 @@ const App = () => (
               <Route path="/blog/zajm-30000-rublej-srochno" element={<BlogPost13 />} />
               <Route path="/blog/zajm-na-kartu-sberbanka-onlajn" element={<BlogPost12 />} />
               <Route path="/blog/kak-vybratsya-iz-dolgov-po-mikrozajmam" element={<BlogPost14 />} />
+              <Route path="/blog/zajm-na-kartu-vtb" element={<BlogPost15 />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/user-agreement" element={<UserAgreement />} />
               <Route path="/sitemap.xml" element={<Sitemap />} />

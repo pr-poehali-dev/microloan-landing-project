@@ -597,6 +597,12 @@ const BlogPost12Content = () => {
               возможность получить первый займ без процентов делают этот формат
               привлекательным для тысяч россиян.
             </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Если вы клиент ВТБ, также рассмотрите варианты займов на карту этого банка. Читайте подробнее в нашей статье{' '}
+              <a href="/blog/zajm-na-kartu-vtb" className="text-indigo-600 hover:text-indigo-800 underline font-semibold">
+                «Займы на карту ВТБ: как быстро получить деньги онлайн»
+              </a>.
+            </p>
             <p className="text-gray-700 leading-relaxed font-semibold">
               Проверьте условия и подберите подходящее предложение прямо на
               сайте — это займёт не больше 5 минут.
