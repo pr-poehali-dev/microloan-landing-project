@@ -122,23 +122,7 @@ const BlogPost12Content = () => {
         />
       </Helmet>
 
-      <article className="max-w-4xl mx-auto px-4 py-12">
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Займ на карту Сбербанка онлайн — быстрое и безопасное оформление
-          </h1>
-          <div className="flex items-center gap-4 text-gray-600 text-sm">
-            <time dateTime="2025-10-15">15 октября 2025</time>
-            <span>•</span>
-            <span>14 мин чтения</span>
-            <span>•</span>
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
-              Советы
-            </span>
-          </div>
-        </header>
-
-        <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none">
           <BlogPost12Intro />
           <BlogPost12TopMFO 
             mfoOffers={mfoOffers}
@@ -151,7 +135,6 @@ const BlogPost12Content = () => {
           <BlogPost12FAQ />
           <BlogPost12Conclusion />
         </div>
-      </article>
     </>
   );
 };
