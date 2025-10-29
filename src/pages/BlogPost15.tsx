@@ -148,6 +148,13 @@ const BlogPost15 = () => {
           readTime="18 мин"
           category="Советы"
           views={viewCount}
+          imageUrl="https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg"
+          imageAlt="Займы на карту ВТБ онлайн"
+          breadcrumbs={{
+            home: "Главная",
+            blog: "Блог",
+            current: "Займы на карту ВТБ"
+          }}
         />
 
         <TableOfContents sections={sections} />
