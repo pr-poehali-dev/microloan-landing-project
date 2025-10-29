@@ -78,7 +78,10 @@ const BlogPost9 = () => {
                   </div>
                   <BlogPost9Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/mfo-s-momentalnym-odobreniem"
+                    postTitle="МФО с моментальным одобрением — топ-5 лучших в 2025 году"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/mfo-s-momentalnym-odobreniem" />

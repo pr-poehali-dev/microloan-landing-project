@@ -77,7 +77,10 @@ const JournalPost5 = () => {
                   </div>
                   <JournalPost5Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/kak-vstupit-v-nasledstvo-2025"
+                    postTitle="Как вступить в наследство в 2025: пошаговая инструкция и 4 способа наследования"
+                  />
                 </div>
               </div>
 

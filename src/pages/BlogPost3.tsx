@@ -13,8 +13,6 @@ import { useBlogPostMeta } from "@/components/blog/useBlogPostMeta";
 const BlogPost3 = () => {
   const postSlug = 'kak-vybrat-nadezhnuyu-mfo';
   const viewCount = useViewCounter(postSlug);
-  const postUrl = `${window.location.origin}/blog/kak-vybrat-nadezhnuyu-mfo`;
-  const postTitle = "Как выбрать надёжную МФО: проверенная инструкция";
 
   const faqItems = [
     {
@@ -115,7 +113,10 @@ const BlogPost3 = () => {
             </div>
 
             <div className="max-w-4xl">
-              <BlogPostFooter postUrl={postUrl} postTitle={postTitle} />
+              <BlogPostFooter
+                postUrl="https://mikrofinru.ru/blog/kak-vybrat-nadezhnuyu-mfo"
+                postTitle="Как выбрать надёжную МФО: полное руководство для безопасного получения займа"
+              />
               
               <RelatedPosts currentPostId={3} />
             </div>

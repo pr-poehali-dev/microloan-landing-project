@@ -77,7 +77,10 @@ const JournalPost4 = () => {
                   </div>
                   <JournalPost4Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/reshenie-cb-24-oktyabrya-vklady-obligacii"
+                    postTitle="Что решит ЦБ 24 октября: как это ударит по вашим вкладам и облигациям"
+                  />
                 </div>
               </div>
 

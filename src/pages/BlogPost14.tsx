@@ -78,7 +78,10 @@ const BlogPost14 = () => {
                   </div>
                   <BlogPost14Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/kak-vybratsya-iz-dolgov-po-mikrozajmam"
+                    postTitle="Как выбраться из долгов по микрозаймам? Реальная история из Москвы"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/kak-vybratsya-iz-dolgov-po-mikrozajmam" />

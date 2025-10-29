@@ -408,7 +408,10 @@ const BlogPost15 = () => {
           
           <RelatedPosts currentPostId={15} />
           
-          <BlogPostFooter />
+          <BlogPostFooter 
+            postUrl="https://mikrofinru.ru/blog/zajm-na-kartu-vtb"
+            postTitle="Займы на карту ВТБ: как быстро получить деньги онлайн — условия и оформление"
+          />
         </div>
       </article>
 

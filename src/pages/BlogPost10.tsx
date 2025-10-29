@@ -78,7 +78,10 @@ const BlogPost10 = () => {
                   </div>
                   <BlogPost10Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej"
+                    postTitle="МФО-кредит с плохой кредитной историей: как я получил займ онлайн"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/mfo-kredit-s-plohoj-kreditnoj-istoriej" />

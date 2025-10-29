@@ -78,7 +78,10 @@ const BlogPost11 = () => {
                   </div>
                   <BlogPost11Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/pochemu-banki-i-mfo-otkazyvayut"
+                    postTitle="Почему банки и МФО отказывают в кредитах: анализ причин"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/pochemu-banki-i-mfo-otkazyvayut" />

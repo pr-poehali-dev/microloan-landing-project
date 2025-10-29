@@ -125,7 +125,10 @@ const BlogPost1 = () => {
                   <BlogPostContent />
                   <BlogPostFAQ items={faqItems} />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/chto-takoe-mikrozajmy"
+                    postTitle="Что такое микрозаймы и как они работают: простыми словами о займах онлайн"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/chto-takoe-mikrozajmy" />

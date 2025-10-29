@@ -78,7 +78,10 @@ const BlogPost13 = () => {
                   </div>
                   <BlogPost13Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/zajm-30000-rublej-srochno"
+                    postTitle="Займ 30 000 рублей на карту срочно — где одобрят за 5 минут в 2025"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/zajm-30000-rublej-srochno" />

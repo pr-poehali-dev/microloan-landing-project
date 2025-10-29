@@ -77,7 +77,10 @@ const JournalPost6 = () => {
                   </div>
                   <JournalPost6Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/shtraf-za-prosrochennyj-pasport"
+                    postTitle="Штраф за просроченный паспорт РФ — сколько платить и как избежать?"
+                  />
                 </div>
               </div>
 

@@ -77,7 +77,10 @@ const JournalPost7 = () => {
                   </div>
                   <JournalPost7Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/kak-sekonomit-na-mikrozajme"
+                    postTitle="Как сэкономить на микрозайме: 3 рабочих способа уменьшить переплату"
+                  />
                 </div>
               </div>
 

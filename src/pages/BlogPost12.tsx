@@ -78,7 +78,10 @@ const BlogPost12 = () => {
                   </div>
                   <BlogPost12Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/blog/zajm-na-kartu-sberbanka-onlajn"
+                    postTitle="Займ на карту Сбербанка онлайн — быстро и без отказа в 2025"
+                  />
                 </div>
                 
                 <RelatedPosts currentPostUrl="/blog/zajm-na-kartu-sberbanka-onlajn" />

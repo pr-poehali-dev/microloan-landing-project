@@ -77,7 +77,10 @@ const JournalPost2 = () => {
                   </div>
                   <JournalPost2Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/ipoteka-ot-mfo-2025"
+                    postTitle="Ипотека от МФО с 22 октября 2025: революция или маркетинг?"
+                  />
                 </div>
               </div>
 

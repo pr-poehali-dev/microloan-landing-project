@@ -77,7 +77,10 @@ const JournalPost3 = () => {
                   </div>
                   <JournalPost3Content />
                   <ArticleLike postSlug={postSlug} />
-                  <BlogPostFooter />
+                  <BlogPostFooter
+                    postUrl="https://mikrofinru.ru/journal/transportnyj-nalog-tri-regiona-2025"
+                    postTitle="Транспортный налог 2025: три региона повышают ставки | Оренбург, Новосибирск, Красноярск"
+                  />
                 </div>
               </div>
 
