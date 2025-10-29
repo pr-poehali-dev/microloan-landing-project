@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import SocialSubscribe from "@/components/blog/SocialSubscribe";
 
 interface BlogPostFooterProps {
   postUrl: string;
@@ -13,7 +14,9 @@ const BlogPostFooter = ({ postUrl, postTitle }: BlogPostFooterProps) => {
   };
   return (
     <div className="mt-12 pt-8 border-t px-8 md:px-12 pb-8">
-      <div className="mb-8">
+      <SocialSubscribe />
+      
+      <div className="mb-8 mt-8">
         <h3 className="text-lg font-bold mb-4 text-foreground">Поделиться статьей:</h3>
         <div className="flex flex-wrap gap-3">
           <a
