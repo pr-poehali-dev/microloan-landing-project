@@ -61,8 +61,8 @@ const BlogPostHeader = ({
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute top-6 left-6">
-            <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-primary shadow-lg">
+          <div className="absolute top-4 left-4 z-10">
+            <span className="px-4 py-2 bg-primary text-white backdrop-blur-sm rounded-full text-sm font-bold shadow-2xl border-2 border-white">
               {category}
             </span>
           </div>
