@@ -44,8 +44,8 @@ const BlogPost15 = () => {
     description: "Узнайте, как оформить займ на карту ВТБ без отказа, срочно и без процентов. Подробные условия, требования, пошаговая инструкция и полезные советы — всё в одном материале.",
     ogTitle: "Займы на карту ВТБ: полное руководство по получению денег",
     ogDescription: "Узнайте, как оформить займ на карту ВТБ без отказа, срочно и без процентов. Подробные условия, требования и пошаговая инструкция.",
-    ogImage: "https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg",
-    twitterImage: "https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg",
+    ogImage: "https://cdn.poehali.dev/files/46cd7c6a-81fe-4c51-b641-8d1d9be3d56b.jpg",
+    twitterImage: "https://cdn.poehali.dev/files/46cd7c6a-81fe-4c51-b641-8d1d9be3d56b.jpg",
     url: "https://mikrofinru.ru/blog/zajm-na-kartu-vtb",
     datePublished: "2025-10-29",
     dateModified: "2025-10-29",
@@ -145,7 +145,7 @@ const BlogPost15 = () => {
             readTime="18 мин"
             category="Советы"
             viewCount={viewCount}
-            imageUrl="https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg"
+            imageUrl="https://cdn.poehali.dev/files/46cd7c6a-81fe-4c51-b641-8d1d9be3d56b.jpg"
             imageAlt="Займы на карту ВТБ онлайн"
             breadcrumbs={{
               home: "Главная",

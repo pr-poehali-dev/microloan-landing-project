@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "29 октября 2025",
     readTime: "18 мин",
     category: "Советы",
-    image: "https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg",
+    image: "https://cdn.poehali.dev/files/46cd7c6a-81fe-4c51-b641-8d1d9be3d56b.jpg",
     url: "/blog/zajm-na-kartu-vtb",
     slug: "zajm-na-kartu-vtb"
   },
