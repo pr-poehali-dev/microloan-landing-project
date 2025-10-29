@@ -125,17 +125,6 @@ const BlogPost15 = () => {
     }
   ];
 
-  const sections = [
-    { id: "why-choose", title: "Почему выбирают займы на карту ВТБ" },
-    { id: "conditions", title: "Условия получения займа" },
-    { id: "how-to-apply", title: "Как оформить займ онлайн" },
-    { id: "no-interest", title: "Можно ли получить займ без процентов" },
-    { id: "faq-section", title: "Частые вопросы" },
-    { id: "safety-tips", title: "Советы по безопасному оформлению" },
-    { id: "alternatives", title: "Альтернативы займам ВТБ" },
-    { id: "conclusion", title: "Заключение" }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -156,7 +145,7 @@ const BlogPost15 = () => {
           }}
         />
 
-        <TableOfContents sections={sections} />
+        <TableOfContents />
 
         <div className="prose prose-lg max-w-none mt-8">
           <section id="why-choose">
