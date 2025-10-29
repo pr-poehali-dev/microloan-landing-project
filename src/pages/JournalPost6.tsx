@@ -69,12 +69,13 @@ const JournalPost6 = () => {
               />
             </div>
 
+            <div className="lg:hidden mb-6 max-w-4xl mx-auto">
+              <TableOfContents />
+            </div>
+
             <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8 max-w-7xl mx-auto">
               <div className="max-w-4xl">
                 <div className="bg-white rounded-b-2xl shadow-xl px-8 md:px-12 pb-4">
-                  <div className="lg:hidden mb-6">
-                    <TableOfContents />
-                  </div>
                   <JournalPost6Content />
                   <ArticleLike postSlug={postSlug} />
                   <BlogPostFooter
