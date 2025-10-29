@@ -137,25 +137,27 @@ const BlogPost15 = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <article className="container mx-auto px-4 py-8 max-w-4xl">
-        <BlogPostHeader
-          title="Займы на карту ВТБ: полное руководство по получению денег"
-          date="29 октября 2025"
-          readTime="18 мин"
-          category="Советы"
-          viewCount={viewCount}
-          imageUrl="https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg"
-          imageAlt="Займы на карту ВТБ онлайн"
-          breadcrumbs={{
-            home: "Главная",
-            blog: "Блог",
-            current: "Займы на карту ВТБ"
-          }}
-        />
+      <article className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          <BlogPostHeader
+            title="Займы на карту ВТБ: полное руководство по получению денег"
+            date="29 октября 2025"
+            readTime="18 мин"
+            category="Советы"
+            viewCount={viewCount}
+            imageUrl="https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg"
+            imageAlt="Займы на карту ВТБ онлайн"
+            breadcrumbs={{
+              home: "Главная",
+              blog: "Блог",
+              current: "Займы на карту ВТБ"
+            }}
+          />
+        </div>
 
-        <TableOfContents />
-
-        <div className="prose prose-lg max-w-none mt-8">
+        <div className="max-w-7xl mx-auto mt-8">
+          <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8">
+            <div className="prose prose-lg max-w-none">
           <section id="why-choose">
             <h2>Почему выбирают займы на карту ВТБ</h2>
             <p>
@@ -391,15 +393,23 @@ const BlogPost15 = () => {
               Помните: ответственный подход к займам поможет избежать проблем с переплатой и сохранить хорошую кредитную историю. Если сомневаетесь в своих возможностях, проконсультируйтесь с финансовым специалистом. Больше полезных советов вы найдёте в нашей статье <a href="/blog/kak-vzyat-mikrozajm-i-ne-popast-v-dolgovuyu-yamu" className="text-primary hover:underline">«Как взять микрозайм и не попасть в долговую яму»</a>.
             </p>
           </section>
+            </div>
+
+            <aside className="hidden lg:block">
+              <TableOfContents />
+            </aside>
+          </div>
         </div>
 
-        <BlogPostFAQ items={faqItems} />
-        
-        <ArticleLike postSlug={postSlug} />
-        
-        <RelatedPosts currentPostId={15} />
-        
-        <BlogPostFooter />
+        <div className="max-w-4xl mx-auto mt-8">
+          <BlogPostFAQ items={faqItems} />
+          
+          <ArticleLike postSlug={postSlug} />
+          
+          <RelatedPosts currentPostId={15} />
+          
+          <BlogPostFooter />
+        </div>
       </article>
 
       <Footer />
