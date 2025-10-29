@@ -50,7 +50,15 @@ const BlogPost15 = () => {
     datePublished: "2025-10-29",
     dateModified: "2025-10-29",
     category: "Советы",
-    readTime: "18 мин"
+    keywords: ["займ на карту ВТБ", "займ ВТБ онлайн", "кредит ВТБ", "быстрый займ"],
+    wordCount: 3500,
+    timeRequired: "PT18M",
+    breadcrumbs: [
+      { position: 1, name: "Главная", item: "https://mikrofinru.ru/" },
+      { position: 2, name: "Блог", item: "https://mikrofinru.ru/blog" },
+      { position: 3, name: "Займы на карту ВТБ", item: "https://mikrofinru.ru/blog/zajm-na-kartu-vtb" }
+    ],
+    faqItems
   });
 
   const trackClick = async (mfoName: string) => {
