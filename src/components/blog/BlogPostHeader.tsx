@@ -28,25 +28,25 @@ const BlogPostHeader = ({
 }: BlogPostHeaderProps) => {
   return (
     <>
-      <nav className="mb-8" aria-label="Навигационная цепочка">
+      <nav className="mb-8 max-w-full overflow-hidden" aria-label="Навигационная цепочка">
         <ol className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
-          <li>
+          <li className="whitespace-nowrap">
             <Link to="/" className="hover:text-primary transition-colors">
               {breadcrumbs.home}
             </Link>
           </li>
-          <li>
+          <li className="flex-shrink-0">
             <Icon name="ChevronRight" size={16} />
           </li>
-          <li>
+          <li className="whitespace-nowrap">
             <Link to="/blog" className="hover:text-primary transition-colors">
               {breadcrumbs.blog}
             </Link>
           </li>
-          <li>
+          <li className="flex-shrink-0">
             <Icon name="ChevronRight" size={16} />
           </li>
-          <li className="text-foreground font-medium">
+          <li className="text-foreground font-medium break-words max-w-full">
             {breadcrumbs.current}
           </li>
         </ol>
