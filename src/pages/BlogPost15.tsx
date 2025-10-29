@@ -147,7 +147,7 @@ const BlogPost15 = () => {
           date="29 октября 2025"
           readTime="18 мин"
           category="Советы"
-          views={viewCount}
+          viewCount={viewCount}
           imageUrl="https://cdn.poehali.dev/files/42fef705-92d7-4075-88d7-1983eaa53552.jpg"
           imageAlt="Займы на карту ВТБ онлайн"
           breadcrumbs={{
