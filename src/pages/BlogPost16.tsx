@@ -36,8 +36,8 @@ const BlogPost16 = () => {
     description: "Рассказываем, как получить займ онлайн без звонков, проверок и документов. Условия, надёжные МФО, пошаговая инструкция и важные нюансы — всё в одном материале.",
     ogTitle: "Займы без звонков и проверок на карту: полное руководство",
     ogDescription: "Рассказываем, как получить займ онлайн без звонков, проверок и документов. Условия, надёжные МФО и пошаговая инструкция.",
-    ogImage: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/a071102c-838e-4fb5-811f-0546ba17fd56.jpg",
-    twitterImage: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/a071102c-838e-4fb5-811f-0546ba17fd56.jpg",
+    ogImage: "https://cdn.poehali.dev/files/14ab716b-1655-4ad0-8f1c-02eb6e836825.jpg",
+    twitterImage: "https://cdn.poehali.dev/files/14ab716b-1655-4ad0-8f1c-02eb6e836825.jpg",
     url: "https://mikrofinru.ru/blog/zajmy-bez-zvonkov-i-proverok",
     datePublished: "2025-10-30",
     dateModified: "2025-10-30",
@@ -137,7 +137,7 @@ const BlogPost16 = () => {
             readTime="14 мин"
             category="Советы"
             viewCount={viewCount}
-            imageUrl="https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/a071102c-838e-4fb5-811f-0546ba17fd56.jpg"
+            imageUrl="https://cdn.poehali.dev/files/14ab716b-1655-4ad0-8f1c-02eb6e836825.jpg"
             imageAlt="Займы без звонков и проверок онлайн"
             breadcrumbs={{
               home: "Главная",
