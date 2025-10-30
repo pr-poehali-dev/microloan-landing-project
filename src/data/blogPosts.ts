@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "30 октября 2025",
     readTime: "14 мин",
     category: "Советы",
-    image: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/a071102c-838e-4fb5-811f-0546ba17fd56.jpg",
+    image: "https://cdn.poehali.dev/files/14ab716b-1655-4ad0-8f1c-02eb6e836825.jpg",
     url: "/blog/zajmy-bez-zvonkov-i-proverok",
     slug: "zajmy-bez-zvonkov-i-proverok"
   },
