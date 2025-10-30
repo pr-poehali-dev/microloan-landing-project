@@ -17,8 +17,13 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    const title = 'Микрозаймы, кредиты и финансы — блог о деньгах и займах';
-    const description = 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.';
+    const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+    const pagesSuffix = currentPage > 1 ? ` — страница ${currentPage}` : '';
+    
+    const title = `Микрозаймы, кредиты и финансы — блог о деньгах и займах${pagesSuffix}`;
+    const description = currentPage > 1 
+      ? `Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Страница ${currentPage} из ${totalPages}.`
+      : 'Блог о финансах: микрозаймы онлайн, потребительские кредиты и кредитные карты. Разница, условия, советы и полезная информация.';
     
     document.title = title;
     
@@ -36,8 +41,36 @@ const Blog = () => {
     if (ogDescription) {
       ogDescription.setAttribute('content', description);
     }
+
+    // Add canonical and prev/next links for pagination
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', `https://mikrofinru.ru/blog${currentPage > 1 ? `?page=${currentPage}` : ''}`);
+
+    // Remove existing prev/next links
+    document.querySelectorAll('link[rel="prev"], link[rel="next"]').forEach(el => el.remove());
+
+    // Add prev link
+    if (currentPage > 1) {
+      const prevLink = document.createElement('link');
+      prevLink.setAttribute('rel', 'prev');
+      prevLink.setAttribute('href', `https://mikrofinru.ru/blog${currentPage > 2 ? `?page=${currentPage - 1}` : ''}`);
+      document.head.appendChild(prevLink);
+    }
+
+    // Add next link
+    if (currentPage < totalPages) {
+      const nextLink = document.createElement('link');
+      nextLink.setAttribute('rel', 'next');
+      nextLink.setAttribute('href', `https://mikrofinru.ru/blog?page=${currentPage + 1}`);
+      document.head.appendChild(nextLink);
+    }
     
-    console.log('✅ SEO теги обновлены для страницы блога:', { title, description });
+    console.log('✅ SEO теги обновлены для страницы блога:', { title, description, page: currentPage, totalPages });
     
     // Fetch view counts for all blog posts
     const fetchViewCounts = async () => {
@@ -57,7 +90,7 @@ const Blog = () => {
     };
     
     fetchViewCounts();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
