@@ -17,8 +17,8 @@ const JournalPost8 = () => {
     description: "Подробная инструкция, куда и как подать жалобу на банк, МФО или страховую компанию. Разбираем все инстанции: Центробанк, Роспотребнадзор, суд и другие. Примеры ситуаций и сроки рассмотрения.",
     ogTitle: "Куда жаловаться на МФО, банк или страховую: полное руководство",
     ogDescription: "Пошаговая инструкция: куда обращаться при конфликте с банком, МФО или страховой. Все инстанции, сроки и способы подачи жалоб.",
-    ogImage: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/1049d0bd-4c73-4597-bfe0-f9961fb6d818.jpg",
-    twitterImage: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/1049d0bd-4c73-4597-bfe0-f9961fb6d818.jpg",
+    ogImage: "https://cdn.poehali.dev/files/133a4cd5-ca9a-49e7-a1ea-80fe862bdd45.jpg",
+    twitterImage: "https://cdn.poehali.dev/files/133a4cd5-ca9a-49e7-a1ea-80fe862bdd45.jpg",
     url: "https://mikrofinru.ru/journal/kuda-zhalovatsya-na-mfo-bank-strahovuyu",
     datePublished: "2025-10-30",
     dateModified: "2025-10-30",
@@ -59,7 +59,7 @@ const JournalPost8 = () => {
                 readTime="10 мин"
                 viewCount={viewCount}
                 title="Куда жаловаться на МФО, банк или страховую: все инстанции и порядок действий"
-                imageUrl="https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/1049d0bd-4c73-4597-bfe0-f9961fb6d818.jpg"
+                imageUrl="https://cdn.poehali.dev/files/133a4cd5-ca9a-49e7-a1ea-80fe862bdd45.jpg"
                 imageAlt="Жалоба на банк, МФО или страховую - инструкция и инстанции"
                 breadcrumbs={{
                   home: "Главная",

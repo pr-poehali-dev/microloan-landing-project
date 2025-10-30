@@ -18,7 +18,7 @@ export const journalPosts: JournalPost[] = [
     date: "30 октября 2025",
     readTime: "10 мин",
     category: "Гайды",
-    image: "https://cdn.poehali.dev/projects/e9a3fa0a-9ed6-45a2-8cf3-d090c021105f/files/1049d0bd-4c73-4597-bfe0-f9961fb6d818.jpg",
+    image: "https://cdn.poehali.dev/files/133a4cd5-ca9a-49e7-a1ea-80fe862bdd45.jpg",
     url: "/journal/kuda-zhalovatsya-na-mfo-bank-strahovuyu",
     slug: "kuda-zhalovatsya-na-mfo-bank-strahovuyu"
   },
