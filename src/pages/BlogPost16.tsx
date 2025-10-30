@@ -508,7 +508,7 @@ const BlogPost16 = () => {
         </div>
 
         <div className="max-w-7xl mx-auto mt-12">
-          <RelatedPosts currentPostUrl="/blog/zajmy-bez-zvonkov-i-proverok" />
+          <RelatedPosts currentPostId={16} />
         </div>
       </article>
       
