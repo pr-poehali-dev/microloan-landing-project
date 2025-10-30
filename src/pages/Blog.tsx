@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Icon from "@/components/ui/icon";
 import { blogPosts } from "@/data/blogPosts";
 
+const POSTS_PER_PAGE = 9;
+
 const Blog = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
+  const currentPage = parseInt(searchParams.get('page') || '1', 10);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -85,7 +89,9 @@ const Blog = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => (
+              {blogPosts
+                .slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE)
+                .map((post, index) => (
                 <Card 
                   key={post.id}
                   className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fade-in"
@@ -161,6 +167,56 @@ const Blog = () => {
                 </Card>
               ))}
             </div>
+
+            {/* Pagination */}
+            {blogPosts.length > POSTS_PER_PAGE && (
+              <div className="mt-12 flex justify-center items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => {
+                    setSearchParams({ page: String(currentPage - 1) });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  disabled={currentPage === 1}
+                  className="gap-2"
+                >
+                  <Icon name="ChevronLeft" size={20} />
+                  Назад
+                </Button>
+                
+                <div className="flex gap-2">
+                  {Array.from({ length: Math.ceil(blogPosts.length / POSTS_PER_PAGE) }, (_, i) => i + 1).map((pageNum) => (
+                    <Button
+                      key={pageNum}
+                      variant={pageNum === currentPage ? "default" : "outline"}
+                      size="lg"
+                      onClick={() => {
+                        setSearchParams({ page: String(pageNum) });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="min-w-[48px]"
+                    >
+                      {pageNum}
+                    </Button>
+                  ))}
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => {
+                    setSearchParams({ page: String(currentPage + 1) });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  disabled={currentPage === Math.ceil(blogPosts.length / POSTS_PER_PAGE)}
+                  className="gap-2"
+                >
+                  Вперёд
+                  <Icon name="ChevronRight" size={20} />
+                </Button>
+              </div>
+            )}
 
             <div className="mt-16 text-center">
               <Link to="/">
